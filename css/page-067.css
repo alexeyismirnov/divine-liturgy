@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Page 67 — "The Remembrance" (continued) specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text (continuation from page 66)
+                      with the blue drop cap "I"
+     - Right column : the lead quote "There is no life without food…"
+                      centered at the top, with the Last Supper image
+                      placeholder below it
+
+   Below the grid:
+     - Full-width QUESTIONS box (green border)
+     - Full-width bottom commentary (blue drop cap "A")
+   ========================================================================== */
+
+/* Top section: 2-column grid with equal-width columns. The left
+   column holds the commentary text; the right column holds the lead
+   quote + Last Supper image. */
+.page-067-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-067-top-grid .commentary-body p { margin: 0 0 8px; }
+
+/* Right column: lead quote + image */
+.page-067-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Lead quote at the top of the right column, above the image:
+   "'There is no life without food…'" — centered, bold, italic,
+   slightly larger, with the last two "new life/new food" words
+   in italic. */
+.lead-quote {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.lead-quote em { font-style: italic; }
+
+/* Last Supper image: centered in the right column below the quote */
+.page-067-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Quote below the image in the right column:
+   "'Unless you eat the flesh of the Son of Man…'"
+   Same style as the lead quote above the image (centered, bold,
+   italic) with a bit of extra top padding to separate it from the
+   image. */
+.right-col-quote {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.page-067-image .image-placeholder {
+  width: 100%;
+  height: 240px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+.page-067-image figcaption {
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}

@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Page 66 — "The Remembrance" specific styles
+   --------------------------------------------------------------------------
+   Loaded IN ADDITION to css/book.css. Only contains the layout pieces
+   that are unique to this page: the 2-column outer layout that lets
+   the right column of stage directions extend below the 3-column prayer
+   grid down to the bottom of the "Remembrance" section.
+   ========================================================================== */
+
+/* ---------- Outer 2-column layout for the "Remembrance" section ----------
+   Wraps the prayer grid (top) + words of institution (below) on the
+   left, a long vertical separator in the middle, and the right column
+   of stage directions on the right. The right column spans the full
+   height of the section so its 5 stage-direction blocks align with
+   their corresponding rows in the prayer text. */
+.remembrance-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3.4fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* On page 66 the inner .preface-grid is only 2-column (People | Priest)
+   because the third (right) column has been moved out into
+   .col-right-full. */
+.remembrance-layout .preface-grid {
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 2.5fr);
+}
+
+/* ---------- Long vertical separator ----------
+   Inherits the diamond pattern and end caps from the standard
+   .vdivider in book.css. Runs the full height of the "Remembrance"
+   section. */
+.vdivider.vdivider-long {
+  width: 16px;
+  align-self: stretch;
+}
+
+/* ---------- Right column (full-height variant) ----------
+   The .col-right-full container spans the full height of the section
+   (via `align-self: stretch` + `height: 100%` inside the outer grid).
+   Its 5 children are distributed as follows:
+     - stage-top (red)        : top, aligned with the start of the prayer
+     - stage-deacon           : upper-middle, aligned with the middle of
+                                the silent prayer (grows to fill space)
+     - stage-bottom (green)   : lower-middle, aligned with "Take! Eat!"
+                                (grows to fill space)
+     - stage-bottom (blue)    : just below green, aligned with
+                                "And likewise…"
+     - stage-bottom (brown)   : at the very bottom, aligned with
+                                "Drink of it…"
+
+   The middle two stage-bottom blocks (blue "prays silently" and
+   brown "then exclaims out loud") sit on consecutive lines in the
+   original scan, so we let the deacon and green blocks grow to
+   absorb the free space. */
+.col-right-full {
+  padding: 0 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  height: 100%;
+}
+.col-right-full p { margin: 0; text-align: right; }
+/* The 2nd (deacon) grows 0.5, the 3rd (green) grows 1.0. The green
+   lands at the row of "Take! Eat!" while blue/brown land at
+   "And likewise…" and "Drink of it…" respectively. */
+.col-right-full > :nth-child(2) { flex-grow: 0.5; }
+.col-right-full > :nth-child(3) { flex-grow: 1; }
+
+/* ---------- Centred silent prayer in the words of institution ----------
+   The aloud words of institution ("Take! Eat!", "Drink of it…") and
+   the People responses are left-aligned (they are dialogue lines).
+   The silent prayer in between ("And likewise, after supper, He took
+   the cup, saying: …") is centred in the original scan. */
+.prayer-continuation-centered {
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+# Ignore scanned page images — these are reference material used
+# while building the HTML, not assets served by the site. Keep them
+# out of the public repo (each is ~3MB).
+IMG_*.jpeg
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*.swo
+*~

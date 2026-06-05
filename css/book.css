@@ -1,0 +1,591 @@
+/* ==========================================================================
+   Divine Liturgy - Book Stylesheet
+   Shared styles for all pages of the book.
+   ========================================================================== */
+
+/* ---------- Web Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cardo:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ---------- Color Palette ---------- */
+:root {
+  --color-bg-room:       #c9c9c9;
+  --color-page-bg:       #fdfdf7;
+  --color-box-bg:        #f1ead0;       /* parchment / cream */
+  --color-box-bg-2:      #ebe2c0;
+  --color-box-border:    #4a3a76;       /* purple book border */
+  --color-priest:        #7a1f24;       /* dark red for "Priest:"/"People:" */
+  --color-prayer:        #1f2a6b;       /* dark blue prayer body */
+  --color-emphasis:      #1f6b3a;       /* dark green emphasis */
+  --color-stage:         #3a4a8a;       /* slightly brighter blue for stage directions */
+  --color-link:          #8a2a2a;       /* link color */
+  --color-heading:       #1a1a2e;
+  --color-text:          #1d1d20;       /* commentary body */
+  --color-divider:       #4a3a76;
+  --color-cue-silent:    #8a5a2a;       /* brown triangle */
+  --color-cue-aloud:     #1f6b3a;       /* green triangle */
+  --color-cue-red:       #8a2530;       /* red/maroon triangle */
+  --color-cue-blue:      #1f2a6b;       /* blue triangle */
+  --color-cue-green:     #1f6b3a;       /* alias of aloud */
+  --color-cue-brown:     #8a5a2a;       /* alias of silent */
+  --color-question-border: #6f9c80;     /* teal-green border for question boxes */
+  --color-question-header: #2f6a45;     /* darker green for QUESTION header text */
+  --color-bible-underline: #5a2a20;     /* brownish-maroon for underlined biblical emphasis */
+  --color-sanctus-quote:  #7a1f24;      /* maroon for the opening liturgical quote */
+}
+
+/* ---------- Page / Body ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg-room);
+  font-family: 'Cardo', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+/* ---------- The Book Page ---------- */
+.book-page {
+  width: 820px;
+  margin: 30px auto;
+  background: var(--color-page-bg);
+  padding: 36px 42px 24px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1060px;
+}
+
+/* ---------- Headings ---------- */
+.chapter-title,
+.section-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-heading);
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: none;
+}
+
+.chapter-title {
+  font-size: 32px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  margin-bottom: 2px;
+}
+
+.section-title {
+  font-size: 24px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 4px 0 6px;
+}
+
+.commentary .section-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+/* ==========================================================================
+   Liturgical Box (top half of page)
+   ========================================================================== */
+.liturgical-box {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.02) 100%),
+    var(--color-box-bg);
+  border: 2px solid var(--color-box-border);
+  box-shadow: 0 0 0 2px var(--color-page-bg) inset,
+              0 0 0 3px var(--color-box-border) inset;
+  padding: 10px 22px 14px;
+  margin-bottom: 18px;
+}
+
+/* Title row: chapter title centered above grid */
+.liturgical-box > .chapter-title {
+  margin: 6px 0 4px;
+}
+
+/* ---------- Speaker labels & prayer text ---------- */
+.speaker {
+  color: var(--color-priest);
+  font-weight: 400;
+}
+
+.prayer-text,
+.dialogue-text {
+  color: var(--color-prayer);
+}
+
+.cue {
+  font-size: 0.95em;
+  display: inline-block;
+  transform: translateY(-1px);
+  color: var(--color-prayer);
+}
+
+/* Semantic cue colors used on page 64 (single silent/aloud pair).
+   On pages with multiple prayer movements, the color is used as a
+   visual link between a stage-direction note and its priest text.
+   Both naming styles are provided. */
+.cue-silent { color: var(--color-cue-silent); }
+.cue-aloud  { color: var(--color-cue-aloud); }
+.cue-red    { color: var(--color-cue-red); }
+.cue-blue   { color: var(--color-cue-blue); }
+.cue-green  { color: var(--color-cue-green); }
+.cue-brown  { color: var(--color-cue-brown); }
+
+/* ---------- Three-Column Layout for the Preface Prayer ----------
+   The 3-column grid is used on page 64 (and any other page that has
+   People | Priest | Stage directions side-by-side). Page 66 uses a
+   different 2-column outer layout defined in css/page-066.css. */
+.preface-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 2.5fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* Left column dialogue (Priest/People) */
+.col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.col-left p {
+  margin: 0 0 12px;
+}
+
+/* Center column main prayer */
+.col-center {
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.col-center > .section-title {
+  margin: 0 0 4px;
+}
+.col-center p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Right column stage directions — used inside the .preface-grid
+   on page 64 (and other 3-column pages). The .col-right-full
+   variant for page 66's 2-column layout lives in css/page-066.css. */
+.col-right {
+  padding: 4px 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.col-right p {
+  margin: 0;
+  text-align: right;
+}
+/* stage-bottom: small filled diamond bullet that prefixes the second
+   stage-direction block (used on page 64). */
+.col-right .stage-bottom .lead-diamond {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--color-divider);
+  transform: translateY(-1px) rotate(45deg);
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* ---------- Decorative Vertical Dividers ----------
+   Pattern: tightly stacked diamond outlines (chain pattern),
+   with a small filled diamond cap at the top and bottom.
+*/
+.vdivider {
+  width: 16px;
+  align-self: stretch;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'><path d='M8 0 L14 5 L8 10 L2 5 Z' fill='none' stroke='%234a3a76' stroke-width='1'/></svg>");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 16px 10px;
+  position: relative;
+}
+
+/* Cap diamond at top and bottom of divider */
+.vdivider::before,
+.vdivider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  background: var(--color-divider);
+}
+.vdivider::before { top: -3px; }
+.vdivider::after  { bottom: -3px; }
+
+/* ---------- Continuation line below the columns ----------
+   Used for the words of institution ("Take! Eat!", "Drink of it…",
+   "And likewise…") and the People responses. Left-aligned by
+   default. Page 66's silent prayer in the middle of the words of
+   institution ("And likewise…") is centred via the
+   `.prayer-continuation-centered` modifier defined in
+   css/page-066.css. */
+.prayer-continuation {
+  margin: 12px 4px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.prayer-continuation .speaker { color: var(--color-priest); }
+
+/* Simple People/Priest dialogue line (e.g. "People: Amen.") */
+.dialogue-line {
+  margin: 4px 4px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.dialogue-line .speaker { color: var(--color-priest); }
+
+/* Sanctus-style People text used inside the left column of the box
+   (people's continuing "Holy! Holy! Holy!..." response) */
+.sanctus-people {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.sanctus-people .speaker { color: var(--color-priest); }
+.sanctus-people .people-body { color: var(--color-emphasis); }
+
+/* The narrow deacon-action note in the right column */
+.stage-deacon {
+  margin: 8px 0;
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--color-text);
+  text-align: right;
+  line-height: 1.35;
+}
+
+/* Highlight the current step in the "Liturgy of the Faithful" outline */
+.liturgy-outline .outline-current {
+  color: var(--color-link);
+  font-weight: 700;
+}
+
+/* ---------- The Sanctus block ---------- */
+.sanctus {
+  margin: 4px 12px 4px;
+  font-size: 15px;
+  color: var(--color-emphasis);
+  text-align: center;
+  line-height: 1.45;
+}
+.sanctus .speaker { color: var(--color-priest); }
+.sanctus .body { color: var(--color-emphasis); }
+
+/* footnote about Sabaoth */
+.box-footnote {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 4px 0 8px;
+  font-style: normal;
+}
+.box-footnote em { font-style: italic; }
+.hebrew {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  font-size: 1.05em;
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* ---------- Liturgy outline at bottom of box ---------- */
+.liturgy-outline {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  border-top: 1px solid var(--color-box-border);
+  padding-top: 6px;
+  margin-top: 4px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+.outline-label {
+  text-align: center;
+  align-self: center;
+  font-style: italic;
+}
+.outline-text { padding-left: 4px; }
+.outline-text a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Commentary section (bottom half of page)
+   ========================================================================== */
+.commentary {
+  position: relative;
+  padding: 0 6px;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.commentary p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* First paragraph opening quote + drop cap */
+.drop-cap-wrap {
+  position: relative;
+  padding-left: 0;
+}
+
+.drop-cap {
+  font-family: 'MedievalSharp', serif;
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.85;
+  padding: 4px 6px 0 0;
+  color: var(--color-heading);
+}
+
+.opening-quote {
+  font-family: 'Cardo', serif;
+  font-size: 1.4em;
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+/* inline emphasis colors */
+.commentary .quote-green { color: var(--color-emphasis); font-weight: 600; }
+.commentary .quote-blue  { color: var(--color-prayer); font-weight: 600; }
+.commentary u           { text-decoration: underline; }
+.commentary em          { font-style: italic; }
+.commentary strong      { font-weight: 700; }
+
+/* asterisks for glossed terms (ineffable*, aeon*, etc.) */
+.gloss-mark {
+  font-size: 0.85em;
+  vertical-align: super;
+  color: var(--color-text);
+}
+
+/* ---------- Figure / Image placeholder ---------- */
+.figure-right {
+  float: right;
+  width: 290px;
+  margin: 4px 0 6px 16px;
+  text-align: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 270px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+
+.figure-right figcaption {
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+
+/* ---------- Page number ---------- */
+.page-number {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: white; }
+  .book-page {
+    box-shadow: none;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   QUESTION / QUESTIONS box (green-bordered call-out)
+   Used on commentary pages with study questions.
+   ========================================================================== */
+.question-box {
+  border: 1.5px solid var(--color-question-border);
+  background: #fbf9f1;
+  padding: 8px 18px 12px;
+  margin: 12px 0;
+  position: relative;
+}
+
+.question-box .box-header {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 0 0 8px;
+}
+
+.question-prompt {
+  font-weight: 700;
+  margin: 8px 0 6px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.question-prompt em { font-weight: 700; font-style: italic; }
+
+.bible-quote {
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 4px 0 6px;
+  padding: 0 8px 0 28px;
+  text-align: justify;
+}
+
+.bible-emph {
+  text-decoration: underline;
+  color: var(--color-bible-underline);
+}
+
+.citation {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 13.5px;
+  font-style: normal;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Bottom Split Layout (Question box | Bible quote, side by side)
+   ========================================================================== */
+.bottom-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+  align-items: start;
+}
+
+.bottom-split .question-box { margin: 0; }
+
+.bible-quote-block {
+  font-size: 14.5px;
+  line-height: 1.45;
+  padding: 4px 4px 0 0;
+}
+.bible-quote-block p {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+.bible-quote-block .citation {
+  display: block;
+  text-align: right;
+  font-size: 13.5px;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   Sanctus / liturgical opening quote inside commentary
+   ========================================================================== */
+.sanctus-quote {
+  color: var(--color-sanctus-quote);
+}
+
+.sanctus-quote .liturgy-em {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Drop-cap variant in dark blue (matches a prayer's opening word) */
+.drop-cap.drop-cap-prayer {
+  color: var(--color-prayer);
+}
+
+/* Footnote/superscript markers in body text */
+.footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+  font-weight: 400;
+  margin-left: 1px;
+}
+
+/* When commentary section title sits flush-left at the top of a section */
+.commentary > .section-title:first-child {
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Two-column commentary layout with a bold pull-out on the left
+   ========================================================================== */
+.commentary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.commentary .pullout {
+  margin: 0;
+  padding: 4px 4px 0 0;
+}
+.commentary .pullout p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  text-align: left;
+  color: var(--color-text);
+}
+.commentary .pullout u { text-decoration: underline; }
+.commentary .pullout em { font-style: italic; }
+
+.commentary-body p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* Inline blue-italic liturgical/biblical quotations */
+.commentary .quote-inline {
+  color: var(--color-prayer);
+  font-style: italic;
+  font-weight: 600;
+}
