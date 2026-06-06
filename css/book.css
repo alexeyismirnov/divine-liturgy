@@ -21,12 +21,14 @@
   --color-heading:       #1a1a2e;
   --color-text:          #1d1d20;       /* commentary body */
   --color-divider:       #4a3a76;
-  --color-cue-silent:    #8a5a2a;       /* brown triangle */
-  --color-cue-aloud:     #1f6b3a;       /* green triangle */
-  --color-cue-red:       #8a2530;       /* red/maroon triangle */
-  --color-cue-blue:      #1f2a6b;       /* blue triangle */
-  --color-cue-green:     #1f6b3a;       /* alias of aloud */
-  --color-cue-brown:     #8a5a2a;       /* alias of silent */
+  /* Stage-direction cue triangles. Brighter, more saturated colors
+     so the ▶ / ▼ arrows stand out clearly in the browser. */
+  --color-cue-silent:    #b8732e;       /* bright brown/orange triangle */
+  --color-cue-aloud:     #2e9d57;       /* bright green triangle */
+  --color-cue-red:       #d63344;       /* bright red triangle */
+  --color-cue-blue:      #3a5fde;       /* bright blue triangle */
+  --color-cue-green:     #2e9d57;       /* alias of aloud */
+  --color-cue-brown:     #b8732e;       /* alias of silent */
   --color-question-border: #6f9c80;     /* teal-green border for question boxes */
   --color-question-header: #2f6a45;     /* darker green for QUESTION header text */
   --color-bible-underline: #5a2a20;     /* brownish-maroon for underlined biblical emphasis */
