@@ -34,6 +34,8 @@ evolve independently.
 | 69 | The Consecration | Commentary (body text + chalice image) with a St John of Damascus quote box + bold pullout, then a QUESTION box |
 | 70 | The Intercession | Two stacked 3-col grids (The Intercession + The Hymn to the Theotokos) with a full-width priest prayer line between them, then Theotokos commentary with icon floated left |
 | 71 | The Intercession / The Hymn to the Theotokos | Top commentary with floated St John the Baptist image (right) and pullout (left), middle QUESTIONS box, bottom commentary on the Theotokos with a pullout floated right |
+| 72 | The Intercession (Continued) | Liturgical box: 2-col grid (Hymn title + People line | Priest prayer p1+p2) + full-width prayer + 3-col grid (People | Priest | 3 stage directions) + aloud prayer (brown cue) + People: Amen + BLESSING title + aloud blessing (green cue) + People: And with your spirit + Liturgy outline (Intercession highlighted); commentary with drop cap "F" and right-floated pullout |
+| 73 | Prayer for the Church | Top QUESTION box (Hebrews 7.25, Romans 8.34); "Prayer for the Church" commentary with left-floated icon of the Apostles (caption: "Feasts of St Peter and St Paul and The Synaxion of the 70 Apostles"), body text (drop cap "A"), and right-floated pullout; bottom QUESTIONS box (Hebrews 13.17-18, 1 Thess 5.25, Eph 6.19, Col 4.3); final commentary with drop cap "A" and blue-italic liturgical quotes |
 
 ## Tech notes
 

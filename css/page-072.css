@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Page 72 — "The Intercession" (Continued) specific styles
+   --------------------------------------------------------------------------
+   The top liturgical box contains:
+     1. Chapter title "The Intercession (Continued)"
+     2. A 2-column grid: Hymn title + People line (left) | Priest prayer
+        in 2 paragraphs (right) — used to align the People line with
+        the second priest prayer paragraph
+     3. Full-width priest prayer line (continuation)
+     4. A 3-column grid: People (left) | Priest prayer (middle) | Stage
+        directions (right) — 3 stage-direction blocks distributed with
+        space-between
+     5. Aloud priest prayer (brown/orange cue) — "exclaims out loud"
+     6. People: Amen.
+     7. "BLESSING" section title
+     8. Aloud blessing (green cue) — "turns toward the people and
+        blesses them"
+     9. People: And with your spirit.
+    10. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom commentary contains:
+     1. "The Intercession (Continued)" section title (centered)
+     2. Body paragraph with drop cap "F" (blue)
+     3. Right-floated pullout: "We understand that the only real
+        sin, and the root of all sin, is selfishness."
+   ========================================================================== */
+
+/* ---------- "(Continued)" subtitle on chapter / section titles ------
+   Smaller, italic, not underlined. Used in both the chapter title at
+   the top of the liturgical box and the section title in the bottom
+   commentary. */
+.page-072-subtitle {
+  font-size: 0.55em;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ---------- 2-column grid for the Hymn + Priest prayer section -----
+   2 columns: left for the Hymn title + People line, right for the
+   Priest prayer (2 paragraphs). The vdivider runs down the middle.
+   `align-self: stretch` on the column children makes both columns
+   the same height. */
+.preface-grid-hymn-2col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.7fr) 16px minmax(0, 1.3fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* Left column: Hymn title at top, People line at bottom (margin-top:
+   auto pushes the People line to the bottom of the column, aligning
+   it with the second priest prayer paragraph on the right). */
+.preface-grid-hymn-2col .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.preface-grid-hymn-2col .col-left .page-072-people-line {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Hymn title in the left column: "The Hymn to the Theotokos" */
+.page-072-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 4px;
+}
+.page-072-hymn-continued {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+.page-072-hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+/* People line: "It is truly meet to bless you, O Theotokos...." */
+.page-072-people-line {
+  font-size: 15px;
+  line-height: 1.45;
+}
+.page-072-people-line .speaker { color: var(--color-priest); }
+.page-072-people-line .people-body { color: var(--color-emphasis); font-weight: 700; }
+
+/* Right column: 2 prayer paragraphs (Priest prayer p1 and p2).
+   `display: flex; flex-direction: column` lets the 2 paragraphs
+   stack, with a small margin between them. */
+.preface-grid-hymn-2col .col-right {
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+}
+.preface-grid-hymn-2col .col-right p {
+  margin: 0 0 14px;
+  text-align: left;
+}
+.preface-grid-hymn-2col .col-right p:last-child { margin-bottom: 0; }
+.preface-grid-hymn-2col .col-right .speaker { color: var(--color-priest); }
+
+/* ---------- Middle 3-col grid: stage direction distribution --------
+   The right column has 3 stage-direction blocks distributed along
+   the full height of the section (deacon at top, "exclaims out
+   loud" in the middle, "turns and blesses" at the bottom). The
+   standard .col-right in book.css uses `justify-content: space-
+   between`, which positions the 3 children at top / middle / bottom. */
+.page-072-middle-col-right {
+  /* Inherits .col-right flex column, but ensure correct spacing */
+  justify-content: space-between;
+}
+.page-072-middle-col-right > p { margin: 0; text-align: right; }
+
+/* ---------- Full-width prayer line between the 2 grids -------------
+   "Priest: ...Among the first, remember, O Lord, His Beatitude..."
+   Spans the full width of the liturgical box, with a small top
+   margin to separate it from the grid above. */
+.page-072-fullwidth-prayer {
+  margin: 12px 4px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.page-072-fullwidth-prayer .speaker { color: var(--color-priest); }
+
+/* ---------- "BLESSING" section title ----------
+   "BLESSING" - centered, decorative, underlined, slightly larger
+   spacing above to separate it from the prayer above. */
+.page-072-blessing-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 16px 0 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Bottom commentary ----------
+   "The Intercession (Continued)" commentary with drop cap "F" (blue)
+   and a right-floated pullout. The pullout is local to this page
+   (page-071.css defines its own .pullout-right with a different
+   layout, so we redefine the same idea here for self-containment). */
+.commentary .pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 18px;
+  padding: 0;
+}
+.commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}

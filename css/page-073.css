@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Page 73 — "Prayer for the Church" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top QUESTIONS box (singular "QUESTION" header)
+     2. "Prayer for the Church" section title
+     3. Commentary with icon of the Apostles floated left, body text
+        wrapping around it, and a right-floated pullout
+     4. Bottom QUESTIONS box (plural "QUESTIONS" header)
+     5. Bottom commentary with drop cap "A" (blue)
+   ========================================================================== */
+
+/* ---------- Figure floated to the left of the commentary text ----
+   Icon of the "Feasts of St Peter and St Paul and The Synaxion of
+   the 70 Apostles". The body text wraps around the right side of
+   the image. Defined locally for self-containment (a similar
+   .figure-left exists in page-070.css with a different image
+   height). */
+.figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.figure-left .image-placeholder {
+  width: 100%;
+  height: 320px;
+}
+.figure-left figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ---------- Pullout floated to the right (top commentary) ----------
+   "A parish as a human institution can easily replace Christ with
+   something else." Bold, dark text, sits to the right of the body
+   text and the body text wraps around it. A small margin-top
+   pushes the pullout down to roughly the middle of the body text,
+   matching the layout in the original book scan. */
+.commentary .pullout-right {
+  float: right;
+  width: 220px;
+  margin: 120px 0 8px 16px;
+  padding: 0;
+}
+.commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
