@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Page 62 — "The Anaphora / The Preparation" specific styles
+   --------------------------------------------------------------------------
+   The page has three sections:
+     1. Top liturgical box: 2-col grid (dialogue | vdivider | stage
+        directions), followed by the Liturgy of the Faithful outline
+        (Anaphora - The Eucharistic Prayer highlighted)
+     2. Commentary: "The Preparation" — body text with drop cap "L",
+        a left-floated green pullout, and a right-floated dark pullout
+     3. QUESTIONS box (standard .question-box style from book.css)
+   ========================================================================== */
+
+/* ---------- 2-column grid for the dialogue section ----------------
+   Unlike the default 3-column .preface-grid in book.css, page 62
+   only needs 2 columns: a wider left column for the Deacon/Priest/
+   People dialogue and a narrower right column for the stage
+   directions. */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* ---------- Color-coded dialogue text ----------------------------
+   The dialogue column on page 62 uses three colors (matching the
+   original book scan):
+     - Deacon : red    (.deacon-text)
+     - People : green  (.people-response), bold
+     - Priest : blue   (.priest-text)
+   The .speaker label is in red by default. */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Right column (stage directions) ---------------------
+   Override the default .col-right (which uses justify-content:
+   space-between) so the two stage-direction blocks sit near the
+   top of the column with a small gap between them, matching the
+   layout in the original book scan. */
+.page-062-col-right {
+  justify-content: flex-start;
+}
+.page-062-col-right .stage-bottom {
+  margin-top: 18px;
+}
+
+/* ---------- Pullout floated to the left (top of commentary) ------
+   "'A mercy of peace, a sacrifice of praise' signifies that the
+   Holy Sacrifice is the greatest mercy to us from God…". Bold,
+   dark green, sits to the left of the body text and the body
+   text wraps around it. */
+.commentary .pullout-left {
+  float: left;
+  width: 215px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+.commentary .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+
+/* ---------- Pullout floated to the right (mid commentary) --------
+   "It is also a Holy Sacrifice to God from us – a sacrifice of
+   thanksgiving and praise to Him." Bold, dark text, sits to the
+   right of the body text and the body text wraps around it. */
+.commentary .pullout-right {
+  float: right;
+  width: 215px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+.commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}

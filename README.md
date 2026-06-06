@@ -24,6 +24,8 @@ evolve independently.
 
 | Page | Section | Description |
 |------|---------|-------------|
+| 62 | The Anaphora / The Preparation | 2-col dialogue grid (Deacon/Priest/People | stage directions) with color-coded responses + Liturgy outline (Anaphora highlighted); commentary with left + right floated pullouts; bottom QUESTIONS box (Romans 3.9-23, Hebrews 13.15) |
+| 63 | Let us lift up our hearts! / Liturgical Fans / The Eucharistic Prayer | Green decorative title + commentary (Cabasilas quote, drop cap "C") + QUESTIONS box (Matthew 6.19-21); Liturgical Fans 3-col grid (rhipidia close-up | body text with drop cap "I" | pullout + angel image) with section caption; "The Eucharistic Prayer" blue/grey box with numbered actions, right-floated St John 6.51 pullout, and bold summary |
 | 64 | The Eucharistic Prayer | The Preface Prayer (3-col grid with silent + aloud cues) |
 | 65 | The Sanctus | Commentary + QUESTIONS box + Sanctus commentary + bottom QUESTION + Isaiah quote |
 | 66 | The Remembrance | Priest's silent prayer + 5 stage-direction blocks + words of institution + QUESTIONS |

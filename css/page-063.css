@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Page 63 — "Let us lift up our hearts!" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top commentary with the green decorative title "Let us lift
+        up our hearts!" and a single body paragraph (drop cap "C")
+     2. QUESTIONS box (standard .question-box style from book.css)
+     3. "Liturgical Fans (Rhipidia)" — 3-col grid: close-up image |
+        body text (drop cap "I") | pullout + angel-with-rhipidia
+        image; a section caption "An angel holding a rhipidia" sits
+        centered below the grid
+     4. "The Eucharistic Prayer" — light blue/grey box with body
+        text, a right-floated pullout (St John 6.51) and a bold
+        summary at the end
+   ========================================================================== */
+
+/* ---------- "Let us lift up our hearts!" decorative title -----
+   Green, slightly larger than the default .section-title, no
+   underline, decorative MedievalSharp font. */
+.page-063-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-emphasis);
+  font-size: 30px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  margin: 0 0 10px;
+}
+
+/* ---------- Green highlighted text in the top commentary ------
+   "'Let us lift up our hearts!'" and "'We lift them up unto the
+   Lord.'" within the top commentary paragraph. Italic, dark
+   green, bold. */
+.commentary .quote-green-italic {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ---------- "Liturgical Fans (Rhipidia)" 3-col grid ----------
+   3-column grid:
+     Left column  : close-up image of a rhipidia
+     Center column: body text with drop cap "I"
+     Right column : pullout (top) + angel-with-rhipidia image (below)
+   The section caption "An angel holding a rhipidia" sits centered
+   below the grid. */
+.page-063-fans-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 6px;
+}
+
+.page-063-fans-grid .commentary-body p { margin: 0; }
+
+/* Left column: close-up image of a rhipidia */
+.page-063-image-left,
+.page-063-image-right {
+  margin: 0;
+  text-align: center;
+}
+.page-063-image-left .image-placeholder {
+  width: 100%;
+  height: 220px;
+}
+.page-063-image-right .image-placeholder {
+  width: 100%;
+  height: 150px;
+}
+
+/* Right column: pullout (top) + image (below) */
+.page-063-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-063-right .page-063-pullout {
+  margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+.page-063-right .page-063-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* Section caption below the fans grid */
+.page-063-caption {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 10px 0 0;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+
+/* ---------- "The Eucharistic Prayer" blue/grey box ----------
+   Light blue/grey background, thin border. Contains the
+   eucharistic prayer commentary + list of foundational actions +
+   right-floated pullout + bold summary at the end. */
+.page-063-eucharistic-box {
+  background: #c9cdd2;
+  border: 1px solid #7a8590;
+  padding: 14px 22px 16px;
+  margin: 16px 0 0;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--color-text);
+  position: relative;
+}
+.page-063-eucharistic-box p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* Decorative "The" at the start of the first paragraph */
+.page-063-eucharistic-box .deco-the {
+  font-family: 'MedievalSharp', serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--color-heading);
+  vertical-align: baseline;
+  margin-right: 2px;
+}
+
+/* "Eucharistic Prayer" in small caps */
+.page-063-eucharistic-box .smallcaps {
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Numbered list items (1)-(4) */
+.page-063-eucharistic-box .page-063-action {
+  margin: 0 0 4px 16px;
+  text-align: justify;
+  font-weight: 400;
+}
+.page-063-eucharistic-box .page-063-action strong {
+  font-weight: 700;
+}
+
+/* Right-floated pullout in the eucharistic box */
+.page-063-eucharistic-box .page-063-eucharistic-pullout {
+  float: right;
+  width: 215px;
+  margin: 4px 0 8px 18px;
+  padding: 0;
+}
+.page-063-eucharistic-box .page-063-eucharistic-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+.page-063-eucharistic-box .page-063-pullout-citation {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--color-text);
+}
+
+/* Underlined terms within the eucharistic box */
+.page-063-eucharistic-box u { text-decoration: underline; }
+
+/* Bold summary at the bottom of the eucharistic box */
+.page-063-eucharistic-box .page-063-summary {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 14px !important;
+  text-align: left !important;
+}
+.page-063-eucharistic-box .page-063-summary em {
+  font-style: italic;
+  font-weight: 700;
+}
