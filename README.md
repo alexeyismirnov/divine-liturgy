@@ -24,10 +24,36 @@ The book scans (`IMG_0xxx.jpeg`) are reference material only and are
 │   │                        with a long vertical separator and
 │   │                        5 stage-direction blocks distributed
 │   │                        along the full column height)
-│   └── page-067.css       Page-specific overrides for page 67
-│                            (equal-width 2-col top section with
-│                            commentary on the left and lead quote +
-│                            Last Supper image on the right)
+│   ├── page-067.css       Page-specific overrides for page 67
+│   │                        (equal-width 2-col top section with
+│   │                        commentary on the left and lead quote +
+│   │                        Last Supper image on the right)
+│   ├── page-068.css       Page-specific overrides for page 68
+│   │                        (two stacked liturgical boxes: a 2-titled
+│   │                        top box for The Consecration + The
+│   │                        Elevation of the Gifts, and a 3-col
+│   │                        Epiclesis box with 10+ short right-column
+│   │                        stage-direction blocks)
+│   └── page-069.css       Page-specific overrides for page 69
+│                            (2-col top section: commentary with a
+│                            chalice figure floated inside the body
+│                            text on the left, and a St John of
+│                            Damascus quote box + bold pullout on the
+│                            right; bottom QUESTION box with the
+│                            header anchored in the top right corner)
+│   ├── page-070.css       Page-specific overrides for page 70
+│   │                        (single liturgical box with two stacked
+│   │                        3-col grids + a full-width priest prayer
+│   │                        line between them; a new `.cue-yellow`
+│   │                        for the gold "exclaims out loud" cue;
+│   │                        bottom commentary with the Theotokos
+│   │                        icon floated to the left)
+│   └── page-071.css       Page-specific overrides for page 71
+│                            (top commentary with a St John the Baptist
+│                            image floated right and a pullout floated
+│                            left, both with large top margins; middle
+│                            QUESTIONS box; bottom commentary with a
+│                            pullout floated right)
 ├── pages/
 │   ├── page-064.html       The Eucharistic Prayer / The Preface Prayer
 │   ├── page-065.html       The Sanctus (commentary + questions)
@@ -35,9 +61,19 @@ The book scans (`IMG_0xxx.jpeg`) are reference material only and are
 │   │                        of institution + QUESTIONS)
 │   ├── page-067.html       The Remembrance (continued) + QUESTIONS
 │   │                        + bottom commentary
-│   └── page-068.html       The Consecration of the Gifts + The
-│                            Prayer of the Epiclesis (two stacked
-│                            liturgical boxes)
+│   ├── page-068.html       The Consecration of the Gifts + The
+│   │                        Prayer of the Epiclesis (two stacked
+│   │                        liturgical boxes)
+│   ├── page-069.html       The Consecration (commentary with
+│   │                        St John of Damascus callout + QUESTION
+│   │                        box at the bottom)
+│   ├── page-070.html       The Intercession + The Hymn to the
+│   │                        Theotokos (liturgical box with two
+│   │                        stacked 3-col grids) + Theotokos
+│   │                        commentary (icon floated left)
+│   └── page-071.html       The Intercession + The Hymn to the
+│                            Theotokos commentary (with floated
+│                            image and pullouts) + QUESTIONS box
 └── .gitignore              Excludes IMG_*.jpeg scans + editor noise
 ```
 
@@ -80,6 +116,9 @@ evolve independently.
 | 66 | The Remembrance | Priest's silent prayer + 5 stage-direction blocks + words of institution + QUESTIONS |
 | 67 | The Remembrance (cont.) | Commentary continued + Last Supper image + QUESTIONS + bottom commentary |
 | 68 | The Consecration / The Epiclesis | Two stacked liturgical boxes: The Consecration + The Elevation of the Gifts, then The Prayer of the Epiclesis |
+| 69 | The Consecration | Commentary (body text + chalice image) with a St John of Damascus quote box + bold pullout, then a QUESTION box |
+| 70 | The Intercession | Two stacked 3-col grids (The Intercession + The Hymn to the Theotokos) with a full-width priest prayer line between them, then Theotokos commentary with icon floated left |
+| 71 | The Intercession / The Hymn to the Theotokos | Top commentary with floated St John the Baptist image (right) and pullout (left), middle QUESTIONS box, bottom commentary on the Theotokos with a pullout floated right |
 
 ## Tech notes
 

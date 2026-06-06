@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Page 69 — "The Consecration" specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text with the blue drop cap "T" and
+                     a chalice image floated to the left below the
+                     first paragraph.
+     - Right column : a bordered box with a St John of Damascus quote
+                     (and his icon) at the top, plus a bold pullout
+                     block below.
+
+   Below the grid:
+     - Full-width QUESTION box (green border) with the "QUESTION"
+       header anchored in the top right corner (instead of the
+       centered "Questions" header used on pages 66/67) and the
+       question prompt offset by a right padding to clear the header.
+   ========================================================================== */
+
+/* ---------- Top section: 2-column grid ----------------------------
+   Wider left column (~2.1fr) for the body text and chalice image,
+   narrower right column (~1fr) for the St John box + pullout. */
+.page-069-top {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+/* Chalice image floated to the left of the body text below the first
+   paragraph. The float lets the surrounding text wrap around it. */
+.page-069-chalice {
+  float: left;
+  margin: 4px 16px 6px 0;
+  width: 150px;
+}
+.page-069-chalice .image-placeholder {
+  width: 100%;
+  height: 150px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 6px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* Right column container (St John box + pullout) */
+.page-069-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- St John of Damascus quote box ------------------------
+   Bordered box with the saint's icon centered at the top and the
+   quote text below it. Sits at the top of the right column. */
+.damascus-box {
+  border: 1.5px solid var(--color-box-border);
+  background: #fbf9f1;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.damascus-text { min-width: 0; align-self: stretch; }
+.damascus-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+.damascus-name u { text-decoration: underline; }
+.damascus-dates {
+  font-weight: 400;
+  font-size: 13px;
+}
+.damascus-quote {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+.damascus-image-placeholder {
+  width: 110px;
+  height: 120px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 4px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* ---------- Pullout block (right column, below the St John box) ---
+   Large, bold, left-aligned statement. Uses the .page-069-right
+   ancestor in the selector so the margin-top wins over the
+   .commentary p rule (0,1,1 specificity) defined in book.css. */
+.page-069-right .page-069-pullout {
+  margin: 40px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- QUESTION box (bottom of page) -------------------------
+   Same border/background/padding as the standard .question-box from
+   book.css, but the header is anchored in the top right corner
+   instead of centered, and the question prompt is padded on the
+   right so it doesn't collide with the header. */
+.question-box-069 {
+  position: relative;
+}
+.box-header-069 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.question-prompt-069 {
+  margin: 0 0 10px;
+  padding-right: 140px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}

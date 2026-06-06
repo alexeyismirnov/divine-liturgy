@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Page 70 — "The Intercession" + "Theotokos" specific styles
+   --------------------------------------------------------------------------
+   The top section is a single liturgical box containing:
+     1. The Intercession (3-col grid: People | Priest | Stage directions)
+     2. A full-width priest prayer line below the first grid
+     3. The Hymn to the Theotokos (3-col grid: Hymn text | Priest |
+        Stage directions)
+     4. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom section is a commentary with the Theotokos icon floated
+   to the left and the "THEOTOKOS" title + drop-cap body text wrapping
+   around its right side.
+   ========================================================================== */
+
+/* ---------- Gold/yellow cue color ------------------------------------
+   The "exclaims out loud" stage direction in the right column of the
+   first grid uses a gold/yellow triangle (distinct from the standard
+   red silent / green aloud cues defined in book.css). The page-070
+   CSS variable is local; if other pages adopt this color it should be
+   promoted to book.css. */
+:root {
+  --color-cue-yellow: #d4a017;
+}
+.cue-yellow { color: var(--color-cue-yellow); }
+
+/* ---------- Hymn title in the left column of the second grid --------
+   "The Hymn to the Theotokos" — centered, slightly smaller than the
+   default .section-title so it fits the narrow left column. */
+.page-070-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 6px;
+}
+
+/* ---------- Override column widths for the second (Hymn) grid -------
+   The default .preface-grid in book.css uses 0.9fr | 2.5fr | 0.85fr
+   (narrow left, very wide center, narrow right). For the Hymn grid
+   we want equal-width left and center columns (~1fr each) with a
+   smaller right column (~0.55fr) for the single short deacon stage
+   direction. */
+.preface-grid-hymn {
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 0.55fr);
+}
+
+/* Italic note under the Hymn title:
+   "(On certain Feast Days this is replaced by another hymn.)" */
+.hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+/* "repeated from page 68" note in the first grid (under the People's
+   continuing response). Sits on its own line below the green people
+   text. */
+.people-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* Italic saint name placeholder in the priest prayer text
+   (e.g. "Saint (saint of the day)" or "grant them rest, O God…"). */
+.priest-name {
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+/* Italic stage-direction note in the priest prayer text
+   (e.g. "(he remembers by name whom he will of those who have
+   fallen asleep)"). */
+.priest-cue {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* ---------- Figure floated to the left of the commentary text --------
+   Theotokos icon at the bottom of the page. */
+.figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.figure-left .image-placeholder {
+  width: 100%;
+  height: 340px;
+}
+
+/* ---------- "THEOTOKOS" title in the commentary ---------------------
+   Centered within the text column and uppercase, overriding the
+   .commentary .section-title default (left-aligned, mixed case). */
+.page-070-theotokos-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+}
