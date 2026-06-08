@@ -40,10 +40,10 @@
 
 /* ---------- "Liturgical Fans (Rhipidia)" 3-col grid ----------
    3-column grid:
-     Left column  : pullout (top) + close-up image of a rhipidia (below)
+     Left column  : close-up image of a rhipidia (top) + pullout (below)
      Center column: body text with drop cap "I"
      Right column : angel-with-rhipidia image with caption
-   The pullout quote "They show by this ritual…" sits above the
+   The pullout quote "They show by this ritual…" sits below the
    close-up image in the left column. */
 .page-063-fans-grid {
   display: grid;
