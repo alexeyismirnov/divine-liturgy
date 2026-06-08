@@ -40,11 +40,11 @@
 
 /* ---------- "Liturgical Fans (Rhipidia)" 3-col grid ----------
    3-column grid:
-     Left column  : close-up image of a rhipidia
+     Left column  : pullout (top) + close-up image of a rhipidia (below)
      Center column: body text with drop cap "I"
-     Right column : pullout (top) + angel-with-rhipidia image (below)
-   The section caption "An angel holding a rhipidia" sits centered
-   below the grid. */
+     Right column : angel-with-rhipidia image with caption
+   The pullout quote "They show by this ritual…" sits above the
+   close-up image in the left column. */
 .page-063-fans-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
@@ -70,17 +70,22 @@
   height: 150px;
 }
 
-/* Right column: pullout (top) + image (below) */
+/* Left and right columns: flex column so the pullout (left) or
+   the image (right) stack vertically and center within the
+   column. */
+.page-063-left,
 .page-063-right {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.page-063-left .page-063-pullout,
 .page-063-right .page-063-pullout {
   margin: 0 0 10px;
   padding: 0;
   width: 100%;
 }
+.page-063-left .page-063-pullout p,
 .page-063-right .page-063-pullout p {
   margin: 0;
   font-weight: 700;
@@ -91,14 +96,39 @@
   color: var(--color-text);
 }
 
-/* Section caption below the fans grid */
-.page-063-caption {
+/* Caption inside the right-column figure (below the angel image).
+   The .commentary ancestor bumps specificity above .commentary p
+   (0,1,1) in book.css so text-align: center isn't overridden by
+   the justify default. */
+.commentary .page-063-caption {
   text-align: center;
   font-weight: 700;
   font-size: 16px;
-  margin: 10px 0 0;
+  margin: 6px 0 0;
   color: var(--color-heading);
   font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+/* Real rhipidia images (replace the .image-placeholder divs).
+   The PNGs are taller than the original placeholders, so at the
+   column's natural width they push the page past the page-number
+   position. Cap each image at its placeholder's original height
+   and constrain width to the column, letting the browser scale
+   it down while preserving aspect ratio. */
+.page-063-image-left .figure-image {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.page-063-image-right .figure-image {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* ---------- "The Eucharistic Prayer" blue/grey box ----------
@@ -109,7 +139,7 @@
   background: #c9cdd2;
   border: 1px solid #7a8590;
   padding: 14px 22px 16px;
-  margin: 16px 0 0;
+  margin: 16px 0 30px;
   font-size: 15.5px;
   line-height: 1.5;
   color: var(--color-text);

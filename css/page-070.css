@@ -95,6 +95,18 @@
   height: 340px;
 }
 
+/* Real Theotokos icon (replaces the .image-placeholder div).
+   The PNG (740x1247) is much taller than wide, so at the
+   .figure-left's 230px width it would render at ~387px tall
+   and overflow the page. Cap its height at 340px (matching the
+   original placeholder) and let the browser scale the image
+   down to fit, preserving its aspect ratio. */
+.figure-left .figure-image {
+  max-height: 340px;
+  width: auto;
+  margin: 0 auto;
+}
+
 /* ---------- "THEOTOKOS" title in the commentary ---------------------
    Centered within the text column and uppercase, overriding the
    .commentary .section-title default (left-aligned, mixed case). */

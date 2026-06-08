@@ -410,6 +410,18 @@ html, body {
   text-align: center;
 }
 
+/* ---------- Real figure image ----------
+   Used by <img> elements that replace a gray placeholder div
+   inside a .figure-right (or other figure) container. The image
+   fills the parent figure's width and keeps its natural aspect
+   ratio. No border — the image has a transparent background. */
+.figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
 .figure-right figcaption {
   margin-top: 6px;
   font-size: 17px;

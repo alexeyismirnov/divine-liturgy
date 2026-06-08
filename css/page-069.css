@@ -105,6 +105,16 @@
   text-align: center;
 }
 
+/* Real St John of Damascus icon (replaces the .damascus-image-placeholder
+   div). Matches the 110x120 frame the placeholder occupied. No border —
+   the image has a transparent background. */
+.damascus-image {
+  display: block;
+  width: 110px;
+  height: auto;
+  box-sizing: border-box;
+}
+
 /* ---------- Pullout block (right column, below the St John box) ---
    Large, bold, left-aligned statement. Uses the .page-069-right
    ancestor in the selector so the margin-top wins over the
