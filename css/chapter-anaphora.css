@@ -1,0 +1,1323 @@
+/* ==========================================================================
+   Chapter: The Anaphora (the Offering) — merged styles from pages 62–73
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN wrappers to avoid cascade clashes.
+   ========================================================================== */
+
+.book-chapter {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+/* Breathing room between stacked sections in the merged chapter */
+.book-chapter h2 {
+  margin-top: 18px;
+}
+
+.book-chapter .commentary > .section-title:first-child,
+.book-chapter .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+/* Grid/column titles stay compact at the top of their cell */
+.book-chapter .col-center > h2,
+.book-chapter .col-left > h2,
+.book-chapter .preface-grid-hymn .col-left > h2,
+.book-chapter .preface-grid-hymn-2col .col-left > h2 {
+  margin-top: 4px;
+}
+
+
+/* ---------- From css/page-062.css ---------- */
+
+/* ==========================================================================
+   Page 62 — "The Anaphora / The Preparation" specific styles
+   --------------------------------------------------------------------------
+   The page has three sections:
+     1. Top liturgical box: 2-col grid (dialogue | vdivider | stage
+        directions), followed by the Liturgy of the Faithful outline
+        (Anaphora - The Eucharistic Prayer highlighted)
+     2. Commentary: "The Preparation" — body text with drop cap "L",
+        a left-floated green pullout, and a right-floated dark pullout
+     3. QUESTIONS box (standard .question-box style from book.css)
+   ========================================================================== */
+
+/* ---------- 2-column grid for the dialogue section ----------------
+   Unlike the default 3-column .preface-grid in book.css, page 62
+   only needs 2 columns: a wider left column for the Deacon/Priest/
+   People dialogue and a narrower right column for the stage
+   directions. */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* ---------- Color-coded dialogue text ----------------------------
+   The dialogue column on page 62 uses three colors (matching the
+   original book scan):
+     - Deacon : red    (.deacon-text)
+     - People : green  (.people-response), bold
+     - Priest : blue   (.priest-text)
+   The .speaker label is in red by default. */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Right column (stage directions) ---------------------
+   Override the default .col-right (which uses justify-content:
+   space-between) so the two stage-direction blocks sit near the
+   top of the column with a small gap between them, matching the
+   layout in the original book scan. */
+.page-062-col-right {
+  justify-content: flex-start;
+}
+.page-062-col-right .stage-bottom {
+  margin-top: 18px;
+}
+
+/* ---------- Pullout floated to the left (top of commentary) ------
+   "'A mercy of peace, a sacrifice of praise' signifies that the
+   Holy Sacrifice is the greatest mercy to us from God…". Bold,
+   dark green, sits to the left of the body text and the body
+   text wraps around it. */
+.segment-062 .commentary .pullout-left {
+  float: left;
+  width: 215px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+.segment-062 .commentary .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+
+/* ---------- Pullout floated to the right (mid commentary) --------
+   "It is also a Holy Sacrifice to God from us – a sacrifice of
+   thanksgiving and praise to Him." Bold, dark text, sits to the
+   right of the body text and the body text wraps around it. */
+.segment-062 .commentary .pullout-right {
+  float: right;
+  width: 215px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+.segment-062 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- From css/page-063.css ---------- */
+
+/* ==========================================================================
+   Page 63 — "Let us lift up our hearts!" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top commentary with the green decorative title "Let us lift
+        up our hearts!" and a single body paragraph (drop cap "C")
+     2. QUESTIONS box (standard .question-box style from book.css)
+     3. "Liturgical Fans (Rhipidia)" — 3-col grid: close-up image |
+        body text (drop cap "I") | pullout + angel-with-rhipidia
+        image; a section caption "An angel holding a rhipidia" sits
+        centered below the grid
+     4. "The Eucharistic Prayer" — light blue/grey box with body
+        text, a right-floated pullout (St John 6.51) and a bold
+        summary at the end
+   ========================================================================== */
+
+/* ---------- "Let us lift up our hearts!" decorative title -----
+   Green, slightly larger than the default .section-title, no
+   underline, decorative MedievalSharp font. */
+.page-063-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-emphasis);
+  font-size: 30px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  margin: 0 0 10px;
+}
+
+/* ---------- Green highlighted text in the top commentary ------
+   "'Let us lift up our hearts!'" and "'We lift them up unto the
+   Lord.'" within the top commentary paragraph. Italic, dark
+   green, bold. */
+.commentary .quote-green-italic {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ---------- "Liturgical Fans (Rhipidia)" 3-col grid ----------
+   3-column grid:
+     Left column  : close-up image of a rhipidia (top) + pullout (below)
+     Center column: body text with drop cap "I"
+     Right column : angel-with-rhipidia image with caption
+   The pullout quote "They show by this ritual…" sits below the
+   close-up image in the left column. */
+.page-063-fans-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 6px;
+}
+
+.page-063-fans-grid .commentary-body p { margin: 0; }
+
+/* Left column: close-up image of a rhipidia */
+.page-063-image-left,
+.page-063-image-right {
+  margin: 0;
+  text-align: center;
+}
+.page-063-image-left .image-placeholder {
+  width: 100%;
+  height: 220px;
+}
+.page-063-image-right .image-placeholder {
+  width: 100%;
+  height: 150px;
+}
+
+/* Left and right columns: flex column so the pullout (left) or
+   the image (right) stack vertically and center within the
+   column. */
+.page-063-left,
+.page-063-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-063-left .page-063-pullout,
+.page-063-right .page-063-pullout {
+  margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+.page-063-left .page-063-pullout p,
+.page-063-right .page-063-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* Caption inside the right-column figure (below the angel image).
+   The .commentary ancestor bumps specificity above .commentary p
+   (0,1,1) in book.css so text-align: center isn't overridden by
+   the justify default. */
+.commentary .page-063-caption {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 6px 0 0;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+/* Real rhipidia images (replace the .image-placeholder divs).
+   The PNGs are taller than the original placeholders, so at the
+   column's natural width they push the page past the page-number
+   position. Cap each image at its placeholder's original height
+   and constrain width to the column, letting the browser scale
+   it down while preserving aspect ratio. */
+.page-063-image-left .figure-image {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.page-063-image-right .figure-image {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ---------- "The Eucharistic Prayer" blue/grey box ----------
+   Light blue/grey background, thin border. Contains the
+   eucharistic prayer commentary + list of foundational actions +
+   right-floated pullout + bold summary at the end. */
+.page-063-eucharistic-box {
+  background: #c9cdd2;
+  border: 1px solid #7a8590;
+  padding: 14px 22px 16px;
+  margin: 16px 0 30px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--color-text);
+  position: relative;
+}
+.page-063-eucharistic-box p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* Decorative "The" at the start of the first paragraph */
+.page-063-eucharistic-box .deco-the {
+  font-family: 'MedievalSharp', serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--color-heading);
+  vertical-align: baseline;
+  margin-right: 2px;
+}
+
+/* "Eucharistic Prayer" in small caps */
+.page-063-eucharistic-box .smallcaps {
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Numbered list items (1)-(4) */
+.page-063-eucharistic-box .page-063-action {
+  margin: 0 0 4px 16px;
+  text-align: justify;
+  font-weight: 400;
+}
+.page-063-eucharistic-box .page-063-action strong {
+  font-weight: 700;
+}
+
+/* Right-floated pullout in the eucharistic box */
+.page-063-eucharistic-box .page-063-eucharistic-pullout {
+  float: right;
+  width: 215px;
+  margin: 4px 0 8px 18px;
+  padding: 0;
+}
+.page-063-eucharistic-box .page-063-eucharistic-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+.page-063-eucharistic-box .page-063-pullout-citation {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--color-text);
+}
+
+/* Underlined terms within the eucharistic box */
+.page-063-eucharistic-box u { text-decoration: underline; }
+
+/* Bold summary at the bottom of the eucharistic box */
+.page-063-eucharistic-box .page-063-summary {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 14px !important;
+  text-align: left !important;
+}
+.page-063-eucharistic-box .page-063-summary em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ---------- From css/page-066.css ---------- */
+
+/* ==========================================================================
+   Page 66 — "The Remembrance" specific styles
+   --------------------------------------------------------------------------
+   Loaded IN ADDITION to css/book.css. Only contains the layout pieces
+   that are unique to this page: the 2-column outer layout that lets
+   the right column of stage directions extend below the 3-column prayer
+   grid down to the bottom of the "Remembrance" section.
+   ========================================================================== */
+
+/* ---------- Outer 2-column layout for the "Remembrance" section ----------
+   Wraps the prayer grid (top) + words of institution (below) on the
+   left, a long vertical separator in the middle, and the right column
+   of stage directions on the right. The right column spans the full
+   height of the section so its 5 stage-direction blocks align with
+   their corresponding rows in the prayer text. */
+.remembrance-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3.4fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* On page 66 the inner .preface-grid is only 2-column (People | Priest)
+   because the third (right) column has been moved out into
+   .col-right-full. */
+.remembrance-layout .preface-grid {
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 2.5fr);
+}
+
+/* ---------- Long vertical separator ----------
+   Inherits the diamond pattern and end caps from the standard
+   .vdivider in book.css. Runs the full height of the "Remembrance"
+   section. */
+.vdivider.vdivider-long {
+  width: 16px;
+  align-self: stretch;
+}
+
+/* ---------- Right column (full-height variant) ----------
+   The .col-right-full container spans the full height of the section
+   (via `align-self: stretch` + `height: 100%` inside the outer grid).
+   Its 5 children are distributed as follows:
+     - stage-top (red)        : top, aligned with the start of the prayer
+     - stage-deacon           : upper-middle, aligned with the middle of
+                                the silent prayer (grows to fill space)
+     - stage-bottom (green)   : lower-middle, aligned with "Take! Eat!"
+                                (grows to fill space)
+     - stage-bottom (blue)    : just below green, aligned with
+                                "And likewise…"
+     - stage-bottom (brown)   : at the very bottom, aligned with
+                                "Drink of it…"
+
+   The middle two stage-bottom blocks (blue "prays silently" and
+   brown "then exclaims out loud") sit on consecutive lines in the
+   original scan, so we let the deacon and green blocks grow to
+   absorb the free space. */
+.col-right-full {
+  padding: 0 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  height: 100%;
+}
+.col-right-full p { margin: 0; text-align: right; }
+/* The 2nd (deacon) grows 0.5, the 3rd (green) grows 1.0. The green
+   lands at the row of "Take! Eat!" while blue/brown land at
+   "And likewise…" and "Drink of it…" respectively. */
+.col-right-full > :nth-child(2) { flex-grow: 0.5; }
+.col-right-full > :nth-child(3) { flex-grow: 1; }
+
+/* ---------- Centred silent prayer in the words of institution ----------
+   The aloud words of institution ("Take! Eat!", "Drink of it…") and
+   the People responses are left-aligned (they are dialogue lines).
+   The silent prayer in between ("And likewise, after supper, He took
+   the cup, saying: …") is centred in the original scan. */
+.prayer-continuation-centered {
+  text-align: center;
+}
+
+/* ---------- From css/page-067.css ---------- */
+
+/* ==========================================================================
+   Page 67 — "The Remembrance" (continued) specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text (continuation from page 66)
+                      with the blue drop cap "I"
+     - Right column : the lead quote "There is no life without food…"
+                      centered at the top, with the Last Supper image
+                      placeholder below it
+
+   Below the grid:
+     - Full-width QUESTIONS box (green border)
+     - Full-width bottom commentary (blue drop cap "A")
+   ========================================================================== */
+
+/* Top section: 2-column grid with equal-width columns. The left
+   column holds the commentary text; the right column holds the lead
+   quote + Last Supper image. */
+.page-067-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-067-top-grid .commentary-body p { margin: 0 0 8px; }
+
+/* Right column: lead quote + image */
+.page-067-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Lead quote at the top of the right column, above the image:
+   "'There is no life without food…'" — centered, bold, italic,
+   slightly larger, with the last two "new life/new food" words
+   in italic. */
+.lead-quote {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.lead-quote em { font-style: italic; }
+
+/* Last Supper image: centered in the right column below the quote */
+.page-067-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Quote below the image in the right column:
+   "'Unless you eat the flesh of the Son of Man…'"
+   Same style as the lead quote above the image (centered, bold,
+   italic) with a bit of extra top padding to separate it from the
+   image. */
+.right-col-quote {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.page-067-image .image-placeholder {
+  width: 100%;
+  height: 240px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+.page-067-image figcaption {
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+
+/* ---------- From css/page-068.css ---------- */
+
+/* ==========================================================================
+   Page 68 — "The Consecration" + "The Elevation of the Gifts" +
+   "The Prayer of the Epiclesis" specific styles
+   --------------------------------------------------------------------------
+   Page 68 has TWO stacked liturgical boxes:
+     Box 1: Two side-by-side titled sections within one box.
+            Left half: "The Consecration" (People's Amen + Priest's
+            prayer). Right half: "The Elevation of the Gifts"
+            (description of the physical elevation action).
+     Box 2: The 3-column Epiclesis prayer (People | Priest | Stage
+            directions) with a 15+ short blocks in the right column.
+   ========================================================================== */
+
+/* Stack the two boxes with no extra gap between them */
+.book-page .liturgical-box + .liturgical-box {
+  margin-top: 12px;
+}
+
+/* Amen. response lines in the left column (green text) */
+.amen-line {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.amen-line .speaker { color: var(--color-priest); }
+
+/* Inline "Amen." markers in the center-column prayer text */
+.amen-inline {
+  color: var(--color-emphasis);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ===== Box 1: two side-by-side titled sections =====================
+   Classic 3-column grid (People | vdivider | Priest | vdivider | Right)
+   but the LEFT column is very narrow (15%), and the CENTER and
+   RIGHT columns are wider (~42.5% each). The two section titles
+   sit ABOVE the grid as plain text headers. */
+.preface-grid-two-titles {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.3fr) 16px
+    minmax(0, 1fr) 16px
+    minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+/* Title row: each title is placed above its respective columns.
+   The first vdivider is between col-left (col 1) and col-center
+   (col 3). It spans both the title row and the content row. */
+.preface-grid-two-titles > .vdivider:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+.preface-grid-two-titles > .col-left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.preface-grid-two-titles > .col-center {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.preface-grid-two-titles > .vdivider:nth-of-type(2) {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+.preface-grid-two-titles > .col-right {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+
+/* Title for the left half ("The Consecration"): spans columns 1
+   (left content) and 3 (center content), sitting above the
+   inner vdivider (col 2). */
+.col-title-left {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  text-align: center;
+  margin: 6px 0 4px;
+  padding-left: 0;
+}
+/* Title for the right half ("The Elevation of the Gifts"): sits
+   above the second vdivider and the right column. */
+.col-title-right {
+  grid-column: 4 / 6;
+  grid-row: 1 / 2;
+  text-align: center;
+  margin: 6px 0 4px;
+  padding-left: 0;
+}
+
+/* Prevent the .prayer-continuation paragraphs inside the center
+   column from overflowing the grid cell (their default
+   `margin: 12px 4px 4px` adds horizontal margins that would push
+   the text past the right edge of the narrow center column). */
+.preface-grid-two-titles .col-center .prayer-continuation {
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 0;
+}
+/* The .col-center itself should not allow its children to overflow. */
+.preface-grid-two-titles .col-center {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* Indent the second "Amen." line slightly under "People:" */
+.amen-line-indented {
+  margin-left: 16px;
+}
+
+/* The "Elevation of the Gifts" prose on the right side of Box 1 */
+.elevation-prose {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.elevation-prose .cue { color: var(--color-cue-red); }
+
+/* Full-width prayer line that spans all three columns below the
+   3-col grid in Box 1. Sits between the upper section and the
+   Epiclesis section (Box 2), bridging the two. */
+.full-width-prayer {
+  margin: 12px 8px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.full-width-prayer .speaker { color: var(--color-priest); }
+
+/* Subtitle under the section title in Box 2:
+   "(Invocation of the Holy Spirit)" — italic, centered. */
+.epiclesis-subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-text);
+  margin: -4px 0 8px;
+}
+
+/* Box 2 (The Prayer of the Epiclesis) grid override: left column
+   is narrow (~15%), center and right columns are equal (~42.5%
+   each). The general .preface-grid class (used by Box 1 via
+   .preface-grid-two-titles, and by page 64) has a different
+   distribution, so we override it here for the second box only
+   (which uses .preface-grid WITHOUT the .preface-grid-two-titles
+   modifier). */
+.preface-grid.epiclesis-grid {
+  grid-template-columns:
+    minmax(0, 0.3fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr);
+}
+
+
+/* ---------- From css/page-069.css ---------- */
+
+/* ==========================================================================
+   Page 69 — "The Consecration" specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text with the blue drop cap "T" and
+                     a chalice image floated to the left below the
+                     first paragraph.
+     - Right column : a bordered box with a St John of Damascus quote
+                     (and his icon) at the top, plus a bold pullout
+                     block below.
+
+   Below the grid:
+     - Full-width QUESTION box (green border) with the "QUESTION"
+       header anchored in the top right corner (instead of the
+       centered "Questions" header used on pages 66/67) and the
+       question prompt offset by a right padding to clear the header.
+   ========================================================================== */
+
+/* ---------- Top section: 2-column grid ----------------------------
+   Wider left column (~2.1fr) for the body text and chalice image,
+   narrower right column (~1fr) for the St John box + pullout. */
+.page-069-top {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+/* Chalice image floated to the left of the body text below the first
+   paragraph. The float lets the surrounding text wrap around it. */
+.page-069-chalice {
+  float: left;
+  margin: 4px 16px 6px 0;
+  width: 150px;
+}
+.page-069-chalice .image-placeholder {
+  width: 100%;
+  height: 150px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 6px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* Right column container (St John box + pullout) */
+.page-069-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- St John of Damascus quote box ------------------------
+   Bordered box with the saint's icon centered at the top and the
+   quote text below it. Sits at the top of the right column. */
+.damascus-box {
+  border: 1.5px solid var(--color-box-border);
+  background: #fbf9f1;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.damascus-text { min-width: 0; align-self: stretch; }
+.damascus-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+.damascus-name u { text-decoration: underline; }
+.damascus-dates {
+  font-weight: 400;
+  font-size: 13px;
+}
+.damascus-quote {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+.damascus-image-placeholder {
+  width: 110px;
+  height: 120px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 4px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* Real St John of Damascus icon (replaces the .damascus-image-placeholder
+   div). Matches the 110x120 frame the placeholder occupied. No border —
+   the image has a transparent background. */
+.damascus-image {
+  display: block;
+  width: 110px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* ---------- Pullout block (right column, below the St John box) ---
+   Large, bold, left-aligned statement. Uses the .page-069-right
+   ancestor in the selector so the margin-top wins over the
+   .commentary p rule (0,1,1 specificity) defined in book.css. */
+.page-069-right .page-069-pullout {
+  margin: 40px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- QUESTION box (bottom of page) -------------------------
+   Same border/background/padding as the standard .question-box from
+   book.css, but the header is anchored in the top right corner
+   instead of centered, and the question prompt is padded on the
+   right so it doesn't collide with the header. */
+.question-box-069 {
+  position: relative;
+}
+.box-header-069 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.question-prompt-069 {
+  margin: 0 0 10px;
+  padding-right: 140px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ---------- From css/page-070.css ---------- */
+
+/* ==========================================================================
+   Page 70 — "The Intercession" + "Theotokos" specific styles
+   --------------------------------------------------------------------------
+   The top section is a single liturgical box containing:
+     1. The Intercession (3-col grid: People | Priest | Stage directions)
+     2. A full-width priest prayer line below the first grid
+     3. The Hymn to the Theotokos (3-col grid: Hymn text | Priest |
+        Stage directions)
+     4. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom section is a commentary with the Theotokos icon floated
+   to the left and the "THEOTOKOS" title + drop-cap body text wrapping
+   around its right side.
+   ========================================================================== */
+
+/* ---------- Gold/yellow cue color ------------------------------------
+   The "exclaims out loud" stage direction in the right column of the
+   first grid uses a gold/yellow triangle (distinct from the standard
+   red silent / green aloud cues defined in book.css). The page-070
+   CSS variable is local; if other pages adopt this color it should be
+   promoted to book.css. */
+:root {
+  --color-cue-yellow: #d4a017;
+}
+.cue-yellow { color: var(--color-cue-yellow); }
+
+/* ---------- Hymn title in the left column of the second grid --------
+   "The Hymn to the Theotokos" — centered, slightly smaller than the
+   default .section-title so it fits the narrow left column. */
+.page-070-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 6px;
+}
+
+/* ---------- Override column widths for the second (Hymn) grid -------
+   The default .preface-grid in book.css uses 0.9fr | 2.5fr | 0.85fr
+   (narrow left, very wide center, narrow right). For the Hymn grid
+   we want equal-width left and center columns (~1fr each) with a
+   smaller right column (~0.55fr) for the single short deacon stage
+   direction. */
+.preface-grid-hymn {
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 0.55fr);
+}
+
+/* Italic note under the Hymn title:
+   "(On certain Feast Days this is replaced by another hymn.)" */
+.hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+/* "repeated from page 68" note in the first grid (under the People's
+   continuing response). Sits on its own line below the green people
+   text. */
+.people-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* Italic saint name placeholder in the priest prayer text
+   (e.g. "Saint (saint of the day)" or "grant them rest, O God…"). */
+.priest-name {
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+/* Italic stage-direction note in the priest prayer text
+   (e.g. "(he remembers by name whom he will of those who have
+   fallen asleep)"). */
+.priest-cue {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* ---------- Figure floated to the left of the commentary text --------
+   Theotokos icon at the bottom of the page. */
+.segment-070 .figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.segment-070 .figure-left .image-placeholder {
+  width: 100%;
+  height: 340px;
+}
+
+/* Real Theotokos icon (replaces the .image-placeholder div).
+   The PNG (740x1247) is much taller than wide, so at the
+   .segment-070 .figure-left's 230px width it would render at ~387px tall
+   and overflow the page. Cap its height at 340px (matching the
+   original placeholder) and let the browser scale the image
+   down to fit, preserving its aspect ratio. */
+.segment-070 .figure-left .figure-image {
+  max-height: 340px;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* ---------- "THEOTOKOS" title in the commentary ---------------------
+   Centered within the text column and uppercase, overriding the
+   .commentary .section-title default (left-aligned, mixed case). */
+.page-070-theotokos-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- From css/page-071.css ---------- */
+
+/* ==========================================================================
+   Page 71 — "The Intercession" (commentary) + "The Hymn to the Theotokos"
+   specific styles
+   --------------------------------------------------------------------------
+   The page has three sections:
+     1. Top commentary: 2-column grid. Left column is the body text
+        (with drop cap "N"); right column stacks a pullout on top of
+        the St John the Baptist icon (with caption) below.
+     2. QUESTIONS box (standard .question-box style from book.css)
+     3. Bottom commentary: "The Hymn to the Theotokos" section title +
+        body text with drop cap "M", and a pullout floated right
+   ========================================================================== */
+
+/* ---------- Top section: 2-column grid ----------------------------
+   Wider left column (~1.6fr) for the body text, narrower right
+   column (~1fr) for the pullout + icon. */
+.page-071-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+/* Right column: flex column so the pullout sits on top of the icon */
+.page-071-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Pullout in the right column of the top section ---------
+   The .commentary ancestor in the selector bumps specificity above
+   .commentary .pullout from book.css (both end up at 0,2,0, but
+   the page-071 rule comes later in the cascade and wins). */
+.commentary .page-071-pullout {
+  margin: 0 0 14px;
+  padding: 0;
+}
+.commentary .page-071-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- St John the Baptist icon in the right column -----------
+   Full width of the right column. No float, no large top margin —
+   sits naturally below the pullout in the flex column. */
+.page-071-image {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+.page-071-image .image-placeholder {
+  width: 100%;
+  height: 220px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+.page-071-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+/* ---------- Pullout floated to the right (bottom commentary) -------
+   Wider column with bold text. Small top margin since the body text
+   in this section is shorter and the pullout can appear near the top. */
+.segment-071 .commentary .pullout-right {
+  float: right;
+  width: 300px;
+  margin: 8px 0 6px 16px;
+  padding: 0;
+}
+.segment-071 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- "The Hymn to the Theotokos" section title ---------------
+   Centered (overrides .commentary .section-title from book.css).
+   The .commentary ancestor bumps specificity above the default. */
+.commentary .page-071-hymn-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+/* ---------- From css/page-072.css ---------- */
+
+/* ==========================================================================
+   Page 72 — "The Intercession" (Continued) specific styles
+   --------------------------------------------------------------------------
+   The top liturgical box contains:
+     1. Chapter title "The Intercession (Continued)"
+     2. A 2-column grid: Hymn title + People line (left) | Priest prayer
+        in 2 paragraphs (right) — used to align the People line with
+        the second priest prayer paragraph
+     3. Full-width priest prayer line (continuation)
+     4. A 3-column grid: People (left) | Priest prayer (middle) | Stage
+        directions (right) — 3 stage-direction blocks distributed with
+        space-between
+     5. Aloud priest prayer (brown/orange cue) — "exclaims out loud"
+     6. People: Amen.
+     7. "BLESSING" section title
+     8. Aloud blessing (green cue) — "turns toward the people and
+        blesses them"
+     9. People: And with your spirit.
+    10. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom commentary contains:
+     1. "The Intercession (Continued)" section title (centered)
+     2. Body paragraph with drop cap "F" (blue)
+     3. Right-floated pullout: "We understand that the only real
+        sin, and the root of all sin, is selfishness."
+   ========================================================================== */
+
+/* ---------- "(Continued)" subtitle on chapter / section titles ------
+   Smaller, italic, not underlined. Used in both the chapter title at
+   the top of the liturgical box and the section title in the bottom
+   commentary. */
+.page-072-subtitle {
+  font-size: 0.55em;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ---------- 2-column grid for the Hymn + Priest prayer section -----
+   2 columns: left for the Hymn title + People line, right for the
+   Priest prayer (2 paragraphs). The vdivider runs down the middle.
+   `align-self: stretch` on the column children makes both columns
+   the same height. */
+.preface-grid-hymn-2col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.7fr) 16px minmax(0, 1.3fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+/* Left column: Hymn title at top, People line at bottom (margin-top:
+   auto pushes the People line to the bottom of the column, aligning
+   it with the second priest prayer paragraph on the right). */
+.preface-grid-hymn-2col .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.preface-grid-hymn-2col .col-left .page-072-people-line {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Hymn title in the left column: "The Hymn to the Theotokos" */
+.page-072-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 4px;
+}
+.page-072-hymn-continued {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+.page-072-hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+/* People line: "It is truly meet to bless you, O Theotokos...." */
+.page-072-people-line {
+  font-size: 15px;
+  line-height: 1.45;
+}
+.page-072-people-line .speaker { color: var(--color-priest); }
+.page-072-people-line .people-body { color: var(--color-emphasis); font-weight: 700; }
+
+/* Right column: 2 prayer paragraphs (Priest prayer p1 and p2).
+   `display: flex; flex-direction: column` lets the 2 paragraphs
+   stack, with a small margin between them. */
+.preface-grid-hymn-2col .col-right {
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+}
+.preface-grid-hymn-2col .col-right p {
+  margin: 0 0 14px;
+  text-align: left;
+}
+.preface-grid-hymn-2col .col-right p:last-child { margin-bottom: 0; }
+.preface-grid-hymn-2col .col-right .speaker { color: var(--color-priest); }
+
+/* ---------- Middle 3-col grid: stage direction distribution --------
+   The right column has 3 stage-direction blocks distributed along
+   the full height of the section (deacon at top, "exclaims out
+   loud" in the middle, "turns and blesses" at the bottom). The
+   standard .col-right in book.css uses `justify-content: space-
+   between`, which positions the 3 children at top / middle / bottom. */
+.page-072-middle-col-right {
+  /* Inherits .col-right flex column, but ensure correct spacing */
+  justify-content: space-between;
+}
+.page-072-middle-col-right > p { margin: 0; text-align: right; }
+
+/* ---------- Full-width prayer line between the 2 grids -------------
+   "Priest: ...Among the first, remember, O Lord, His Beatitude..."
+   Spans the full width of the liturgical box, with a small top
+   margin to separate it from the grid above. */
+.page-072-fullwidth-prayer {
+  margin: 12px 4px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.page-072-fullwidth-prayer .speaker { color: var(--color-priest); }
+
+/* ---------- "BLESSING" section title ----------
+   "BLESSING" - centered, decorative, underlined, slightly larger
+   spacing above to separate it from the prayer above. */
+.page-072-blessing-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 16px 0 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Bottom commentary ----------
+   "The Intercession (Continued)" commentary with drop cap "F" (blue)
+   and a right-floated pullout. The pullout is local to this page
+   (page-071.css defines its own .pullout-right with a different
+   layout, so we redefine the same idea here for self-containment). */
+.segment-072 .commentary .pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 18px;
+  padding: 0;
+}
+.segment-072 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- From css/page-073.css ---------- */
+
+/* ==========================================================================
+   Page 73 — "Prayer for the Church" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top QUESTIONS box (singular "QUESTION" header)
+     2. "Prayer for the Church" section title
+     3. Commentary with icon of the Apostles floated left, body text
+        wrapping around it, and a right-floated pullout
+     4. Bottom QUESTIONS box (plural "QUESTIONS" header)
+     5. Bottom commentary with drop cap "A" (blue)
+   ========================================================================== */
+
+/* ---------- Figure floated to the left of the commentary text ----
+   Icon of the "Feasts of St Peter and St Paul and The Synaxion of
+   the 70 Apostles". The body text wraps around the right side of
+   the image. Defined locally for self-containment (a similar
+   .segment-073 .figure-left exists in page-070.css with a different image
+   height). */
+.segment-073 .figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.segment-073 .figure-left .image-placeholder {
+  width: 100%;
+  height: 320px;
+}
+.segment-073 .figure-left figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ---------- Pullout floated to the right (top commentary) ----------
+   "A parish as a human institution can easily replace Christ with
+   something else." Bold, dark text, sits to the right of the body
+   text and the body text wraps around it. */
+.segment-073 .commentary .pullout-right {
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+.segment-073 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}

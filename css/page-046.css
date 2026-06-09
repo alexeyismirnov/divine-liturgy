@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Page 46 — The Cherubim Hymn / Prayer of the Cherubim Hymn / The Aer
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col top grid (People hymn | Priest prayer | deacon censing rubric)
+     2. Full-width prayer continuation
+     3. 2-col grid (dialogue | rubrics with colored cues)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "The Aer" — text + image placeholder
+   ========================================================================== */
+
+/* ---------- 3-column top grid ------------------------------------ */
+.page-046-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.85fr) 16px minmax(0, 1.55fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-046-top-grid .col-left,
+.page-046-top-grid .col-center,
+.page-046-top-grid .col-right {
+  padding-top: 0;
+}
+
+.page-046-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-046-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+/* People hymn — green text with left accent bar */
+.page-046-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-046-people-hymn .speaker {
+  color: var(--color-priest);
+}
+
+.page-046-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-046-people-hymn u {
+  text-decoration: underline;
+}
+
+.page-046-top-grid .col-center .prayer-text {
+  margin: 0;
+  text-align: left;
+}
+
+/* Deacon censing rubric — narrow right column */
+.page-046-censing-note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+/* ---------- Dialogue / rubrics 2-column grid --------------------- */
+.page-046-dialogue-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+
+.page-046-dialogue-grid .col-left p,
+.page-046-dialogue-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-046-dialogue-grid .col-left p:last-child,
+.page-046-dialogue-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-046-dialogue-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-046-times-note {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+/* ---------- "The Aer" commentary section ----------------------- */
+.page-046-aer-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-046-aer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  column-gap: 16px;
+  align-items: start;
+}
+
+.page-046-aer-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-046-aer-image {
+  margin: 0;
+  text-align: center;
+}
+
+.page-046-aer-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

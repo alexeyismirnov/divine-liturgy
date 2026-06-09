@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Page 45 — "The Liturgy of the Faithful" commentary (The Offertory)
+   --------------------------------------------------------------------------
+   1. Chapter title + "The Offertory" section with left pullout + drop cap
+   2. "Prayers of the Faithful" — 2-col grid (commentary | fresco image)
+   3. QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Chapter title at top of commentary page -------------- */
+.page-045-chapter-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  letter-spacing: 0.02em;
+  margin: 4px 0 6px;
+}
+
+.commentary .page-045-offertory-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 2px 0 8px;
+}
+
+/* ---------- Left pullout for "The Offertory" section -------------- */
+.page-045-offertory .pullout-left {
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+
+.page-045-offertory .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+
+/* ---------- "Prayers of the Faithful" 2-column grid -------------- */
+.page-045-prayers-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-045-prayers-grid .commentary-body p {
+  margin: 0;
+}
+
+/* Fresco image floated in the right column */
+.page-045-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-045-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-045-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}

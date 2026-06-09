@@ -39,13 +39,11 @@
 /* ---------- Pullout floated to the right (top commentary) ----------
    "A parish as a human institution can easily replace Christ with
    something else." Bold, dark text, sits to the right of the body
-   text and the body text wraps around it. A small margin-top
-   pushes the pullout down to roughly the middle of the body text,
-   matching the layout in the original book scan. */
+   text and the body text wraps around it. */
 .commentary .pullout-right {
   float: right;
   width: 220px;
-  margin: 120px 0 8px 16px;
+  margin: 4px 0 8px 16px;
   padding: 0;
 }
 .commentary .pullout-right p {

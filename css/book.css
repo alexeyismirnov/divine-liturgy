@@ -33,6 +33,7 @@
   --color-question-header: #2f6a45;     /* darker green for QUESTION header text */
   --color-bible-underline: #5a2a20;     /* brownish-maroon for underlined biblical emphasis */
   --color-sanctus-quote:  #7a1f24;      /* maroon for the opening liturgical quote */
+  --book-scale:          1.25;         /* default reading scale (~125% browser zoom) */
 }
 
 /* ---------- Page / Body ---------- */
@@ -44,6 +45,12 @@ html, body {
   color: var(--color-text);
   font-size: 16px;
   line-height: 1.35;
+}
+
+/* Scale book pages for comfortable reading (browsers do not allow setting
+   their zoom level from HTML; CSS zoom mimics the effect). */
+body:has(.book-page) {
+  zoom: var(--book-scale);
 }
 
 /* ---------- The Book Page ---------- */
@@ -444,6 +451,9 @@ html, body {
 /* ---------- Print ---------- */
 @media print {
   body { background: white; }
+  body:has(.book-page) {
+    zoom: 1;
+  }
   .book-page {
     box-shadow: none;
     margin: 0 auto;

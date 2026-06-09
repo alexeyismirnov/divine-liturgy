@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Page 44 — "The Liturgy of the Faithful / The Offertory" specific styles
+   --------------------------------------------------------------------------
+   The page is a single liturgical box containing:
+     1. Chapter title + "The Offertory"
+     2. First Prayer of the Faithful — 3-col grid (Deacon/People |
+        Priest prayer | stage direction)
+     3. First-prayer closing lines (priest ending, People, Deacon, People)
+     4. Second Prayer of the Faithful — 2-col grid (deacon petitions |
+        Priest prayer), with "(if a deacon is serving:)" in the left column
+     5. Second-prayer closing lines (priest ending, People: Amen)
+     6. Liturgy of the Faithful outline (Two Litanies highlighted)
+   ========================================================================== */
+
+/* ---------- 3-column grid for the First Prayer --------------------
+   Narrow left column for the Deacon/People dialogue, wide center for
+   the priest's silent prayer, narrow right for the stage direction. */
+.page-044-first-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-044-first-prayer-grid .col-left p {
+  margin: 0 0 10px;
+}
+
+.page-044-first-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+}
+
+.page-044-first-prayer-grid .col-right {
+  justify-content: flex-start;
+}
+
+/* ---------- 2-column grid for the Second Prayer -------------------
+   Left column holds the deacon petitions (when a deacon is serving);
+   right column holds the priest's silent prayer. */
+.page-044-second-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1.35fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-044-second-prayer-grid .col-left {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-044-second-prayer-grid .col-left p {
+  margin: 0 0 8px;
+}
+
+.page-044-second-prayer-grid .col-right {
+  justify-content: flex-start;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+}
+
+.page-044-second-prayer-grid .col-right p {
+  margin: 0;
+  text-align: left;
+}
+
+/* "(if a deacon is serving:)" — italic note above the deacon petitions */
+.page-044-deacon-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-priest);
+  margin: 0 0 8px;
+}
+
+/* ---------- Color-coded dialogue (matching the book scan) ---------- */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Section titles inside the liturgical box -------------- */
+.page-044-prayer-title {
+  font-size: 22px;
+  margin: 10px 0 4px;
+}
+
+.page-044-offertory-title {
+  margin: 2px 0 8px;
+}
+
+/* ---------- Closing dialogue block after each prayer -------------- */
+.page-044-closing-lines {
+  margin-top: 8px;
+}
+
+.page-044-closing-lines .dialogue-line,
+.page-044-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
