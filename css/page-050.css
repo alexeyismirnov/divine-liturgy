@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Page 50 — The Cherubim Hymn (2nd part continued) / Placing the Gifts
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col grid (People hymn continued | priest troparia & dialogue |
+        placing-the-gifts rubrics)
+     2. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     3. "Symbolic Meaning of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+
+.book-page[data-page-number="50"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Cherubim Hymn (second part continued) 3-col grid -------- */
+.page-050-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.38fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-050-main-grid .col-left,
+.page-050-main-grid .col-center,
+.page-050-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-050-section-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.page-050-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-050-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+}
+
+.page-050-people-response .speaker {
+  color: var(--color-priest);
+}
+
+.page-050-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-050-main-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-050-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-050-liturgical-underline {
+  color: var(--color-prayer);
+  text-decoration: underline;
+}
+
+.page-050-main-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-050-main-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-050-main-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+/* ---------- Symbolic Meaning commentary --------------------------- */
+.page-050-symbolic-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-050-symbolic-body p {
+  margin: 0;
+}

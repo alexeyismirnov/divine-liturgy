@@ -1,0 +1,983 @@
+/* ==========================================================================
+   Chapter: The Offertory — merged styles from pages 44–51
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Duplicate global selectors (deacon-text,
+   priest-text, people-response) are defined once. Page-number padding
+   rules are omitted. Segment wrappers are invisible (no page-break styling).
+   ========================================================================== */
+
+.book-chapter {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-chapter h2 {
+  margin-top: 18px;
+}
+
+.book-chapter .commentary > .section-title:first-child,
+.book-chapter .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+.book-chapter .col-center > h2,
+.book-chapter .col-left > h2 {
+  margin-top: 4px;
+}
+
+/* ---------- Shared dialogue colours (from individual page CSS) ----- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+
+/* ---------- From css/page-044.css ---------- */
+
+/* ==========================================================================
+   Page 44 — "The Liturgy of the Faithful / The Offertory" specific styles
+   --------------------------------------------------------------------------
+   The page is a single liturgical box containing:
+     1. Chapter title + "The Offertory"
+     2. First Prayer of the Faithful — 3-col grid (Deacon/People |
+        Priest prayer | stage direction)
+     3. First-prayer closing lines (priest ending, People, Deacon, People)
+     4. Second Prayer of the Faithful — 2-col grid (deacon petitions |
+        Priest prayer), with "(if a deacon is serving:)" in the left column
+     5. Second-prayer closing lines (priest ending, People: Amen)
+     6. Liturgy of the Faithful outline (Two Litanies highlighted)
+   ========================================================================== */
+
+/* ---------- 3-column grid for the First Prayer --------------------
+   Narrow left column for the Deacon/People dialogue, wide center for
+   the priest's silent prayer, narrow right for the stage direction. */
+.page-044-first-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-044-first-prayer-grid .col-left p {
+  margin: 0 0 10px;
+}
+
+.page-044-first-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+}
+
+.page-044-first-prayer-grid .col-right {
+  justify-content: flex-start;
+}
+
+/* ---------- 2-column grid for the Second Prayer -------------------
+   Left column holds the deacon petitions (when a deacon is serving);
+   right column holds the priest's silent prayer. */
+.page-044-second-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1.35fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-044-second-prayer-grid .col-left {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-044-second-prayer-grid .col-left p {
+  margin: 0 0 8px;
+}
+
+.page-044-second-prayer-grid .col-right {
+  justify-content: flex-start;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+}
+
+.page-044-second-prayer-grid .col-right p {
+  margin: 0;
+  text-align: left;
+}
+
+/* "(if a deacon is serving:)" — italic note above the deacon petitions */
+.page-044-deacon-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-priest);
+  margin: 0 0 8px;
+}
+
+/* ---------- Color-coded dialogue (matching the book scan) ---------- */
+
+
+/* ---------- Section titles inside the liturgical box -------------- */
+.page-044-prayer-title {
+  font-size: 22px;
+  margin: 10px 0 4px;
+}
+
+.page-044-offertory-title {
+  margin: 2px 0 8px;
+}
+
+/* ---------- Closing dialogue block after each prayer -------------- */
+.page-044-closing-lines {
+  margin-top: 8px;
+}
+
+.page-044-closing-lines .dialogue-line,
+.page-044-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+/* ---------- From css/page-045.css ---------- */
+
+/* ==========================================================================
+   Page 45 — "The Liturgy of the Faithful" commentary (The Offertory)
+   --------------------------------------------------------------------------
+   1. Chapter title + "The Offertory" section with left pullout + drop cap
+   2. "Prayers of the Faithful" — 2-col grid (commentary | fresco image)
+   3. QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Chapter title at top of commentary page -------------- */
+.page-045-chapter-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  letter-spacing: 0.02em;
+  margin: 4px 0 6px;
+}
+
+.commentary .page-045-offertory-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 2px 0 8px;
+}
+
+/* ---------- Left pullout for "The Offertory" section -------------- */
+.page-045-offertory .pullout-left {
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+
+.page-045-offertory .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+
+/* ---------- "Prayers of the Faithful" 2-column grid -------------- */
+.page-045-prayers-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-045-prayers-grid .commentary-body p {
+  margin: 0;
+}
+
+/* Fresco image floated in the right column */
+.page-045-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-045-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-045-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+/* ---------- From css/page-046.css ---------- */
+
+/* ==========================================================================
+   Page 46 — The Cherubim Hymn / Prayer of the Cherubim Hymn / The Aer
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col top grid (People hymn | Priest prayer | deacon censing rubric)
+     2. Full-width prayer continuation
+     3. 2-col grid (dialogue | rubrics with colored cues)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "The Aer" — text + image placeholder
+   ========================================================================== */
+
+/* ---------- 3-column top grid ------------------------------------ */
+.page-046-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.85fr) 16px minmax(0, 1.55fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-046-top-grid .col-left,
+.page-046-top-grid .col-center,
+.page-046-top-grid .col-right {
+  padding-top: 0;
+}
+
+.page-046-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-046-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+/* People hymn — green text with left accent bar */
+.page-046-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-046-people-hymn .speaker {
+  color: var(--color-priest);
+}
+
+.page-046-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-046-people-hymn u {
+  text-decoration: underline;
+}
+
+.page-046-top-grid .col-center .prayer-text {
+  margin: 0;
+  text-align: left;
+}
+
+/* Deacon censing rubric — narrow right column */
+.page-046-censing-note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+/* ---------- Dialogue / rubrics 2-column grid --------------------- */
+.page-046-dialogue-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+
+.page-046-dialogue-grid .col-left p,
+.page-046-dialogue-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-046-dialogue-grid .col-left p:last-child,
+.page-046-dialogue-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-046-dialogue-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-046-times-note {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+
+
+/* ---------- "The Aer" commentary section ----------------------- */
+.page-046-aer-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-046-aer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  column-gap: 16px;
+  align-items: start;
+}
+
+.page-046-aer-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-046-aer-image {
+  margin: 0;
+  text-align: center;
+}
+
+.page-046-aer-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- From css/page-047.css ---------- */
+
+/* ==========================================================================
+   Page 47 — The Offertory (continued) / The Cherubim Hymn
+   --------------------------------------------------------------------------
+   1. "The Offertory (continued)" — 2-col grid (text | seraph icon)
+   2. "The Cherubim Hymn" — row 1: cherub | para 1;
+      bottom grid: pullout | para 2 (row 1) + QUESTIONS (row 2, cols 1–2) | seraph (right, spans both rows)
+   ========================================================================== */
+
+/* ---------- "(continued)" subtitle -------------------------------- */
+.page-047-subtitle {
+  font-size: 0.55em;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.commentary .page-047-offertory-title,
+.commentary .page-047-cherubim-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+/* ---------- Green underlined liturgical quote --------------------- */
+.page-047-quote-green-underline {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- "The Offertory (continued)" 2-col grid -------------- */
+.page-047-offertory-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 0.55fr);
+  column-gap: 14px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.page-047-offertory-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-047-offertory-icon {
+  margin: 0;
+  text-align: center;
+}
+
+.page-047-offertory-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- "The Cherubim Hymn" two-row layout -------------------- */
+.page-047-cherubim-section {
+  margin-top: 4px;
+}
+
+.page-047-cherubim-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.5fr) minmax(0, 0.75fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.page-047-cherubim-row-1 {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.page-047-cherubim-para-1 {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-047-cherubim-para-2 {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-047-pullout-left {
+  margin: 0;
+  padding: 0;
+}
+
+.page-047-pullout-left p {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-047-attribution {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* Cherub image — top-left of the Cherubim Hymn section */
+.page-047-cherub-figure {
+  margin: 0 0 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.page-047-cherub-figure .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Bottom grid: quote + para 2, then QUESTIONS beside tall seraph */
+.page-047-cherubim-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.5fr) minmax(0, 0.75fr);
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: start;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.page-047-cherubim-bottom-grid .page-047-pullout-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.page-047-cherubim-bottom-grid .page-047-cherubim-para-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.page-047-seraph-right {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  margin: 0;
+  text-align: center;
+  align-self: start;
+}
+
+.page-047-seraph-right .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-047-questions-in-grid {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* ---------- From css/page-048.css ---------- */
+
+/* ==========================================================================
+   Page 48 — The Cherubim Hymn (continued) / The Great Entrance
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 2-col top grid (People hymn continued | aer/diskos/chalice rubrics)
+     2. "The Great Entrance" — deacon commemoration + three priest petitions
+     3. 3-col grid (Cherubim Hymn 2nd part / People | Deacon/Priest exchange |
+        Holy Doors rubrics)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "History of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+
+/* ---------- Cherubim Hymn (continued) 2-col top grid -------------- */
+.page-048-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 1.1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-048-top-grid .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-048-top-grid .col-right {
+  padding: 4px 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-048-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-048-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-048-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-people-hymn .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-048-people-hymn u {
+  text-decoration: underline;
+}
+
+.page-048-rubric-note {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.page-048-rubric-note:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- The Great Entrance commemorations -------------------- */
+.page-048-great-entrance-title {
+  font-size: 22px;
+  margin: 12px 0 8px;
+}
+
+.page-048-commemoration {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-commemoration .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-commemoration .deacon-text {
+  color: var(--color-priest);
+}
+
+.page-048-commemoration .priest-text {
+  color: var(--color-prayer);
+}
+
+/* ---------- Cherubim Hymn (second part) 3-col grid ---------------- */
+.page-048-bottom-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 1.15fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+
+.page-048-bottom-grid .col-left,
+.page-048-bottom-grid .col-center,
+.page-048-bottom-grid .col-right {
+  padding-top: 0;
+}
+
+.page-048-second-part-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-048-second-part-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-048-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-people-response .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-048-bottom-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-bottom-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-048-bottom-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-048-bottom-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-048-bottom-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* ---------- History of the Great Entrance commentary ------------- */
+.page-048-history-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-048-history-body p {
+  margin: 0;
+}
+
+/* ---------- From css/page-049.css ---------- */
+
+/* ==========================================================================
+   Page 49 — "The Great Entrance" commentary
+   --------------------------------------------------------------------------
+   1. Section title + pullout-right + drop-cap paragraph (footnote 10)
+   2. Full-width fresco image placeholder + caption
+   3. Drop-cap paragraph on the Cherubic Hymn (footnotes 11–12)
+   4. QUESTIONS box
+   ========================================================================== */
+
+.commentary .page-049-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+/* ---------- Right pullout beside the opening paragraph ------------ */
+.commentary .page-049-pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-049-pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-049-opening-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+}
+
+/* ---------- Full-width fresco image + caption -------------------- */
+.page-049-image {
+  clear: both;
+  margin: 10px 0 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.page-049-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-049-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-049-image figcaption em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.page-049-cherubim-para {
+  margin-top: 4px;
+}
+
+/* ---------- From css/page-050.css ---------- */
+
+/* ==========================================================================
+   Page 50 — The Cherubim Hymn (2nd part continued) / Placing the Gifts
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col grid (People hymn continued | priest troparia & dialogue |
+        placing-the-gifts rubrics)
+     2. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     3. "Symbolic Meaning of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+
+/* ---------- Cherubim Hymn (second part continued) 3-col grid -------- */
+.page-050-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.38fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-050-main-grid .col-left,
+.page-050-main-grid .col-center,
+.page-050-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-050-section-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.page-050-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-050-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+}
+
+.page-050-people-response .speaker {
+  color: var(--color-priest);
+}
+
+.page-050-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-050-main-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-050-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-050-liturgical-underline {
+  color: var(--color-prayer);
+  text-decoration: underline;
+}
+
+.page-050-main-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-050-main-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-050-main-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* ---------- Symbolic Meaning commentary --------------------------- */
+.page-050-symbolic-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-050-symbolic-body p {
+  margin: 0;
+}
+
+/* ---------- From css/page-051.css ---------- */
+
+/* ==========================================================================
+   Page 51 — "Symbolic Meaning of the Great Entrance" (continued)
+   --------------------------------------------------------------------------
+   1. Continuation paragraph + Christ's Entry image (floated right)
+   2. Drop-cap paragraph (Jerusalem / Cherubim Hymn symbolism)
+   3. Placing-the-Gifts symbolism + Joseph image (floated left)
+   4. QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Christ's Entry into Jerusalem (floated right) ----------- */
+.page-051-entry-image {
+  float: right;
+  width: 260px;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+
+.page-051-entry-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-051-entry-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+/* ---------- Joseph takes down the Body (floated left) ------------- */
+.page-051-joseph-image {
+  float: left;
+  width: 250px;
+  margin: 4px 16px 8px 0;
+  text-align: center;
+}
+
+.page-051-joseph-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-051-joseph-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-051-symbolism-para {
+  margin-top: 4px;
+}
+
+.page-051-liturgy-quote {
+  color: var(--color-prayer);
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+}

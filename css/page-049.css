@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Page 49 — "The Great Entrance" commentary
+   --------------------------------------------------------------------------
+   1. Section title + pullout-right + drop-cap paragraph (footnote 10)
+   2. Full-width fresco image placeholder + caption
+   3. Drop-cap paragraph on the Cherubic Hymn (footnotes 11–12)
+   4. QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="49"] {
+  padding-bottom: 60px;
+}
+
+.commentary .page-049-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+/* ---------- Right pullout beside the opening paragraph ------------ */
+.commentary .page-049-pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-049-pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-049-opening-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+}
+
+/* ---------- Full-width fresco image + caption -------------------- */
+.page-049-image {
+  clear: both;
+  margin: 10px 0 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.page-049-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-049-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-049-image figcaption em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.page-049-cherubim-para {
+  margin-top: 4px;
+}

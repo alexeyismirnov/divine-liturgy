@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Page 51 — "Symbolic Meaning of the Great Entrance" (continued)
+   --------------------------------------------------------------------------
+   1. Continuation paragraph + Christ's Entry image (floated right)
+   2. Drop-cap paragraph (Jerusalem / Cherubim Hymn symbolism)
+   3. Placing-the-Gifts symbolism + Joseph image (floated left)
+   4. QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="51"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Christ's Entry into Jerusalem (floated right) ----------- */
+.page-051-entry-image {
+  float: right;
+  width: 260px;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+
+.page-051-entry-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-051-entry-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+/* ---------- Joseph takes down the Body (floated left) ------------- */
+.page-051-joseph-image {
+  float: left;
+  width: 250px;
+  margin: 4px 16px 8px 0;
+  text-align: center;
+}
+
+.page-051-joseph-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-051-joseph-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-051-symbolism-para {
+  margin-top: 4px;
+}
+
+.page-051-liturgy-quote {
+  color: var(--color-prayer);
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+}

@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Page 48 — The Cherubim Hymn (continued) / The Great Entrance
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 2-col top grid (People hymn continued | aer/diskos/chalice rubrics)
+     2. "The Great Entrance" — deacon commemoration + three priest petitions
+     3. 3-col grid (Cherubim Hymn 2nd part / People | Deacon/Priest exchange |
+        Holy Doors rubrics)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "History of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+
+.book-page[data-page-number="48"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Cherubim Hymn (continued) 2-col top grid -------------- */
+.page-048-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 1.1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-048-top-grid .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-048-top-grid .col-right {
+  padding: 4px 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-048-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-048-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-048-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-people-hymn .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-048-people-hymn u {
+  text-decoration: underline;
+}
+
+.page-048-rubric-note {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.page-048-rubric-note:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- The Great Entrance commemorations -------------------- */
+.page-048-great-entrance-title {
+  font-size: 22px;
+  margin: 12px 0 8px;
+}
+
+.page-048-commemoration {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-commemoration .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-commemoration .deacon-text {
+  color: var(--color-priest);
+}
+
+.page-048-commemoration .priest-text {
+  color: var(--color-prayer);
+}
+
+/* ---------- Cherubim Hymn (second part) 3-col grid ---------------- */
+.page-048-bottom-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 1.15fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+
+.page-048-bottom-grid .col-left,
+.page-048-bottom-grid .col-center,
+.page-048-bottom-grid .col-right {
+  padding-top: 0;
+}
+
+.page-048-second-part-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.page-048-second-part-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.page-048-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-people-response .speaker {
+  color: var(--color-priest);
+}
+
+.page-048-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-048-bottom-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-048-bottom-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-048-bottom-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-048-bottom-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-048-bottom-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+/* ---------- History of the Great Entrance commentary ------------- */
+.page-048-history-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+
+.page-048-history-body p {
+  margin: 0;
+}
