@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Page 54 — Little Litany / Litany of Supplication / Prayer of the Prothesis
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Little Litany — 2-col grid (Deacon/People dialogue | rubric)
+     2. Litany of Supplication — full-width Deacon/People dialogue
+     3. Prayer of the Prothesis — 2-col grid (priest prayer | rubric)
+     4. Closing lines (priest ending, People: Amen)
+     5. Liturgy outline (Litanies after Great Entrance highlighted)
+   ========================================================================== */
+
+.book-page[data-page-number="54"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- 2-column grid (shared by Little Litany & Prothesis) --- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-054-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+
+.page-054-section-title:first-child {
+  margin-top: 2px;
+}
+
+.page-054-little-litany-grid .col-left p,
+.page-054-prothesis-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-054-little-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-054-prothesis-grid .col-left p {
+  margin: 0;
+}
+
+.page-054-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-054-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ---------- Color-coded dialogue ---------------------------------- */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Litany of Supplication (full-width block) ------------- */
+.page-054-supplication {
+  margin: 2px 4px 0;
+}
+
+.page-054-supplication p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-054-supplication p:last-child {
+  margin-bottom: 0;
+}
+
+.page-054-underline {
+  text-decoration: underline;
+}
+
+/* ---------- Closing dialogue after Prothesis prayer --------------- */
+.page-054-closing-lines {
+  margin-top: 8px;
+}
+
+.page-054-closing-lines .dialogue-line,
+.page-054-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}

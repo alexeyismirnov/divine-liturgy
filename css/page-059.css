@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Page 59 — The Doors / The Nicene Creed
+   --------------------------------------------------------------------------
+     1. The Doors — pullout-right + drop-cap paragraph
+     2. The Nicene Creed — history + council image | unity quote
+     3. QUESTION box
+   ========================================================================== */
+
+.book-page[data-page-number="59"] {
+  padding-bottom: 60px;
+}
+
+.page-059-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.page-059-doors-emphasis {
+  color: var(--color-cue-red);
+}
+
+/* ---------- Right pullout (Doors section) ------------------------- */
+.commentary .page-059-pullout {
+  float: right;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-059-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- Nicene Creed: image + unity quote --------------------- */
+.page-059-creed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.page-059-council-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-059-council-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-059-council-image figcaption {
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-059-unity-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}

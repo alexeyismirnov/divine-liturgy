@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Page 58 — The Doors / Nicene Creed / Story From Church History
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. The Doors — Deacon call + 2-col grid (Creed | rubrics)
+     2. Liturgy outline (Creed highlighted)
+   Commentary:
+     3. St Polycarp story + image placeholder
+   ========================================================================== */
+
+.book-page[data-page-number="58"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- 2-column liturgical grid ------------------------------ */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-058-section-title {
+  margin: 2px 0 6px;
+}
+
+.page-058-deacon-call {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-058-deacon-call-text {
+  color: var(--color-cue-red);
+}
+
+.page-058-creed-title {
+  font-size: 22px;
+  margin: 4px 0 6px;
+}
+
+.page-058-people-label {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-058-creed p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.page-058-creed p:last-child {
+  margin-bottom: 0;
+}
+
+.page-058-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-058-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-058-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-058-note-ref {
+  font-size: 13px;
+}
+
+/* ---------- Story From Church History ----------------------------- */
+.page-058-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+.page-058-history-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-058-history-grid .commentary-body p {
+  margin: 0 0 8px;
+}
+
+.page-058-polycarp-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-058-polycarp-image .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 155px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-058-polycarp-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Page 55 — Prayer of the Prothesis / Litany of Supplication
+   --------------------------------------------------------------------------
+   1. "Prayer of the Prothesis" commentary (drop cap "D")
+   2. QUESTION box (Ephesians 2.8-10)
+   3. "Litany of Supplication" — 2-col grid (angel image | commentary text)
+   4. QUESTIONS box (Matthew, Hebrews, Colossians, Revelation)
+   ========================================================================== */
+
+.book-page[data-page-number="55"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- "Litany of Supplication" 2-column grid ---------------- */
+.page-055-supplication-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-055-supplication-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-055-angel-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-055-angel-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

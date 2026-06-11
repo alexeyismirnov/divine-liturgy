@@ -1,0 +1,540 @@
+/* ==========================================================================
+   Chapter: Litanies after the Great Entrance and Confession of Faith and Love
+   --------------------------------------------------------------------------
+   Merged styles from pages 54–59. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours and
+   .preface-grid-two-col are defined once.
+   ========================================================================== */
+
+.book-chapter {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-chapter h2 {
+  margin-top: 18px;
+}
+
+.book-chapter > .chapter-title {
+  margin-bottom: 12px;
+}
+
+.book-chapter .commentary > .section-title:first-child,
+.book-chapter .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+.book-chapter .col-center > h2,
+.book-chapter .col-left > h2 {
+  margin-top: 4px;
+}
+
+/* ---------- Shared 2-column liturgical grid --------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+/* ---------- Shared dialogue colours ----------------------------- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- From css/page-054.css ---------- */
+
+/* ==========================================================================
+   Page 54 — Little Litany / Litany of Supplication / Prayer of the Prothesis
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Little Litany — 2-col grid (Deacon/People dialogue | rubric)
+     2. Litany of Supplication — full-width Deacon/People dialogue
+     3. Prayer of the Prothesis — 2-col grid (priest prayer | rubric)
+     4. Closing lines (priest ending, People: Amen)
+     5. Liturgy outline (Litanies after Great Entrance highlighted)
+   ========================================================================== */
+
+.page-054-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+
+.page-054-section-title:first-child {
+  margin-top: 2px;
+}
+
+.page-054-little-litany-grid .col-left p,
+.page-054-prothesis-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-054-little-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-054-prothesis-grid .col-left p {
+  margin: 0;
+}
+
+.page-054-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-054-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ---------- Litany of Supplication (full-width block) ------------- */
+.page-054-supplication {
+  margin: 2px 4px 0;
+}
+
+.page-054-supplication p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-054-supplication p:last-child {
+  margin-bottom: 0;
+}
+
+.page-054-underline {
+  text-decoration: underline;
+}
+
+/* ---------- Closing dialogue after Prothesis prayer --------------- */
+.page-054-closing-lines {
+  margin-top: 8px;
+}
+
+.page-054-closing-lines .dialogue-line,
+.page-054-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+/* ---------- From css/page-055.css ---------- */
+
+/* ==========================================================================
+   Page 55 — Prayer of the Prothesis / Litany of Supplication
+   --------------------------------------------------------------------------
+   1. "Prayer of the Prothesis" commentary (drop cap "D")
+   2. QUESTION box (Ephesians 2.8-10)
+   3. "Litany of Supplication" — 2-col grid (angel image | commentary text)
+   4. QUESTIONS box (Matthew, Hebrews, Colossians, Revelation)
+   ========================================================================== */
+
+/* ---------- "Litany of Supplication" 2-column grid ---------------- */
+.page-055-supplication-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-055-supplication-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-055-angel-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-055-angel-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- From css/page-056.css ---------- */
+
+/* ==========================================================================
+   Page 56 — The Holy Kiss
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Opening dialogue (Priest / People)
+     2. Deacon call + 2-col grid (People + Priest prayers | rubrics)
+     3. Liturgy outline (Kiss of Peace highlighted)
+   Commentary:
+     4. 2-col grid (commentary text | St Peter and St Paul icon)
+   ========================================================================== */
+
+/* ---------- Opening dialogue -------------------------------------- */
+.page-056-opening {
+  margin-bottom: 4px;
+}
+
+.page-056-opening .dialogue-line {
+  margin: 2px 4px;
+}
+
+.page-056-section-title {
+  margin: 4px 0 6px;
+}
+
+.page-056-deacon-call {
+  margin: 0 4px 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-056-deacon-call-text {
+  color: var(--color-cue-red);
+}
+
+/* ---------- 2-column main grid ---------------------------------- */
+.page-056-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-056-dialogue-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.52fr) minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: start;
+  padding: 0 4px;
+}
+
+.page-056-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-056-people-hymn .speaker {
+  color: var(--color-priest);
+}
+
+.page-056-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-056-priest-lines p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-056-priest-lines p:last-child {
+  margin-bottom: 0;
+}
+
+.page-056-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-056-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-056-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary 2-column grid ------------------------------ */
+.page-056-commentary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-056-commentary-grid .commentary-body p {
+  margin: 0 0 8px;
+}
+
+.page-056-scripture-quote {
+  margin: 8px 12px 10px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-056-peter-paul-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-056-peter-paul-image .figure-image {
+  display: block;
+  width: 72%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-056-peter-paul-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+/* ---------- From css/page-057.css ---------- */
+
+/* ==========================================================================
+   Page 57 — The Holy Kiss (continued)
+   --------------------------------------------------------------------------
+     1. Continuation paragraph from page 56
+     2. QUESTION box (1 John 4.20-21)
+     3. Commentary: drop-cap + Didache pullout + second paragraph
+     4. QUESTIONS box (John 13 / John 17)
+   ========================================================================== */
+
+.page-057-continuation {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- Didache pullout (left float) -------------------------- */
+.segment-057 .commentary .page-057-didache-pullout {
+  float: left;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+
+.segment-057 .commentary .page-057-didache-pullout p {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.segment-057 .commentary .page-057-didache-pullout p em {
+  font-style: italic;
+}
+
+.page-057-pullout-attribution {
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+}
+
+/* ---------- From css/page-058.css ---------- */
+
+/* ==========================================================================
+   Page 58 — The Doors / Nicene Creed / Story From Church History
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. The Doors — Deacon call + 2-col grid (Creed | rubrics)
+     2. Liturgy outline (Creed highlighted)
+   Commentary:
+     3. St Polycarp story + image placeholder
+   ========================================================================== */
+
+.page-058-section-title {
+  margin: 2px 0 6px;
+}
+
+.page-058-deacon-call {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-058-deacon-call-text {
+  color: var(--color-cue-red);
+}
+
+.page-058-creed-title {
+  font-size: 22px;
+  margin: 4px 0 6px;
+}
+
+.page-058-people-label {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-058-creed p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.page-058-creed p:last-child {
+  margin-bottom: 0;
+}
+
+.page-058-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-058-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-058-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-058-note-ref {
+  font-size: 13px;
+}
+
+/* ---------- Story From Church History ----------------------------- */
+.page-058-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+.page-058-history-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-058-history-grid .commentary-body p {
+  margin: 0 0 8px;
+}
+
+.page-058-polycarp-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-058-polycarp-image .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 155px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-058-polycarp-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+/* ---------- From css/page-059.css ---------- */
+
+/* ==========================================================================
+   Page 59 — The Doors / The Nicene Creed
+   --------------------------------------------------------------------------
+     1. The Doors — pullout-right + drop-cap paragraph
+     2. The Nicene Creed — history + council image | unity quote
+     3. QUESTION box
+   ========================================================================== */
+
+.page-059-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.page-059-doors-emphasis {
+  color: var(--color-cue-red);
+}
+
+/* ---------- Right pullout (Doors section) ------------------------- */
+.segment-059 .commentary .page-059-pullout {
+  float: right;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+
+.segment-059 .commentary .page-059-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- Nicene Creed: image + unity quote --------------------- */
+.page-059-creed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.page-059-council-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-059-council-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-059-council-image figcaption {
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-059-unity-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+

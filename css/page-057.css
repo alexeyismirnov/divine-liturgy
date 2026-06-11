@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Page 57 — The Holy Kiss (continued)
+   --------------------------------------------------------------------------
+     1. Continuation paragraph from page 56
+     2. QUESTION box (1 John 4.20-21)
+     3. Commentary: drop-cap + Didache pullout + second paragraph
+     4. QUESTIONS box (John 13 / John 17)
+   ========================================================================== */
+
+.book-page[data-page-number="57"] {
+  padding-bottom: 60px;
+}
+
+.page-057-continuation {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- Didache pullout (left float) -------------------------- */
+.commentary .page-057-didache-pullout {
+  float: left;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+
+.commentary .page-057-didache-pullout p {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.commentary .page-057-didache-pullout p em {
+  font-style: italic;
+}
+
+.page-057-pullout-attribution {
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+}
