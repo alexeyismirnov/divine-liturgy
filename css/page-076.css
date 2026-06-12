@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Page 76 — Opening Greeting / Litany Before the Lord's Prayer /
+              Prayer of Preparation
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title "Opening Greeting" + "Blessing the People"
+     2. 2-col grid: Priest/People blessing (left) | rubrics (right)
+     3. Full-width litany title + opening petitions (5 exchanges)
+     4. 2-col grid: Litany continued (left) | Prayer of Preparation (right)
+     5. Liturgy of the Faithful outline (Litanies highlighted)
+   ========================================================================== */
+
+.book-page[data-page-number="76"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Shared dialogue colours -------------------------------- */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-076-underline {
+  text-decoration: underline;
+}
+
+.page-076-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+
+.page-076-section-title:first-child {
+  margin-top: 2px;
+}
+
+/* ---------- Blessing block (2-column) ----------------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-076-blessing-grid .col-left p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-076-blessing-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-076-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-076-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-076-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Full-width litany opening ----------------------------- */
+.page-076-litany-title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.page-076-litany-opening {
+  margin: 2px 4px 0;
+}
+
+.page-076-litany-opening p,
+.page-076-litany-col p {
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-076-litany-opening p:last-child,
+.page-076-litany-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Litany continued / preparation (2-column) ------------- */
+.page-076-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr) 16px minmax(0, 0.95fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 0;
+}
+
+.page-076-litany-col {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 8px 0 4px;
+}
+
+.page-076-divider {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+}
+
+.page-076-preparation-col {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 4px 0 8px;
+}
+
+.page-076-preparation-title {
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* ---------- Prayer of Preparation inner grid ---------------------- */
+.page-076-preparation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr) 16px minmax(0, 0.55fr);
+  align-items: start;
+  column-gap: 0;
+}
+
+.page-076-preparation-prayer {
+  min-width: 0;
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: var(--color-prayer);
+}
+
+.page-076-preparation-prayer .prayer-text {
+  margin: 0;
+}
+
+.page-076-preparation-rubric {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.page-076-preparation-rubric .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}

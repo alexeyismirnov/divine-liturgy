@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Page 81 — Bowing the Head / The Elevation (commentary & questions)
+   --------------------------------------------------------------------------
+   1. Bowing the Head — early Christian icon floated right + drop-cap text
+   2. QUESTION box (Acts, I Corinthians, I Peter)
+   3. The Elevation — drop-cap quote, liturgy colours, Cabasilas pullout
+   4. QUESTIONS box (I Corinthians, Colossians, I Peter)
+   ========================================================================== */
+
+.book-page[data-page-number="81"] {
+  padding-bottom: 60px;
+}
+
+.commentary .page-081-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+/* ---------- Bowing the Head: 2-col (title + text | image) --------- */
+.page-081-inclination-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-081-inclination-body .page-081-section-title {
+  margin-top: 0;
+}
+
+.page-081-inclination-body p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-081-early-christian {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-081-early-christian .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 84px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+
+/* ---------- The Elevation: liturgy colours ---------------------- */
+.commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-081-cabasilas-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  column-gap: 28px;
+  align-items: start;
+}
+
+.page-081-cabasilas-grid > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-081-cabasilas-pullout {
+  margin: 0;
+  padding: 0;
+}
+
+.page-081-cabasilas-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.commentary > p {
+  text-align: justify;
+}

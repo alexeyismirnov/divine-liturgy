@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Page 79 — The Lord's Prayer (commentary continued)
+   --------------------------------------------------------------------------
+   1. Chrysostom quote continuation (from page 78)
+   2. "The Lord's Prayer" title + Christ icon floated left
+   3. Full-width commentary paragraphs + liturgy quote in blue
+   4. QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="79"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Continuation from page 78 ----------------------------- */
+.page-079-continuation {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- Section title ----------------------------------------- */
+.commentary .page-079-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+/* ---------- Opening: Christ icon + first two paragraphs ----------- */
+.page-079-opening {
+  margin-top: 4px;
+}
+
+.page-079-opening::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-079-opening > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-079-opening-second {
+  margin-top: 8px !important;
+  text-indent: 1.5em;
+}
+
+.page-079-christ {
+  float: left;
+  width: 25%;
+  margin: 0 16px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-079-christ .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+
+.page-079-christ figcaption {
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+/* ---------- Full-width commentary paragraphs -------------------- */
+.commentary > p {
+  text-align: justify;
+  margin-top: 8px;
+}

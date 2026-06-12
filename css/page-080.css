@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Page 80 — Greeting / Inclination / Elevation / Deacon Orar
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Greeting dialogue
+     2. Bowing the Head — 2-col (Deacon | silent-prayer rubric)
+     3. Inclination Prayer — 3-col grid + aloud continuation
+     4. Elevation Prayer — 3-col grid
+     5. Holy Things exchange — 2-col (dialogue | elevation rubrics)
+     6. Liturgy outline (Elevation highlighted)
+   Commentary:
+     7. Seraph floated right + drop-cap text
+   ========================================================================== */
+
+.book-page[data-page-number="80"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Shared dialogue colours -------------------------------- */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-080-section-title {
+  font-size: 20px;
+  margin: 8px 0 4px;
+}
+
+/* ---------- Greeting ------------------------------------------------ */
+.page-080-greeting .dialogue-line {
+  margin: 2px 4px;
+}
+
+/* ---------- Shared column widths (right vdivider alignment) -------- */
+.book-page[data-page-number="80"] .liturgical-box {
+  --p80-people: 0.75fr;
+  --p80-center: 2.1fr;
+  --p80-side: 0.85fr;
+  --p80-main: 2.85fr; /* people + center — keeps right vdivider aligned */
+  --p80-gap: 16px;
+}
+
+/* ---------- 2-column grids (main | rubric) ------------------------ */
+.book-page[data-page-number="80"] .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-main)) var(--p80-gap) minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-080-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-080-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-080-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-080-bowing-grid .col-left p,
+.page-080-holy-things-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-080-bowing-grid .col-left p:last-child,
+.page-080-holy-things-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 3-column inclination / elevation grids -------------- */
+.page-080-inclination-grid,
+.page-080-elevation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-people)) var(--p80-gap)
+    minmax(0, var(--p80-center)) var(--p80-gap)
+    minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-080-people-line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-080-people-line .speaker {
+  color: var(--color-priest);
+}
+
+.page-080-inclination-grid .prayer-text,
+.page-080-elevation-grid .prayer-text {
+  margin: 0;
+  color: var(--color-prayer);
+}
+
+.page-080-cleanse-line {
+  margin-top: 8px !important;
+}
+
+.page-080-times-note {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.page-080-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-080-holy-things-grid {
+  margin-top: 8px;
+}
+
+/* ---------- Commentary: seraph floated right ---------------------- */
+.commentary .page-080-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.page-080-seraph {
+  width: 100px;
+  margin: 4px 0 6px 16px;
+}
+
+.page-080-seraph .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary > p {
+  text-align: justify;
+}

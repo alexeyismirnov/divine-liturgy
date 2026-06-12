@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Page 77 — The Litany Before the Lord's Prayer / The Prayer of Preparation
+   --------------------------------------------------------------------------
+   1. "The Litany Before the Lord's Prayer" — drop cap, liturgical quote,
+      2-col grid (pullout left | body right), QUESTION box
+   2. "The Prayer of Preparation" — 2-col grid (body left | pullout right),
+      QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="77"] {
+  padding-bottom: 60px;
+}
+
+.commentary .page-077-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+.commentary > .page-077-section-title:first-child {
+  margin-top: 4px;
+}
+
+/* ---------- Litany section: pullout left, body right --------------- */
+.page-077-litany-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-077-litany-grid .commentary-body p {
+  margin: 0;
+}
+
+/* ---------- Preparation section: body left, pullout right ---------- */
+.page-077-preparation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-077-preparation-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-077-preparation-grid .pullout {
+  margin: 0;
+  padding: 4px 0 0;
+}
+
+.page-077-preparation-grid .pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
