@@ -1,0 +1,1041 @@
+/* ==========================================================================
+   Chapter: Preparation for Communion — merged styles from pages 76–84
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours defined once.
+   Page-number padding rules omitted.
+   ========================================================================== */
+
+.book-chapter {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-chapter h2 {
+  margin-top: 18px;
+}
+
+.book-chapter > .chapter-title {
+  margin-bottom: 12px;
+}
+
+.book-chapter .commentary > .section-title:first-child,
+.book-chapter .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+.book-chapter .col-center > h2,
+.book-chapter .col-left > h2 {
+  margin-top: 4px;
+}
+
+/* ---------- Shared dialogue colours ----------------------------- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+
+/* ---------- From css/page-076.css ---------- */
+/* ==========================================================================
+   Page 76 — Opening Greeting / Litany Before the Lord's Prayer /
+              Prayer of Preparation
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title "Opening Greeting" + "Blessing the People"
+     2. 2-col grid: Priest/People blessing (left) | rubrics (right)
+     3. Full-width litany title + opening petitions (5 exchanges)
+     4. 2-col grid: Litany continued (left) | Prayer of Preparation (right)
+     5. Liturgy of the Faithful outline (Litanies highlighted)
+   ========================================================================== */
+
+/* ---------- Shared dialogue colours -------------------------------- */
+.page-076-underline {
+  text-decoration: underline;
+}
+
+.page-076-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+
+.page-076-section-title:first-child {
+  margin-top: 2px;
+}
+
+/* ---------- Blessing block (2-column) ----------------------------- */
+.chapter-segment.segment-076 .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-076-blessing-grid .col-left p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-076-blessing-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-076-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-076-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-076-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Full-width litany opening ----------------------------- */
+.page-076-litany-title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.page-076-litany-opening {
+  margin: 2px 4px 0;
+}
+
+.page-076-litany-opening p,
+.page-076-litany-col p {
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-076-litany-opening p:last-child,
+.page-076-litany-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Litany continued / preparation (2-column) ------------- */
+.page-076-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr) 16px minmax(0, 0.95fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 0;
+}
+
+.page-076-litany-col {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 8px 0 4px;
+}
+
+.page-076-divider {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+}
+
+.page-076-preparation-col {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 4px 0 8px;
+}
+
+.page-076-preparation-title {
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* ---------- Prayer of Preparation inner grid ---------------------- */
+.page-076-preparation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr) 16px minmax(0, 0.55fr);
+  align-items: start;
+  column-gap: 0;
+}
+
+.page-076-preparation-prayer {
+  min-width: 0;
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: var(--color-prayer);
+}
+
+.page-076-preparation-prayer .prayer-text {
+  margin: 0;
+}
+
+.page-076-preparation-rubric {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.page-076-preparation-rubric .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+/* ---------- From css/page-077.css ---------- */
+/* ==========================================================================
+   Page 77 — The Litany Before the Lord's Prayer / The Prayer of Preparation
+   --------------------------------------------------------------------------
+   1. "The Litany Before the Lord's Prayer" — drop cap, liturgical quote,
+      2-col grid (pullout left | body right), QUESTION box
+   2. "The Prayer of Preparation" — 2-col grid (body left | pullout right),
+      QUESTIONS box
+   ========================================================================== */
+
+.commentary .page-077-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+.commentary > .page-077-section-title:first-child {
+  margin-top: 4px;
+}
+
+/* ---------- Litany section: pullout left, body right --------------- */
+.page-077-litany-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-077-litany-grid .commentary-body p {
+  margin: 0;
+}
+
+/* ---------- Preparation section: body left, pullout right ---------- */
+.page-077-preparation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-077-preparation-grid .commentary-body p {
+  margin: 0;
+}
+
+.page-077-preparation-grid .pullout {
+  margin: 0;
+  padding: 4px 0 0;
+}
+
+.page-077-preparation-grid .pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- From css/page-078.css ---------- */
+/* ==========================================================================
+   Page 78 — The Lord's Prayer / History in the Liturgy
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Priest introduction + Lord's Prayer (left-aligned) + doxology
+     2. Liturgy outline (Lord's Prayer highlighted)
+   Commentary:
+     3. St John Chrysostom icon floated left
+     4. History text with drop cap "O", pullout right, Augustine quote box
+   ========================================================================== */
+
+/* ---------- Liturgical box: Lord's Prayer ------------------------- */
+.page-078-priest-intro,
+.page-078-priest-doxology {
+  margin: 4px 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+  text-align: left;
+}
+
+.page-078-priest-intro .speaker,
+.page-078-priest-doxology .speaker {
+  color: var(--color-priest);
+}
+
+.page-078-lords-prayer-title {
+  font-size: 24px;
+  margin: 6px 0 8px;
+  text-align: center;
+}
+
+.page-078-lords-prayer {
+  margin: 0 4px 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.page-078-lords-prayer .speaker {
+  color: var(--color-priest);
+}
+
+.page-078-lords-prayer .people-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-078-liturgical .liturgy-outline {
+  text-align: left;
+}
+
+/* ---------- History commentary ------------------------------------ */
+.commentary .page-078-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+.page-078-opening {
+  margin-top: 4px;
+}
+
+.page-078-opening::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-078-opening > p {
+  margin: 0;
+}
+
+.page-078-chrysostom {
+  float: left;
+  width: 25%;
+  margin: 0 16px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-078-chrysostom .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.page-078-chrysostom figcaption {
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.page-078-augustine-box {
+  float: right;
+  width: 300px;
+  margin: 4px 0 10px 18px;
+  padding: 10px 14px 12px;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: var(--color-text);
+}
+
+.page-078-augustine-box p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-078-augustine-box .drop-cap {
+  font-size: 3em;
+}
+
+.commentary > p {
+  text-align: justify;
+}
+
+.page-078-bottom {
+  margin-top: 8px;
+}
+
+/* ---------- From css/page-079.css ---------- */
+/* ==========================================================================
+   Page 79 — The Lord's Prayer (commentary continued)
+   --------------------------------------------------------------------------
+   1. Chrysostom quote continuation (from page 78)
+   2. "The Lord's Prayer" title + Christ icon floated left
+   3. Full-width commentary paragraphs + liturgy quote in blue
+   4. QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Continuation from page 78 ----------------------------- */
+.page-079-continuation {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- Section title ----------------------------------------- */
+.commentary .page-079-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+/* ---------- Opening: Christ icon + first two paragraphs ----------- */
+.page-079-opening {
+  margin-top: 4px;
+}
+
+.page-079-opening::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-079-opening > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-079-opening-second {
+  margin-top: 8px !important;
+  text-indent: 1.5em;
+}
+
+.page-079-christ {
+  float: left;
+  width: 25%;
+  margin: 0 16px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-079-christ .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+
+.page-079-christ figcaption {
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+/* ---------- Full-width commentary paragraphs -------------------- */
+.commentary > p {
+  text-align: justify;
+  margin-top: 8px;
+}
+
+/* ---------- From css/page-080.css ---------- */
+/* ==========================================================================
+   Page 80 — Greeting / Inclination / Elevation / Deacon Orar
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Greeting dialogue
+     2. Bowing the Head — 2-col (Deacon | silent-prayer rubric)
+     3. Inclination Prayer — 3-col grid + aloud continuation
+     4. Elevation Prayer — 3-col grid
+     5. Holy Things exchange — 2-col (dialogue | elevation rubrics)
+     6. Liturgy outline (Elevation highlighted)
+   Commentary:
+     7. Seraph floated right + drop-cap text
+   ========================================================================== */
+
+/* ---------- Shared dialogue colours -------------------------------- */
+.page-080-section-title {
+  font-size: 20px;
+  margin: 8px 0 4px;
+}
+
+/* ---------- Greeting ------------------------------------------------ */
+.page-080-greeting .dialogue-line {
+  margin: 2px 4px;
+}
+
+/* ---------- Shared column widths (right vdivider alignment) -------- */
+.chapter-segment.segment-080 .liturgical-box {
+  --p80-people: 0.75fr;
+  --p80-center: 2.1fr;
+  --p80-side: 0.85fr;
+  --p80-main: 2.85fr; /* people + center — keeps right vdivider aligned */
+  --p80-gap: 16px;
+}
+
+/* ---------- 2-column grids (main | rubric) ------------------------ */
+.chapter-segment.segment-080 .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-main)) var(--p80-gap) minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-080-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-080-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-080-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-080-bowing-grid .col-left p,
+.page-080-holy-things-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-080-bowing-grid .col-left p:last-child,
+.page-080-holy-things-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 3-column inclination / elevation grids -------------- */
+.page-080-inclination-grid,
+.page-080-elevation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-people)) var(--p80-gap)
+    minmax(0, var(--p80-center)) var(--p80-gap)
+    minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-080-people-line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-080-people-line .speaker {
+  color: var(--color-priest);
+}
+
+.page-080-inclination-grid .prayer-text,
+.page-080-elevation-grid .prayer-text {
+  margin: 0;
+  color: var(--color-prayer);
+}
+
+.page-080-cleanse-line {
+  margin-top: 8px !important;
+}
+
+.page-080-times-note {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.page-080-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-080-holy-things-grid {
+  margin-top: 8px;
+}
+
+/* ---------- Commentary: seraph floated right ---------------------- */
+.commentary .page-080-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.page-080-seraph {
+  width: 100px;
+  margin: 4px 0 6px 16px;
+}
+
+.page-080-seraph .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary > p {
+  text-align: justify;
+}
+
+/* ---------- From css/page-081.css ---------- */
+/* ==========================================================================
+   Page 81 — Bowing the Head / The Elevation (commentary & questions)
+   --------------------------------------------------------------------------
+   1. Bowing the Head — early Christian icon floated right + drop-cap text
+   2. QUESTION box (Acts, I Corinthians, I Peter)
+   3. The Elevation — drop-cap quote, liturgy colours, Cabasilas pullout
+   4. QUESTIONS box (I Corinthians, Colossians, I Peter)
+   ========================================================================== */
+
+.commentary .page-081-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+/* ---------- Bowing the Head: 2-col (title + text | image) --------- */
+.page-081-inclination-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-081-inclination-body .page-081-section-title {
+  margin-top: 0;
+}
+
+.page-081-inclination-body p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-081-early-christian {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-081-early-christian .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 84px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+
+/* ---------- The Elevation: liturgy colours ---------------------- */
+.commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-081-cabasilas-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  column-gap: 28px;
+  align-items: start;
+}
+
+.page-081-cabasilas-grid > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-081-cabasilas-pullout {
+  margin: 0;
+  padding: 0;
+}
+
+.page-081-cabasilas-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.commentary > p {
+  text-align: justify;
+}
+
+/* ---------- From css/page-082.css ---------- */
+/* ==========================================================================
+   Page 82 — Manual Acts of Preparation / Breaking the Bread (Fraction)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Communion Hymn (left) | Fraction / Commingling / Zeon (center) |
+        rubrics (right)
+     2. Liturgy outline (Fraction highlighted)
+   Commentary:
+     3. Lamb-cube image floated left + paten image floated right
+   ========================================================================== */
+
+/* ---------- 3-column liturgical grid ------------------------------ */
+.page-082-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-082-main-grid .col-left,
+.page-082-main-grid .col-center,
+.page-082-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-082-communion-hymn-line {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-082-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-082-hymn-text {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-082-hymn-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-082-section-title {
+  font-size: 18px;
+  margin: 6px 0 4px;
+  text-align: center;
+}
+
+.page-082-section-title:first-child {
+  margin-top: 0;
+}
+
+.page-082-main-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-082-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.page-082-fraction-prayer {
+  text-decoration: underline;
+}
+
+.page-082-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-082-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-082-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary -------------------------------------------- */
+.commentary .page-082-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 6px;
+}
+
+.commentary .page-082-fraction-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.page-082-commentary-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-082-lamb-grid {
+  display: grid;
+  grid-template-columns: 144px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.page-082-lamb-cube {
+  margin: 0;
+  text-align: center;
+}
+
+.page-082-lamb-cube .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-082-lamb-text p {
+  margin: 0 0 8px;
+}
+
+.page-082-lamb-text p:last-child {
+  margin-bottom: 0;
+}
+
+.page-082-paten {
+  width: 220px;
+  margin: 4px 0 8px 16px;
+}
+
+.page-082-paten .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary .page-082-commentary-body p {
+  text-align: justify;
+}
+
+/* ---------- From css/page-083.css ---------- */
+/* ==========================================================================
+   Page 83 — Commingling / Questions
+   --------------------------------------------------------------------------
+   1. Top QUESTIONS box (Lamb of God / unity in Christ)
+   2. Commingling commentary + chalice image floated right
+   3. Bottom QUESTIONS box (participation in death and resurrection)
+   ========================================================================== */
+
+.page-083-liturgy-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.commentary .page-083-commingling-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.page-083-chalice {
+  width: 240px;
+  margin: 4px 0 8px 16px;
+}
+
+.page-083-chalice .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary > p {
+  text-align: justify;
+}
+
+/* ---------- From css/page-084.css ---------- */
+/* ==========================================================================
+   Page 84 — Manual Acts of Preparation (repeated) / The Rite of Warmth (Zeon)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Communion Hymn label (left) | Zeon dialogue (center) | rubrics (right)
+     2. Liturgy outline (Fraction highlighted)
+   Commentary:
+     3. Zeon history + Cabasilas quote, zeon chalice image right, Pentecost icon left
+   ========================================================================== */
+
+.page-084-repeated-note {
+  margin: 0 0 6px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.page-084-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-084-main-grid .col-left,
+.page-084-main-grid .col-center,
+.page-084-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-084-communion-hymn-line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-084-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-084-section-title {
+  font-size: 18px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.page-084-main-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-084-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.page-084-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-084-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-084-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary -------------------------------------------- */
+.commentary .page-084-zeon-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.page-084-opening-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.page-084-opening-text .drop-cap-wrap {
+  margin: 0 0 8px;
+}
+
+.page-084-cabasilas-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-084-zeon-pullout {
+  float: left;
+  width: 190px;
+  margin: 4px 16px 8px 0;
+}
+
+.page-084-cabasilas-body > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-084-zeon-chalice {
+  margin: 0;
+  text-align: center;
+}
+
+.page-084-zeon-chalice .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-084-pentecost-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-084-pentecost {
+  margin: 0;
+  text-align: center;
+}
+
+.page-084-pentecost .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-084-pentecost figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.page-084-pentecost-text p {
+  margin: 0;
+  text-align: justify;
+}

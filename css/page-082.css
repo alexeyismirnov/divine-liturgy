@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Page 82 — Manual Acts of Preparation / Breaking the Bread (Fraction)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Communion Hymn (left) | Fraction / Commingling / Zeon (center) |
+        rubrics (right)
+     2. Liturgy outline (Fraction highlighted)
+   Commentary:
+     3. Lamb-cube image floated left + paten image floated right
+   ========================================================================== */
+
+.book-page[data-page-number="82"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- 3-column liturgical grid ------------------------------ */
+.page-082-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-082-main-grid .col-left,
+.page-082-main-grid .col-center,
+.page-082-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-082-communion-hymn-line {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-082-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-082-hymn-text {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-082-hymn-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-082-section-title {
+  font-size: 18px;
+  margin: 6px 0 4px;
+  text-align: center;
+}
+
+.page-082-section-title:first-child {
+  margin-top: 0;
+}
+
+.page-082-main-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-082-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-082-fraction-prayer {
+  text-decoration: underline;
+}
+
+.page-082-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-082-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-082-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary -------------------------------------------- */
+.commentary .page-082-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 6px;
+}
+
+.commentary .page-082-fraction-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.page-082-commentary-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-082-lamb-grid {
+  display: grid;
+  grid-template-columns: 144px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.page-082-lamb-cube {
+  margin: 0;
+  text-align: center;
+}
+
+.page-082-lamb-cube .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-082-lamb-text p {
+  margin: 0 0 8px;
+}
+
+.page-082-lamb-text p:last-child {
+  margin-bottom: 0;
+}
+
+.page-082-paten {
+  width: 220px;
+  margin: 4px 0 8px 16px;
+}
+
+.page-082-paten .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary .page-082-commentary-body p {
+  text-align: justify;
+}

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Page 83 — Commingling / Questions
+   --------------------------------------------------------------------------
+   1. Top QUESTIONS box (Lamb of God / unity in Christ)
+   2. Commingling commentary + chalice image floated right
+   3. Bottom QUESTIONS box (participation in death and resurrection)
+   ========================================================================== */
+
+.book-page[data-page-number="83"] {
+  padding-bottom: 60px;
+}
+
+.page-083-liturgy-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.commentary .page-083-commingling-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.page-083-chalice {
+  width: 240px;
+  margin: 4px 0 8px 16px;
+}
+
+.page-083-chalice .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary > p {
+  text-align: justify;
+}
