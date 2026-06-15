@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Page 93 — The Prayer Before Communion / Communion of the People
+   --------------------------------------------------------------------------
+   1. Prayer Before Communion + right pullout + QUESTION box
+   2. Communion of the People: icon + caption | text + QUESTIONS sidebar
+   3. Full-width QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="93"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Section titles ----------------------------------------- */
+.commentary .page-093-prayer-title,
+.commentary .page-093-communion-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-093-communion-title {
+  margin-top: 6px;
+}
+
+/* ---------- Prayer Before Communion opening ------------------------ */
+.page-093-prayer-open {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.page-093-prayer-open::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.commentary .page-093-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-093-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-093-worthy-question {
+  margin: 10px 0 12px;
+}
+
+.page-093-worthy-phrase {
+  color: var(--color-prayer);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ---------- Communion section: text + sidebar -------------------- */
+.page-093-communion-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-093-communion-main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-093-hades {
+  float: left;
+  width: 200px;
+  margin: 4px 14px 6px 0;
+  text-align: center;
+}
+
+.page-093-hades-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-093-icon-caption {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+.page-093-icon-caption .citation {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page-093-communion-main > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-093-eternity-questions {
+  margin: 0;
+}
+
+.page-093-healing-questions {
+  margin: 0;
+}
+
+.page-093-healing-phrase {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}

@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Page 91 — For the Remission of Sins / Draw Near!
+   --------------------------------------------------------------------------
+   1. Centered section title + full-width intro (drop cap "W")
+   2. 2-column grid: Forerunner image | merged text column
+   3. Full-width QUESTIONS box
+   4. Draw Near commentary (full width)
+   ========================================================================== */
+
+.book-page[data-page-number="91"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Section titles ----------------------------------------- */
+.commentary .page-091-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-091-draw-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+  color: var(--color-priest);
+}
+
+/* ---------- Intro paragraph ---------------------------------------- */
+.page-091-intro {
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.page-091-questions {
+  margin: 12px 0;
+}
+
+/* ---------- 2-column top grid: image | text ---------------------- */
+.page-091-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.page-091-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.commentary .page-091-pullout {
+  margin: 0;
+  padding: 0;
+}
+
+.commentary .page-091-pullout > p:first-child {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-091-attribution {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.page-091-peter-quote {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-091-peter-quote em {
+  font-style: italic;
+}
+
+.page-091-peter-quote .citation {
+  display: block;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+/* ---------- St John the Forerunner image (left col) ---------------- */
+.page-091-forerunner-box {
+  margin: 0;
+  padding: 0;
+}
+
+.page-091-forerunner-figure {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-091-forerunner-image {
+  display: block;
+  width: 100%;
+  max-width: 108px;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.page-091-forerunner-figure figcaption {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.25;
+}
+
+.page-091-forerunner-quote {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.page-091-forerunner-quote .citation {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ---------- Draw Near body + bold closing -------------------------- */
+.page-091-draw-body {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-091-closing {
+  margin: 4px 24px 0 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* ---------- Deacon prompt at bottom of QUESTIONS box ------------- */
+.page-091-deacon-prompt {
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.page-091-deacon-quote {
+  color: var(--color-priest);
+  font-style: italic;
+  font-weight: 700;
+}

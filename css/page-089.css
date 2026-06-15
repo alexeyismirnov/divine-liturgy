@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Page 89 — Forgive Me / Sinners, of whom I am first
+   --------------------------------------------------------------------------
+   1. "Forgive Me" commentary with drop cap
+   2. QUESTIONS box
+   3. "Sinners, of whom I am first" + Timothy quote + St Paul icon (left)
+      + Chrysostom commentary with pullout (right)
+   4. QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="89"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Centered section titles -------------------------------- */
+.commentary .page-089-forgive-title,
+.commentary .page-089-sinners-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-089-sinners-title {
+  margin-top: 6px;
+}
+
+/* ---------- Timothy quote ----------------------------------------- */
+.page-089-timothy-quote {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- St Paul icon + commentary body ------------------------ */
+.page-089-paul-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-089-paul {
+  float: left;
+  width: 200px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+
+.page-089-paul .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-089-paul figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.commentary .page-089-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-089-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-089-paul-body p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-089-paul-body p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Page 97 — The Litany and Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   1. QUESTIONS box (meditation on God all day)
+   2. 2-column layout: Schmemann commentary + One Leper Returns sidebar
+   3. QUESTION box (thanksgiving in prayer)
+   ========================================================================== */
+
+.book-page[data-page-number="97"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Section title -------------------------------------------- */
+.commentary .page-097-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+/* ---------- QUESTION boxes (header top-right) ---------------------- */
+.question-box-097 {
+  position: relative;
+  margin: 0 0 12px;
+}
+
+.box-header-097 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.question-prompt-097 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.question-box-097 > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-097-top-questions .question-prompt-097:first-of-type {
+  margin-top: 0;
+}
+
+.page-097-thanks-question {
+  margin-top: 12px;
+}
+
+/* ---------- 2-column: commentary | leper sidebar ------------------- */
+.page-097-thanksgiving-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.page-097-main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.commentary .page-097-pullout {
+  float: left;
+  width: 200px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+
+.commentary .page-097-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-097-main > .drop-cap-wrap,
+.page-097-main > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-097-main > p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- One Leper Returns sidebar ------------------------------ */
+.page-097-leper-box {
+  margin: 0;
+  border: 1.5px solid #4a6a9a;
+  background: #fbf9f1;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.page-097-leper-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-097-leper-body {
+  padding: 10px 12px 12px;
+}
+
+.page-097-leper-title {
+  margin: 0 0 8px;
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-heading);
+}
+
+.page-097-leper-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: justify;
+  color: var(--color-text);
+}
+
+.page-097-leper-text .drop-cap {
+  font-size: 2.4em;
+}
+
+.page-097-leper-text .citation {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-style: normal;
+}

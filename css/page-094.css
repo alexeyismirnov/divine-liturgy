@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Page 94 — After Communion / Hymns of the Resurrection
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title + Hymns of the Resurrection
+     2. 3-column grid: People | Deacon hymns | Rubrics
+     3. Full-width Priest blessing + People response
+     4. 3-column grid: People | Priest prayers | Rubrics (continued)
+     5. Full-width Priest doxology + People Amen
+     4. Liturgy outline (Conclusion highlighted)
+   Commentary:
+     5. After Communion teaching | QUESTION sidebar
+   ========================================================================== */
+
+.book-page[data-page-number="94"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Liturgical titles -------------------------------------- */
+.liturgical-box > .chapter-title {
+  margin: 4px 0 2px;
+}
+
+.page-094-hymns-title {
+  text-align: center;
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+/* ---------- 3-column liturgy grid ---------------------------------- */
+.page-094-liturgy-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-094-col-left {
+  padding-top: 0;
+}
+
+.page-094-col-center {
+  padding: 0 10px;
+}
+
+.page-094-col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-094-col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-094-hymn-line {
+  margin: 0 0 8px;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-094-col-right {
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.page-094-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-094-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-094-fullwidth-prayer {
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ---------- Lower 3-column grid: People | Priest | Rubrics -------- */
+.page-094-lower-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-094-lower-grid .col-left {
+  padding-top: 0;
+}
+
+.page-094-lower-grid .col-center {
+  padding: 0 10px;
+}
+
+.page-094-lower-grid .col-right {
+  padding-top: 0;
+}
+
+.liturgical-box .prayer-continuation {
+  margin: 10px 4px 6px;
+}
+
+.liturgical-box .dialogue-line {
+  margin: 0 4px 10px;
+}
+
+.liturgical-box .dialogue-line .people-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Commentary: After Communion -------------------------- */
+.page-094-after-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.commentary .page-094-after-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.page-094-after-body > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-094-after-body .citation {
+  display: block;
+  margin-top: 4px;
+}
+
+.page-094-question {
+  margin: 0;
+}

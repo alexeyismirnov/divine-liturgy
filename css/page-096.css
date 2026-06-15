@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Page 96 — Litany of Thanksgiving / Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Upper 2-column: hymn + litany|prayer | upper rubrics
+     2. Full-width priest doxology
+     3. Lower 2-column: dismissal dialogue | lower rubrics
+   Commentary:
+     4. That All Day Long We May Meditate Upon Thy Righteousness — text + pullout
+   ========================================================================== */
+
+.book-page[data-page-number="96"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Upper 2-column: main | upper rubrics ------------------- */
+.page-096-upper-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-096-upper-main {
+  min-width: 0;
+}
+
+.page-096-upper-vdivider {
+  align-self: stretch;
+}
+
+.page-096-upper-rubrics {
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+
+.page-096-upper-rubrics p,
+.page-096-lower-rubrics p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-096-upper-rubrics p:last-child,
+.page-096-lower-rubrics p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Inner 2-column: Litany | Prayer of Thanksgiving -------- */
+.page-096-liturgy-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) 16px minmax(0, 1.05fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 6px;
+}
+
+.page-096-col-left {
+  padding-top: 0;
+}
+
+.page-096-col-left p {
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-096-col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-096-people-hymn {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-096-people-hymn .people-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-096-holiness-phrase {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-096-litany-title,
+.page-096-thanks-title {
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.page-096-thanks-title {
+  margin-top: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-096-col-center {
+  padding: 0 10px;
+}
+
+.page-096-col-center .prayer-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+
+/* ---------- Full-width priest doxology ----------------------------- */
+.page-096-doxology {
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+
+.page-096-doxology .speaker {
+  color: var(--color-priest);
+}
+
+/* ---------- Lower 2-column: dismissal | lower rubrics -------------- */
+.page-096-lower-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-096-lower-left p {
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-096-lower-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-096-lower-rubrics {
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+
+/* ---------- Commentary --------------------------------------------- */
+.commentary .page-096-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+  color: var(--color-question-header);
+}
+
+.page-096-commentary-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-096-commentary-body > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+.commentary .page-096-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-096-pullout p {
+  font-size: 17px;
+  line-height: 1.35;
+}

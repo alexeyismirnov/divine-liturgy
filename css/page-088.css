@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Page 88 — Communion of the Clergy / Prayer Before Communion
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Clergy communion + pre-communion prayer (left) | rubrics (right)
+     2. Liturgy outline (Communion highlighted)
+   ========================================================================== */
+
+:root {
+  --color-cue-yellow: #d4a017;
+}
+.cue-yellow { color: var(--color-cue-yellow); }
+
+.book-page[data-page-number="88"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- 2-column liturgical grid ------------------------------ */
+.page-088-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-088-main-grid .col-left,
+.page-088-main-grid .col-right {
+  padding-top: 0;
+}
+
+.page-088-section-title {
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.page-088-section-title:not(:first-child) {
+  margin-top: 10px;
+}
+
+.page-088-section-title + p {
+  margin-bottom: 8px;
+}
+
+.page-088-main-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-088-main-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-088-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-088-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-088-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-088-indented-rubric {
+  padding-left: 14px;
+}
