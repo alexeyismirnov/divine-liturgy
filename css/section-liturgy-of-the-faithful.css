@@ -1,0 +1,4978 @@
+/* ==========================================================================
+   Section: The Liturgy of the Faithful — merged from all chapters
+   --------------------------------------------------------------------------
+   Each chapter's CSS is scoped under .chapter-part.part-<slug> to avoid clashes.
+   Shared dialogue colours and section layout rules are defined once.
+   ========================================================================== */
+
+.book-section {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-section h2 {
+  margin-top: 18px;
+}
+
+.book-section .chapter-part > .chapter-title {
+  margin-bottom: 12px;
+}
+
+.book-section .chapter-part .commentary > .section-title:first-child,
+.book-section .chapter-part .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+.book-section .chapter-part .col-center > h2,
+.book-section .chapter-part .col-left > h2,
+.book-section .chapter-part .preface-grid-hymn .col-left > h2,
+.book-section .chapter-part .preface-grid-hymn-2col .col-left > h2 {
+  margin-top: 4px;
+}
+
+.book-section .chapter-part + .chapter-part {
+  margin-top: 28px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(74, 58, 118, 0.25);
+}
+
+/* ---------- Shared dialogue colours ----------------------------- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+:root {
+  --color-cue-yellow: #d4a017;
+}
+.cue-yellow { color: var(--color-cue-yellow); }
+
+
+
+/* ---------- From css/chapter-offertory.css ---------- */
+/* ==========================================================================
+   Chapter: The Offertory — merged styles from pages 44–51
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Duplicate global selectors (deacon-text,
+   priest-text, people-response) are defined once. Page-number padding
+   rules are omitted. Segment wrappers are invisible (no page-break styling).
+   ========================================================================== */
+/* ---------- Shared dialogue colours (from individual page CSS) ----- */
+/* ---------- From css/page-044.css ---------- */
+/* ==========================================================================
+   Page 44 — "The Liturgy of the Faithful / The Offertory" specific styles
+   --------------------------------------------------------------------------
+   The page is a single liturgical box containing:
+     1. Chapter title + "The Offertory"
+     2. First Prayer of the Faithful — 3-col grid (Deacon/People |
+        Priest prayer | stage direction)
+     3. First-prayer closing lines (priest ending, People, Deacon, People)
+     4. Second Prayer of the Faithful — 2-col grid (deacon petitions |
+        Priest prayer), with "(if a deacon is serving:)" in the left column
+     5. Second-prayer closing lines (priest ending, People: Amen)
+     6. Liturgy of the Faithful outline (Two Litanies highlighted)
+   ========================================================================== */
+/* ---------- 3-column grid for the First Prayer --------------------
+   Narrow left column for the Deacon/People dialogue, wide center for
+   the priest's silent prayer, narrow right for the stage direction. */
+.chapter-part.part-offertory .page-044-first-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-044-first-prayer-grid .col-left p {
+  margin: 0 0 10px;
+}
+.chapter-part.part-offertory .page-044-first-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+}
+.chapter-part.part-offertory .page-044-first-prayer-grid .col-right {
+  justify-content: flex-start;
+}
+/* ---------- 2-column grid for the Second Prayer -------------------
+   Left column holds the deacon petitions (when a deacon is serving);
+   right column holds the priest's silent prayer. */
+.chapter-part.part-offertory .page-044-second-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1.35fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-044-second-prayer-grid .col-left {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-044-second-prayer-grid .col-left p {
+  margin: 0 0 8px;
+}
+.chapter-part.part-offertory .page-044-second-prayer-grid .col-right {
+  justify-content: flex-start;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+}
+.chapter-part.part-offertory .page-044-second-prayer-grid .col-right p {
+  margin: 0;
+  text-align: left;
+}
+/* "(if a deacon is serving:)" — italic note above the deacon petitions */
+.chapter-part.part-offertory .page-044-deacon-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-priest);
+  margin: 0 0 8px;
+}
+/* ---------- Color-coded dialogue (matching the book scan) ---------- */
+/* ---------- Section titles inside the liturgical box -------------- */
+.chapter-part.part-offertory .page-044-prayer-title {
+  font-size: 22px;
+  margin: 10px 0 4px;
+}
+.chapter-part.part-offertory .page-044-offertory-title {
+  margin: 2px 0 8px;
+}
+/* ---------- Closing dialogue block after each prayer -------------- */
+.chapter-part.part-offertory .page-044-closing-lines {
+  margin-top: 8px;
+}
+.chapter-part.part-offertory .page-044-closing-lines .dialogue-line, .chapter-part.part-offertory .page-044-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+/* ---------- From css/page-045.css ---------- */
+/* ==========================================================================
+   Page 45 — "The Liturgy of the Faithful" commentary (The Offertory)
+   --------------------------------------------------------------------------
+   1. Chapter title + "The Offertory" section with left pullout + drop cap
+   2. "Prayers of the Faithful" — 2-col grid (commentary | fresco image)
+   3. QUESTIONS box
+   ========================================================================== */
+/* ---------- Chapter title at top of commentary page -------------- */
+.chapter-part.part-offertory .page-045-chapter-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  letter-spacing: 0.02em;
+  margin: 4px 0 6px;
+}
+.chapter-part.part-offertory .commentary .page-045-offertory-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 2px 0 8px;
+}
+/* ---------- Left pullout for "The Offertory" section -------------- */
+.chapter-part.part-offertory .page-045-offertory .pullout-left {
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+.chapter-part.part-offertory .page-045-offertory .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+/* ---------- "Prayers of the Faithful" 2-column grid -------------- */
+.chapter-part.part-offertory .page-045-prayers-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-offertory .page-045-prayers-grid .commentary-body p {
+  margin: 0;
+}
+/* Fresco image floated in the right column */
+.chapter-part.part-offertory .page-045-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-offertory .page-045-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-offertory .page-045-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+/* ---------- From css/page-046.css ---------- */
+/* ==========================================================================
+   Page 46 — The Cherubim Hymn / Prayer of the Cherubim Hymn / The Aer
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col top grid (People hymn | Priest prayer | deacon censing rubric)
+     2. Full-width prayer continuation
+     3. 2-col grid (dialogue | rubrics with colored cues)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "The Aer" — text + image placeholder
+   ========================================================================== */
+/* ---------- 3-column top grid ------------------------------------ */
+.chapter-part.part-offertory .page-046-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.85fr) 16px minmax(0, 1.55fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-046-top-grid .col-left, .chapter-part.part-offertory .page-046-top-grid .col-center, .chapter-part.part-offertory .page-046-top-grid .col-right {
+  padding-top: 0;
+}
+.chapter-part.part-offertory .page-046-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+.chapter-part.part-offertory .page-046-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+/* People hymn — green text with left accent bar */
+.chapter-part.part-offertory .page-046-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-046-people-hymn .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-046-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-offertory .page-046-people-hymn u {
+  text-decoration: underline;
+}
+.chapter-part.part-offertory .page-046-top-grid .col-center .prayer-text {
+  margin: 0;
+  text-align: left;
+}
+/* Deacon censing rubric — narrow right column */
+.chapter-part.part-offertory .page-046-censing-note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+/* ---------- Dialogue / rubrics 2-column grid --------------------- */
+.chapter-part.part-offertory .page-046-dialogue-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+.chapter-part.part-offertory .page-046-dialogue-grid .col-left p, .chapter-part.part-offertory .page-046-dialogue-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-046-dialogue-grid .col-left p:last-child, .chapter-part.part-offertory .page-046-dialogue-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-offertory .page-046-dialogue-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-offertory .page-046-times-note {
+  font-size: 14px;
+  color: var(--color-text);
+}
+/* ---------- "The Aer" commentary section ----------------------- */
+.chapter-part.part-offertory .page-046-aer-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+.chapter-part.part-offertory .page-046-aer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  column-gap: 16px;
+  align-items: start;
+}
+.chapter-part.part-offertory .page-046-aer-grid .commentary-body p {
+  margin: 0;
+}
+.chapter-part.part-offertory .page-046-aer-image {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-046-aer-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* ---------- From css/page-047.css ---------- */
+/* ==========================================================================
+   Page 47 — The Offertory (continued) / The Cherubim Hymn
+   --------------------------------------------------------------------------
+   1. "The Offertory (continued)" — 2-col grid (text | seraph icon)
+   2. "The Cherubim Hymn" — row 1: cherub | para 1;
+      bottom grid: pullout | para 2 (row 1) + QUESTIONS (row 2, cols 1–2) | seraph (right, spans both rows)
+   ========================================================================== */
+/* ---------- "(continued)" subtitle -------------------------------- */
+.chapter-part.part-offertory .page-047-subtitle {
+  font-size: 0.55em;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.chapter-part.part-offertory .commentary .page-047-offertory-title, .chapter-part.part-offertory .commentary .page-047-cherubim-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+/* ---------- Green underlined liturgical quote --------------------- */
+.chapter-part.part-offertory .page-047-quote-green-underline {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-offertory .commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+/* ---------- "The Offertory (continued)" 2-col grid -------------- */
+.chapter-part.part-offertory .page-047-offertory-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 0.55fr);
+  column-gap: 14px;
+  align-items: center;
+  margin-top: 4px;
+}
+.chapter-part.part-offertory .page-047-offertory-grid .commentary-body p {
+  margin: 0;
+}
+.chapter-part.part-offertory .page-047-offertory-icon {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-047-offertory-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* ---------- "The Cherubim Hymn" two-row layout -------------------- */
+.chapter-part.part-offertory .page-047-cherubim-section {
+  margin-top: 4px;
+}
+.chapter-part.part-offertory .page-047-cherubim-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.5fr) minmax(0, 0.75fr);
+  column-gap: 14px;
+  align-items: start;
+}
+.chapter-part.part-offertory .page-047-cherubim-row-1 {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.chapter-part.part-offertory .page-047-cherubim-para-1 {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-offertory .page-047-cherubim-para-2 {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-offertory .page-047-pullout-left {
+  margin: 0;
+  padding: 0;
+}
+.chapter-part.part-offertory .page-047-pullout-left p {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-offertory .page-047-attribution {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  text-align: left;
+  color: var(--color-text);
+}
+/* Cherub image — top-left of the Cherubim Hymn section */
+.chapter-part.part-offertory .page-047-cherub-figure {
+  margin: 0 0 10px;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-offertory .page-047-cherub-figure .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Bottom grid: quote + para 2, then QUESTIONS beside tall seraph */
+.chapter-part.part-offertory .page-047-cherubim-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.5fr) minmax(0, 0.75fr);
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: start;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.chapter-part.part-offertory .page-047-cherubim-bottom-grid .page-047-pullout-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+.chapter-part.part-offertory .page-047-cherubim-bottom-grid .page-047-cherubim-para-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.chapter-part.part-offertory .page-047-seraph-right {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  margin: 0;
+  text-align: center;
+  align-self: start;
+}
+.chapter-part.part-offertory .page-047-seraph-right .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-offertory .page-047-questions-in-grid {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  margin: 0;
+  padding-bottom: 10px;
+}
+/* ---------- From css/page-048.css ---------- */
+/* ==========================================================================
+   Page 48 — The Cherubim Hymn (continued) / The Great Entrance
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 2-col top grid (People hymn continued | aer/diskos/chalice rubrics)
+     2. "The Great Entrance" — deacon commemoration + three priest petitions
+     3. 3-col grid (Cherubim Hymn 2nd part / People | Deacon/Priest exchange |
+        Holy Doors rubrics)
+     4. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     5. "History of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+/* ---------- Cherubim Hymn (continued) 2-col top grid -------------- */
+.chapter-part.part-offertory .page-048-top-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 1.1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-048-top-grid .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-offertory .page-048-top-grid .col-right {
+  padding: 4px 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.chapter-part.part-offertory .page-048-section-title {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+.chapter-part.part-offertory .page-048-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-048-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-048-people-hymn .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-048-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-offertory .page-048-people-hymn u {
+  text-decoration: underline;
+}
+.chapter-part.part-offertory .page-048-rubric-note {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+.chapter-part.part-offertory .page-048-rubric-note:last-child {
+  margin-bottom: 0;
+}
+/* ---------- The Great Entrance commemorations -------------------- */
+.chapter-part.part-offertory .page-048-great-entrance-title {
+  font-size: 22px;
+  margin: 12px 0 8px;
+}
+.chapter-part.part-offertory .page-048-commemoration {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-048-commemoration .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-048-commemoration .deacon-text {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-048-commemoration .priest-text {
+  color: var(--color-prayer);
+}
+/* ---------- Cherubim Hymn (second part) 3-col grid ---------------- */
+.chapter-part.part-offertory .page-048-bottom-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 1.15fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 10px;
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-left, .chapter-part.part-offertory .page-048-bottom-grid .col-center, .chapter-part.part-offertory .page-048-bottom-grid .col-right {
+  padding-top: 0;
+}
+.chapter-part.part-offertory .page-048-second-part-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+.chapter-part.part-offertory .page-048-second-part-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-048-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-048-people-response .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-048-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-offertory .page-048-bottom-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- History of the Great Entrance commentary ------------- */
+.chapter-part.part-offertory .page-048-history-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+.chapter-part.part-offertory .page-048-history-body p {
+  margin: 0;
+}
+/* ---------- From css/page-049.css ---------- */
+/* ==========================================================================
+   Page 49 — "The Great Entrance" commentary
+   --------------------------------------------------------------------------
+   1. Section title + pullout-right + drop-cap paragraph (footnote 10)
+   2. Full-width fresco image placeholder + caption
+   3. Drop-cap paragraph on the Cherubic Hymn (footnotes 11–12)
+   4. QUESTIONS box
+   ========================================================================== */
+.chapter-part.part-offertory .commentary .page-049-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+/* ---------- Right pullout beside the opening paragraph ------------ */
+.chapter-part.part-offertory .commentary .page-049-pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-offertory .commentary .page-049-pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-offertory .page-049-opening-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+}
+/* ---------- Full-width fresco image + caption -------------------- */
+.chapter-part.part-offertory .page-049-image {
+  clear: both;
+  margin: 10px 0 12px;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-offertory .page-049-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-offertory .page-049-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-049-image figcaption em {
+  font-style: italic;
+  font-weight: 700;
+}
+.chapter-part.part-offertory .page-049-cherubim-para {
+  margin-top: 4px;
+}
+/* ---------- From css/page-050.css ---------- */
+/* ==========================================================================
+   Page 50 — The Cherubim Hymn (2nd part continued) / Placing the Gifts
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col grid (People hymn continued | priest troparia & dialogue |
+        placing-the-gifts rubrics)
+     2. Liturgy outline (Great Entrance highlighted)
+   Commentary:
+     3. "Symbolic Meaning of the Great Entrance" — drop-cap paragraph
+   ========================================================================== */
+/* ---------- Cherubim Hymn (second part continued) 3-col grid -------- */
+.chapter-part.part-offertory .page-050-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.38fr) 16px minmax(0, 0.9fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-050-main-grid .col-left, .chapter-part.part-offertory .page-050-main-grid .col-center, .chapter-part.part-offertory .page-050-main-grid .col-right {
+  padding-top: 0;
+}
+.chapter-part.part-offertory .page-050-section-title {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+.chapter-part.part-offertory .page-050-section-title .part-note {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+.chapter-part.part-offertory .page-050-people-response {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+}
+.chapter-part.part-offertory .page-050-people-response .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-offertory .page-050-people-response .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-offertory .page-050-main-grid .col-center p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-offertory .page-050-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-offertory .page-050-liturgical-underline {
+  color: var(--color-prayer);
+  text-decoration: underline;
+}
+.chapter-part.part-offertory .page-050-main-grid .col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-offertory .page-050-main-grid .col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-offertory .page-050-main-grid .col-right p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Symbolic Meaning commentary --------------------------- */
+.chapter-part.part-offertory .page-050-symbolic-title {
+  text-align: left;
+  margin: 10px 0 8px;
+  padding-left: 6px;
+}
+.chapter-part.part-offertory .page-050-symbolic-body p {
+  margin: 0;
+}
+/* ---------- From css/page-051.css ---------- */
+/* ==========================================================================
+   Page 51 — "Symbolic Meaning of the Great Entrance" (continued)
+   --------------------------------------------------------------------------
+   1. Continuation paragraph + Christ's Entry image (floated right)
+   2. Drop-cap paragraph (Jerusalem / Cherubim Hymn symbolism)
+   3. Placing-the-Gifts symbolism + Joseph image (floated left)
+   4. QUESTIONS box
+   ========================================================================== */
+/* ---------- Christ's Entry into Jerusalem (floated right) ----------- */
+.chapter-part.part-offertory .page-051-entry-image {
+  float: right;
+  width: 260px;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-051-entry-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-offertory .page-051-entry-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+/* ---------- Joseph takes down the Body (floated left) ------------- */
+.chapter-part.part-offertory .page-051-joseph-image {
+  float: left;
+  width: 250px;
+  margin: 4px 16px 8px 0;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-051-joseph-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-offertory .page-051-joseph-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+.chapter-part.part-offertory .page-051-symbolism-para {
+  margin-top: 4px;
+}
+.chapter-part.part-offertory .page-051-liturgy-quote {
+  color: var(--color-prayer);
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ---------- From css/chapter-litanies-creed.css ---------- */
+/* ==========================================================================
+   Chapter: Litanies after the Great Entrance and Confession of Faith and Love
+   --------------------------------------------------------------------------
+   Merged styles from pages 54–59. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours and
+   .preface-grid-two-col are defined once.
+   ========================================================================== */
+/* ---------- Shared 2-column liturgical grid --------------------- */
+.chapter-part.part-litanies-creed .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+/* ---------- Shared dialogue colours ----------------------------- */
+/* ---------- From css/page-054.css ---------- */
+/* ==========================================================================
+   Page 54 — Little Litany / Litany of Supplication / Prayer of the Prothesis
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Little Litany — 2-col grid (Deacon/People dialogue | rubric)
+     2. Litany of Supplication — full-width Deacon/People dialogue
+     3. Prayer of the Prothesis — 2-col grid (priest prayer | rubric)
+     4. Closing lines (priest ending, People: Amen)
+     5. Liturgy outline (Litanies after Great Entrance highlighted)
+   ========================================================================== */
+.chapter-part.part-litanies-creed .page-054-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+.chapter-part.part-litanies-creed .page-054-section-title:first-child {
+  margin-top: 2px;
+}
+.chapter-part.part-litanies-creed .page-054-little-litany-grid .col-left p, .chapter-part.part-litanies-creed .page-054-prothesis-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-054-little-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-litanies-creed .page-054-prothesis-grid .col-left p {
+  margin: 0;
+}
+.chapter-part.part-litanies-creed .page-054-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-litanies-creed .page-054-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+/* ---------- Litany of Supplication (full-width block) ------------- */
+.chapter-part.part-litanies-creed .page-054-supplication {
+  margin: 2px 4px 0;
+}
+.chapter-part.part-litanies-creed .page-054-supplication p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-054-supplication p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-litanies-creed .page-054-underline {
+  text-decoration: underline;
+}
+/* ---------- Closing dialogue after Prothesis prayer --------------- */
+.chapter-part.part-litanies-creed .page-054-closing-lines {
+  margin-top: 8px;
+}
+.chapter-part.part-litanies-creed .page-054-closing-lines .dialogue-line, .chapter-part.part-litanies-creed .page-054-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+/* ---------- From css/page-055.css ---------- */
+/* ==========================================================================
+   Page 55 — Prayer of the Prothesis / Litany of Supplication
+   --------------------------------------------------------------------------
+   1. "Prayer of the Prothesis" commentary (drop cap "D")
+   2. QUESTION box (Ephesians 2.8-10)
+   3. "Litany of Supplication" — 2-col grid (angel image | commentary text)
+   4. QUESTIONS box (Matthew, Hebrews, Colossians, Revelation)
+   ========================================================================== */
+/* ---------- "Litany of Supplication" 2-column grid ---------------- */
+.chapter-part.part-litanies-creed .page-055-supplication-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-litanies-creed .page-055-supplication-grid .commentary-body p {
+  margin: 0;
+}
+.chapter-part.part-litanies-creed .page-055-angel-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-litanies-creed .page-055-angel-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* ---------- From css/page-056.css ---------- */
+/* ==========================================================================
+   Page 56 — The Holy Kiss
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Opening dialogue (Priest / People)
+     2. Deacon call + 2-col grid (People + Priest prayers | rubrics)
+     3. Liturgy outline (Kiss of Peace highlighted)
+   Commentary:
+     4. 2-col grid (commentary text | St Peter and St Paul icon)
+   ========================================================================== */
+/* ---------- Opening dialogue -------------------------------------- */
+.chapter-part.part-litanies-creed .page-056-opening {
+  margin-bottom: 4px;
+}
+.chapter-part.part-litanies-creed .page-056-opening .dialogue-line {
+  margin: 2px 4px;
+}
+.chapter-part.part-litanies-creed .page-056-section-title {
+  margin: 4px 0 6px;
+}
+.chapter-part.part-litanies-creed .page-056-deacon-call {
+  margin: 0 4px 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-056-deacon-call-text {
+  color: var(--color-cue-red);
+}
+/* ---------- 2-column main grid ---------------------------------- */
+.chapter-part.part-litanies-creed .page-056-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-litanies-creed .page-056-dialogue-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.52fr) minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: start;
+  padding: 0 4px;
+}
+.chapter-part.part-litanies-creed .page-056-people-hymn {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-emphasis);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-056-people-hymn .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-litanies-creed .page-056-people-hymn .people-hymn-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-litanies-creed .page-056-priest-lines p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-056-priest-lines p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-litanies-creed .page-056-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-litanies-creed .page-056-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-litanies-creed .page-056-col-right p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Commentary 2-column grid ------------------------------ */
+.chapter-part.part-litanies-creed .page-056-commentary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-litanies-creed .page-056-commentary-grid .commentary-body p {
+  margin: 0 0 8px;
+}
+.chapter-part.part-litanies-creed .page-056-scripture-quote {
+  margin: 8px 12px 10px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.chapter-part.part-litanies-creed .page-056-peter-paul-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-litanies-creed .page-056-peter-paul-image .figure-image {
+  display: block;
+  width: 72%;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-litanies-creed .page-056-peter-paul-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+/* ---------- From css/page-057.css ---------- */
+/* ==========================================================================
+   Page 57 — The Holy Kiss (continued)
+   --------------------------------------------------------------------------
+     1. Continuation paragraph from page 56
+     2. QUESTION box (1 John 4.20-21)
+     3. Commentary: drop-cap + Didache pullout + second paragraph
+     4. QUESTIONS box (John 13 / John 17)
+   ========================================================================== */
+.chapter-part.part-litanies-creed .page-057-continuation {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+/* ---------- Didache pullout (left float) -------------------------- */
+.chapter-part.part-litanies-creed .segment-057 .commentary .page-057-didache-pullout {
+  float: left;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+.chapter-part.part-litanies-creed .segment-057 .commentary .page-057-didache-pullout p {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-litanies-creed .segment-057 .commentary .page-057-didache-pullout p em {
+  font-style: italic;
+}
+.chapter-part.part-litanies-creed .page-057-pullout-attribution {
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+}
+/* ---------- From css/page-058.css ---------- */
+/* ==========================================================================
+   Page 58 — The Doors / Nicene Creed / Story From Church History
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. The Doors — Deacon call + 2-col grid (Creed | rubrics)
+     2. Liturgy outline (Creed highlighted)
+   Commentary:
+     3. St Polycarp story + image placeholder
+   ========================================================================== */
+.chapter-part.part-litanies-creed .page-058-section-title {
+  margin: 2px 0 6px;
+}
+.chapter-part.part-litanies-creed .page-058-deacon-call {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-058-deacon-call-text {
+  color: var(--color-cue-red);
+}
+.chapter-part.part-litanies-creed .page-058-creed-title {
+  font-size: 22px;
+  margin: 4px 0 6px;
+}
+.chapter-part.part-litanies-creed .page-058-people-label {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-litanies-creed .page-058-creed p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+.chapter-part.part-litanies-creed .page-058-creed p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-litanies-creed .page-058-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-litanies-creed .page-058-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-litanies-creed .page-058-col-right p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-litanies-creed .page-058-note-ref {
+  font-size: 13px;
+}
+/* ---------- Story From Church History ----------------------------- */
+.chapter-part.part-litanies-creed .page-058-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+.chapter-part.part-litanies-creed .page-058-history-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-litanies-creed .page-058-history-grid .commentary-body p {
+  margin: 0 0 8px;
+}
+.chapter-part.part-litanies-creed .page-058-polycarp-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-litanies-creed .page-058-polycarp-image .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 155px;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-litanies-creed .page-058-polycarp-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+/* ---------- From css/page-059.css ---------- */
+/* ==========================================================================
+   Page 59 — The Doors / The Nicene Creed
+   --------------------------------------------------------------------------
+     1. The Doors — pullout-right + drop-cap paragraph
+     2. The Nicene Creed — history + council image | unity quote
+     3. QUESTION box
+   ========================================================================== */
+.chapter-part.part-litanies-creed .page-059-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-litanies-creed .page-059-doors-emphasis {
+  color: var(--color-cue-red);
+}
+/* ---------- Right pullout (Doors section) ------------------------- */
+.chapter-part.part-litanies-creed .segment-059 .commentary .page-059-pullout {
+  float: right;
+  width: 34%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-litanies-creed .segment-059 .commentary .page-059-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- Nicene Creed: image + unity quote --------------------- */
+.chapter-part.part-litanies-creed .page-059-creed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 8px;
+}
+.chapter-part.part-litanies-creed .page-059-council-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-litanies-creed .page-059-council-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-litanies-creed .page-059-council-image figcaption {
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+.chapter-part.part-litanies-creed .page-059-unity-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+/* ---------- From css/chapter-anaphora.css ---------- */
+/* ==========================================================================
+   Chapter: The Anaphora (the Offering) — merged styles from pages 62–73
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN wrappers to avoid cascade clashes.
+   ========================================================================== */
+/* Breathing room between stacked sections in the merged chapter */
+/* Grid/column titles stay compact at the top of their cell */
+/* ---------- From css/page-062.css ---------- */
+/* ==========================================================================
+   Page 62 — "The Anaphora / The Preparation" specific styles
+   --------------------------------------------------------------------------
+   The page has three sections:
+     1. Top liturgical box: 2-col grid (dialogue | vdivider | stage
+        directions), followed by the Liturgy of the Faithful outline
+        (Anaphora - The Eucharistic Prayer highlighted)
+     2. Commentary: "The Preparation" — body text with drop cap "L",
+        a left-floated green pullout, and a right-floated dark pullout
+     3. QUESTIONS box (standard .question-box style from book.css)
+   ========================================================================== */
+/* ---------- 2-column grid for the dialogue section ----------------
+   Unlike the default 3-column .preface-grid in book.css, page 62
+   only needs 2 columns: a wider left column for the Deacon/Priest/
+   People dialogue and a narrower right column for the stage
+   directions. */
+.chapter-part.part-anaphora .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+/* ---------- Color-coded dialogue text ----------------------------
+   The dialogue column on page 62 uses three colors (matching the
+   original book scan):
+     - Deacon : red    (.deacon-text)
+     - People : green  (.people-response), bold
+     - Priest : blue   (.priest-text)
+   The .speaker label is in red by default. */
+/* ---------- Right column (stage directions) ---------------------
+   Override the default .col-right (which uses justify-content:
+   space-between) so the two stage-direction blocks sit near the
+   top of the column with a small gap between them, matching the
+   layout in the original book scan. */
+.chapter-part.part-anaphora .page-062-col-right {
+  justify-content: flex-start;
+}
+.chapter-part.part-anaphora .page-062-col-right .stage-bottom {
+  margin-top: 18px;
+}
+/* ---------- Pullout floated to the left (top of commentary) ------
+   "'A mercy of peace, a sacrifice of praise' signifies that the
+   Holy Sacrifice is the greatest mercy to us from God…". Bold,
+   dark green, sits to the left of the body text and the body
+   text wraps around it. */
+.chapter-part.part-anaphora .segment-062 .commentary .pullout-left {
+  float: left;
+  width: 215px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+.chapter-part.part-anaphora .segment-062 .commentary .pullout-left p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-emphasis);
+}
+/* ---------- Pullout floated to the right (mid commentary) --------
+   "It is also a Holy Sacrifice to God from us – a sacrifice of
+   thanksgiving and praise to Him." Bold, dark text, sits to the
+   right of the body text and the body text wraps around it. */
+.chapter-part.part-anaphora .segment-062 .commentary .pullout-right {
+  float: right;
+  width: 215px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .segment-062 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- From css/page-063.css ---------- */
+/* ==========================================================================
+   Page 63 — "Let us lift up our hearts!" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top commentary with the green decorative title "Let us lift
+        up our hearts!" and a single body paragraph (drop cap "C")
+     2. QUESTIONS box (standard .question-box style from book.css)
+     3. "Liturgical Fans (Rhipidia)" — 3-col grid: close-up image |
+        body text (drop cap "I") | pullout + angel-with-rhipidia
+        image; a section caption "An angel holding a rhipidia" sits
+        centered below the grid
+     4. "The Eucharistic Prayer" — light blue/grey box with body
+        text, a right-floated pullout (St John 6.51) and a bold
+        summary at the end
+   ========================================================================== */
+/* ---------- "Let us lift up our hearts!" decorative title -----
+   Green, slightly larger than the default .section-title, no
+   underline, decorative MedievalSharp font. */
+.chapter-part.part-anaphora .page-063-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-emphasis);
+  font-size: 30px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  margin: 0 0 10px;
+}
+/* ---------- Green highlighted text in the top commentary ------
+   "'Let us lift up our hearts!'" and "'We lift them up unto the
+   Lord.'" within the top commentary paragraph. Italic, dark
+   green, bold. */
+.chapter-part.part-anaphora .commentary .quote-green-italic {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  font-style: italic;
+}
+/* ---------- "Liturgical Fans (Rhipidia)" 3-col grid ----------
+   3-column grid:
+     Left column  : close-up image of a rhipidia (top) + pullout (below)
+     Center column: body text with drop cap "I"
+     Right column : angel-with-rhipidia image with caption
+   The pullout quote "They show by this ritual…" sits below the
+   close-up image in the left column. */
+.chapter-part.part-anaphora .page-063-fans-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 6px;
+}
+.chapter-part.part-anaphora .page-063-fans-grid .commentary-body p { margin: 0; }
+/* Left column: close-up image of a rhipidia */
+.chapter-part.part-anaphora .page-063-image-left, .chapter-part.part-anaphora .page-063-image-right {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-anaphora .page-063-image-left .image-placeholder {
+  width: 100%;
+  height: 220px;
+}
+.chapter-part.part-anaphora .page-063-image-right .image-placeholder {
+  width: 100%;
+  height: 150px;
+}
+/* Left and right columns: flex column so the pullout (left) or
+   the image (right) stack vertically and center within the
+   column. */
+.chapter-part.part-anaphora .page-063-left, .chapter-part.part-anaphora .page-063-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chapter-part.part-anaphora .page-063-left .page-063-pullout, .chapter-part.part-anaphora .page-063-right .page-063-pullout {
+  margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+.chapter-part.part-anaphora .page-063-left .page-063-pullout p, .chapter-part.part-anaphora .page-063-right .page-063-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+/* Caption inside the right-column figure (below the angel image).
+   The .commentary ancestor bumps specificity above .commentary p
+   (0,1,1) in book.css so text-align: center isn't overridden by
+   the justify default. */
+.chapter-part.part-anaphora .commentary .page-063-caption {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 6px 0 0;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+/* Real rhipidia images (replace the .image-placeholder divs).
+   The PNGs are taller than the original placeholders, so at the
+   column's natural width they push the page past the page-number
+   position. Cap each image at its placeholder's original height
+   and constrain width to the column, letting the browser scale
+   it down while preserving aspect ratio. */
+.chapter-part.part-anaphora .page-063-image-left .figure-image {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-anaphora .page-063-image-right .figure-image {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+/* ---------- "The Eucharistic Prayer" blue/grey box ----------
+   Light blue/grey background, thin border. Contains the
+   eucharistic prayer commentary + list of foundational actions +
+   right-floated pullout + bold summary at the end. */
+.chapter-part.part-anaphora .page-063-eucharistic-box {
+  background: #c9cdd2;
+  border: 1px solid #7a8590;
+  padding: 14px 22px 16px;
+  margin: 16px 0 30px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--color-text);
+  position: relative;
+}
+.chapter-part.part-anaphora .page-063-eucharistic-box p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+/* Decorative "The" at the start of the first paragraph */
+.chapter-part.part-anaphora .page-063-eucharistic-box .deco-the {
+  font-family: 'MedievalSharp', serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--color-heading);
+  vertical-align: baseline;
+  margin-right: 2px;
+}
+/* "Eucharistic Prayer" in small caps */
+.chapter-part.part-anaphora .page-063-eucharistic-box .smallcaps {
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+/* Numbered list items (1)-(4) */
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-action {
+  margin: 0 0 4px 16px;
+  text-align: justify;
+  font-weight: 400;
+}
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-action strong {
+  font-weight: 700;
+}
+/* Right-floated pullout in the eucharistic box */
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-eucharistic-pullout {
+  float: right;
+  width: 215px;
+  margin: 4px 0 8px 18px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-eucharistic-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--color-text);
+}
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-pullout-citation {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--color-text);
+}
+/* Underlined terms within the eucharistic box */
+.chapter-part.part-anaphora .page-063-eucharistic-box u { text-decoration: underline; }
+/* Bold summary at the bottom of the eucharistic box */
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-summary {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 14px !important;
+  text-align: left !important;
+}
+.chapter-part.part-anaphora .page-063-eucharistic-box .page-063-summary em {
+  font-style: italic;
+  font-weight: 700;
+}
+/* ---------- From css/page-066.css ---------- */
+/* ==========================================================================
+   Page 66 — "The Remembrance" specific styles
+   --------------------------------------------------------------------------
+   Loaded IN ADDITION to css/book.css. Only contains the layout pieces
+   that are unique to this page: the 2-column outer layout that lets
+   the right column of stage directions extend below the 3-column prayer
+   grid down to the bottom of the "Remembrance" section.
+   ========================================================================== */
+/* ---------- Outer 2-column layout for the "Remembrance" section ----------
+   Wraps the prayer grid (top) + words of institution (below) on the
+   left, a long vertical separator in the middle, and the right column
+   of stage directions on the right. The right column spans the full
+   height of the section so its 5 stage-direction blocks align with
+   their corresponding rows in the prayer text. */
+.chapter-part.part-anaphora .remembrance-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3.4fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+/* On page 66 the inner .preface-grid is only 2-column (People | Priest)
+   because the third (right) column has been moved out into
+   .col-right-full. */
+.chapter-part.part-anaphora .remembrance-layout .preface-grid {
+  grid-template-columns:
+    minmax(0, 0.9fr) 16px minmax(0, 2.5fr);
+}
+/* ---------- Long vertical separator ----------
+   Inherits the diamond pattern and end caps from the standard
+   .vdivider in book.css. Runs the full height of the "Remembrance"
+   section. */
+.chapter-part.part-anaphora .vdivider.vdivider-long {
+  width: 16px;
+  align-self: stretch;
+}
+/* ---------- Right column (full-height variant) ----------
+   The .col-right-full container spans the full height of the section
+   (via `align-self: stretch` + `height: 100%` inside the outer grid).
+   Its 5 children are distributed as follows:
+     - stage-top (red)        : top, aligned with the start of the prayer
+     - stage-deacon           : upper-middle, aligned with the middle of
+                                the silent prayer (grows to fill space)
+     - stage-bottom (green)   : lower-middle, aligned with "Take! Eat!"
+                                (grows to fill space)
+     - stage-bottom (blue)    : just below green, aligned with
+                                "And likewise…"
+     - stage-bottom (brown)   : at the very bottom, aligned with
+                                "Drink of it…"
+
+   The middle two stage-bottom blocks (blue "prays silently" and
+   brown "then exclaims out loud") sit on consecutive lines in the
+   original scan, so we let the deacon and green blocks grow to
+   absorb the free space. */
+.chapter-part.part-anaphora .col-right-full {
+  padding: 0 4px 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  height: 100%;
+}
+.chapter-part.part-anaphora .col-right-full p { margin: 0; text-align: right; }
+/* The 2nd (deacon) grows 0.5, the 3rd (green) grows 1.0. The green
+   lands at the row of "Take! Eat!" while blue/brown land at
+   "And likewise…" and "Drink of it…" respectively. */
+.chapter-part.part-anaphora .col-right-full > :nth-child(2) { flex-grow: 0.5; }
+.chapter-part.part-anaphora .col-right-full > :nth-child(3) { flex-grow: 1; }
+/* ---------- Centred silent prayer in the words of institution ----------
+   The aloud words of institution ("Take! Eat!", "Drink of it…") and
+   the People responses are left-aligned (they are dialogue lines).
+   The silent prayer in between ("And likewise, after supper, He took
+   the cup, saying: …") is centred in the original scan. */
+.chapter-part.part-anaphora .prayer-continuation-centered {
+  text-align: center;
+}
+/* ---------- From css/page-067.css ---------- */
+/* ==========================================================================
+   Page 67 — "The Remembrance" (continued) specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text (continuation from page 66)
+                      with the blue drop cap "I"
+     - Right column : the lead quote "There is no life without food…"
+                      centered at the top, with the Last Supper image
+                      placeholder below it
+
+   Below the grid:
+     - Full-width QUESTIONS box (green border)
+     - Full-width bottom commentary (blue drop cap "A")
+   ========================================================================== */
+/* Top section: 2-column grid with equal-width columns. The left
+   column holds the commentary text; the right column holds the lead
+   quote + Last Supper image. */
+.chapter-part.part-anaphora .page-067-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-anaphora .page-067-top-grid .commentary-body p { margin: 0 0 8px; }
+/* Right column: lead quote + image */
+.chapter-part.part-anaphora .page-067-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Lead quote at the top of the right column, above the image:
+   "'There is no life without food…'" — centered, bold, italic,
+   slightly larger, with the last two "new life/new food" words
+   in italic. */
+.chapter-part.part-anaphora .lead-quote {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.chapter-part.part-anaphora .lead-quote em { font-style: italic; }
+/* Last Supper image: centered in the right column below the quote */
+.chapter-part.part-anaphora .page-067-image {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+/* Quote below the image in the right column:
+   "'Unless you eat the flesh of the Son of Man…'"
+   Same style as the lead quote above the image (centered, bold,
+   italic) with a bit of extra top padding to separate it from the
+   image. */
+.chapter-part.part-anaphora .right-col-quote {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.chapter-part.part-anaphora .page-067-image .image-placeholder {
+  width: 100%;
+  height: 240px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+.chapter-part.part-anaphora .page-067-image figcaption {
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+/* ---------- From css/page-068.css ---------- */
+/* ==========================================================================
+   Page 68 — "The Consecration" + "The Elevation of the Gifts" +
+   "The Prayer of the Epiclesis" specific styles
+   --------------------------------------------------------------------------
+   Page 68 has TWO stacked liturgical boxes:
+     Box 1: Two side-by-side titled sections within one box.
+            Left half: "The Consecration" (People's Amen + Priest's
+            prayer). Right half: "The Elevation of the Gifts"
+            (description of the physical elevation action).
+     Box 2: The 3-column Epiclesis prayer (People | Priest | Stage
+            directions) with a 15+ short blocks in the right column.
+   ========================================================================== */
+/* Stack the two boxes with no extra gap between them */
+.chapter-part.part-anaphora .book-page .liturgical-box + .liturgical-box {
+  margin-top: 12px;
+}
+/* Amen. response lines in the left column (green text) */
+.chapter-part.part-anaphora .amen-line {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.chapter-part.part-anaphora .amen-line .speaker { color: var(--color-priest); }
+/* Inline "Amen." markers in the center-column prayer text */
+.chapter-part.part-anaphora .amen-inline {
+  color: var(--color-emphasis);
+  font-weight: 600;
+  font-style: italic;
+}
+/* ===== Box 1: two side-by-side titled sections =====================
+   Classic 3-column grid (People | vdivider | Priest | vdivider | Right)
+   but the LEFT column is very narrow (15%), and the CENTER and
+   RIGHT columns are wider (~42.5% each). The two section titles
+   sit ABOVE the grid as plain text headers. */
+.chapter-part.part-anaphora .preface-grid-two-titles {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.3fr) 16px
+    minmax(0, 1fr) 16px
+    minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+/* Title row: each title is placed above its respective columns.
+   The first vdivider is between col-left (col 1) and col-center
+   (col 3). It spans both the title row and the content row. */
+.chapter-part.part-anaphora .preface-grid-two-titles > .vdivider:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+.chapter-part.part-anaphora .preface-grid-two-titles > .col-left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.chapter-part.part-anaphora .preface-grid-two-titles > .col-center {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.chapter-part.part-anaphora .preface-grid-two-titles > .vdivider:nth-of-type(2) {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+.chapter-part.part-anaphora .preface-grid-two-titles > .col-right {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+/* Title for the left half ("The Consecration"): spans columns 1
+   (left content) and 3 (center content), sitting above the
+   inner vdivider (col 2). */
+.chapter-part.part-anaphora .col-title-left {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  text-align: center;
+  margin: 6px 0 4px;
+  padding-left: 0;
+}
+/* Title for the right half ("The Elevation of the Gifts"): sits
+   above the second vdivider and the right column. */
+.chapter-part.part-anaphora .col-title-right {
+  grid-column: 4 / 6;
+  grid-row: 1 / 2;
+  text-align: center;
+  margin: 6px 0 4px;
+  padding-left: 0;
+}
+/* Prevent the .prayer-continuation paragraphs inside the center
+   column from overflowing the grid cell (their default
+   `margin: 12px 4px 4px` adds horizontal margins that would push
+   the text past the right edge of the narrow center column). */
+.chapter-part.part-anaphora .preface-grid-two-titles .col-center .prayer-continuation {
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 0;
+}
+/* The .col-center itself should not allow its children to overflow. */
+.chapter-part.part-anaphora .preface-grid-two-titles .col-center {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+/* Indent the second "Amen." line slightly under "People:" */
+.chapter-part.part-anaphora .amen-line-indented {
+  margin-left: 16px;
+}
+/* The "Elevation of the Gifts" prose on the right side of Box 1 */
+.chapter-part.part-anaphora .elevation-prose {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.chapter-part.part-anaphora .elevation-prose .cue { color: var(--color-cue-red); }
+/* Full-width prayer line that spans all three columns below the
+   3-col grid in Box 1. Sits between the upper section and the
+   Epiclesis section (Box 2), bridging the two. */
+.chapter-part.part-anaphora .full-width-prayer {
+  margin: 12px 8px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.chapter-part.part-anaphora .full-width-prayer .speaker { color: var(--color-priest); }
+/* Subtitle under the section title in Box 2:
+   "(Invocation of the Holy Spirit)" — italic, centered. */
+.chapter-part.part-anaphora .epiclesis-subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-text);
+  margin: -4px 0 8px;
+}
+/* Box 2 (The Prayer of the Epiclesis) grid override: left column
+   is narrow (~15%), center and right columns are equal (~42.5%
+   each). The general .preface-grid class (used by Box 1 via
+   .preface-grid-two-titles, and by page 64) has a different
+   distribution, so we override it here for the second box only
+   (which uses .preface-grid WITHOUT the .preface-grid-two-titles
+   modifier). */
+.chapter-part.part-anaphora .preface-grid.epiclesis-grid {
+  grid-template-columns:
+    minmax(0, 0.3fr) 16px minmax(0, 1fr) 16px minmax(0, 1fr);
+}
+/* ---------- From css/page-069.css ---------- */
+/* ==========================================================================
+   Page 69 — "The Consecration" specific styles
+   --------------------------------------------------------------------------
+   The top section is a 2-column grid:
+     - Left column  : commentary text with the blue drop cap "T" and
+                     a chalice image floated to the left below the
+                     first paragraph.
+     - Right column : a bordered box with a St John of Damascus quote
+                     (and his icon) at the top, plus a bold pullout
+                     block below.
+
+   Below the grid:
+     - Full-width QUESTION box (green border) with the "QUESTION"
+       header anchored in the top right corner (instead of the
+       centered "Questions" header used on pages 66/67) and the
+       question prompt offset by a right padding to clear the header.
+   ========================================================================== */
+/* ---------- Top section: 2-column grid ----------------------------
+   Wider left column (~2.1fr) for the body text and chalice image,
+   narrower right column (~1fr) for the St John box + pullout. */
+.chapter-part.part-anaphora .page-069-top {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+/* Chalice image floated to the left of the body text below the first
+   paragraph. The float lets the surrounding text wrap around it. */
+.chapter-part.part-anaphora .page-069-chalice {
+  float: left;
+  margin: 4px 16px 6px 0;
+  width: 150px;
+}
+.chapter-part.part-anaphora .page-069-chalice .image-placeholder {
+  width: 100%;
+  height: 150px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 6px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+/* Right column container (St John box + pullout) */
+.chapter-part.part-anaphora .page-069-right {
+  display: flex;
+  flex-direction: column;
+}
+/* ---------- St John of Damascus quote box ------------------------
+   Bordered box with the saint's icon centered at the top and the
+   quote text below it. Sits at the top of the right column. */
+.chapter-part.part-anaphora .damascus-box {
+  border: 1.5px solid var(--color-box-border);
+  background: #fbf9f1;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.chapter-part.part-anaphora .damascus-text { min-width: 0; align-self: stretch; }
+.chapter-part.part-anaphora .damascus-name {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+.chapter-part.part-anaphora .damascus-name u { text-decoration: underline; }
+.chapter-part.part-anaphora .damascus-dates {
+  font-weight: 400;
+  font-size: 13px;
+}
+.chapter-part.part-anaphora .damascus-quote {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+.chapter-part.part-anaphora .damascus-image-placeholder {
+  width: 110px;
+  height: 120px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 4px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+/* Real St John of Damascus icon (replaces the .damascus-image-placeholder
+   div). Matches the 110x120 frame the placeholder occupied. No border —
+   the image has a transparent background. */
+.chapter-part.part-anaphora .damascus-image {
+  display: block;
+  width: 110px;
+  height: auto;
+  box-sizing: border-box;
+}
+/* ---------- Pullout block (right column, below the St John box) ---
+   Large, bold, left-aligned statement. Uses the .page-069-right
+   ancestor in the selector so the margin-top wins over the
+   .commentary p rule (0,1,1 specificity) defined in book.css. */
+.chapter-part.part-anaphora .page-069-right .page-069-pullout {
+  margin: 40px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- QUESTION box (bottom of page) -------------------------
+   Same border/background/padding as the standard .question-box from
+   book.css, but the header is anchored in the top right corner
+   instead of centered, and the question prompt is padded on the
+   right so it doesn't collide with the header. */
+.chapter-part.part-anaphora .question-box-069 {
+  position: relative;
+}
+.chapter-part.part-anaphora .box-header-069 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.chapter-part.part-anaphora .question-prompt-069 {
+  margin: 0 0 10px;
+  padding-right: 140px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+/* ---------- From css/page-070.css ---------- */
+/* ==========================================================================
+   Page 70 — "The Intercession" + "Theotokos" specific styles
+   --------------------------------------------------------------------------
+   The top section is a single liturgical box containing:
+     1. The Intercession (3-col grid: People | Priest | Stage directions)
+     2. A full-width priest prayer line below the first grid
+     3. The Hymn to the Theotokos (3-col grid: Hymn text | Priest |
+        Stage directions)
+     4. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom section is a commentary with the Theotokos icon floated
+   to the left and the "THEOTOKOS" title + drop-cap body text wrapping
+   around its right side.
+   ========================================================================== */
+/* ---------- Gold/yellow cue color ------------------------------------
+   The "exclaims out loud" stage direction in the right column of the
+   first grid uses a gold/yellow triangle (distinct from the standard
+   red silent / green aloud cues defined in book.css). The page-070
+   CSS variable is local; if other pages adopt this color it should be
+   promoted to book.css. */
+/* ---------- Hymn title in the left column of the second grid --------
+   "The Hymn to the Theotokos" — centered, slightly smaller than the
+   default .section-title so it fits the narrow left column. */
+.chapter-part.part-anaphora .page-070-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 6px;
+}
+/* ---------- Override column widths for the second (Hymn) grid -------
+   The default .preface-grid in book.css uses 0.9fr | 2.5fr | 0.85fr
+   (narrow left, very wide center, narrow right). For the Hymn grid
+   we want equal-width left and center columns (~1fr each) with a
+   smaller right column (~0.55fr) for the single short deacon stage
+   direction. */
+.chapter-part.part-anaphora .preface-grid-hymn {
+  grid-template-columns:
+    minmax(0, 1fr) 16px minmax(0, 1fr) 16px minmax(0, 0.55fr);
+}
+/* Italic note under the Hymn title:
+   "(On certain Feast Days this is replaced by another hymn.)" */
+.chapter-part.part-anaphora .hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+/* "repeated from page 68" note in the first grid (under the People's
+   continuing response). Sits on its own line below the green people
+   text. */
+.chapter-part.part-anaphora .people-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text);
+}
+/* Italic saint name placeholder in the priest prayer text
+   (e.g. "Saint (saint of the day)" or "grant them rest, O God…"). */
+.chapter-part.part-anaphora .priest-name {
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+/* Italic stage-direction note in the priest prayer text
+   (e.g. "(he remembers by name whom he will of those who have
+   fallen asleep)"). */
+.chapter-part.part-anaphora .priest-cue {
+  font-style: italic;
+  color: var(--color-text);
+}
+/* ---------- Figure floated to the left of the commentary text --------
+   Theotokos icon at the bottom of the page. */
+.chapter-part.part-anaphora .segment-070 .figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.chapter-part.part-anaphora .segment-070 .figure-left .image-placeholder {
+  width: 100%;
+  height: 340px;
+}
+/* Real Theotokos icon (replaces the .image-placeholder div).
+   The PNG (740x1247) is much taller than wide, so at the
+   .segment-070 .figure-left's 230px width it would render at ~387px tall
+   and overflow the page. Cap its height at 340px (matching the
+   original placeholder) and let the browser scale the image
+   down to fit, preserving its aspect ratio. */
+.chapter-part.part-anaphora .segment-070 .figure-left .figure-image {
+  max-height: 340px;
+  width: auto;
+  margin: 0 auto;
+}
+/* ---------- "THEOTOKOS" title in the commentary ---------------------
+   Centered within the text column and uppercase, overriding the
+   .commentary .section-title default (left-aligned, mixed case). */
+.chapter-part.part-anaphora .page-070-theotokos-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+}
+/* ---------- From css/page-071.css ---------- */
+/* ==========================================================================
+   Page 71 — "The Intercession" (commentary) + "The Hymn to the Theotokos"
+   specific styles
+   --------------------------------------------------------------------------
+   The page has three sections:
+     1. Top commentary: 2-column grid. Left column is the body text
+        (with drop cap "N"); right column stacks a pullout on top of
+        the St John the Baptist icon (with caption) below.
+     2. QUESTIONS box (standard .question-box style from book.css)
+     3. Bottom commentary: "The Hymn to the Theotokos" section title +
+        body text with drop cap "M", and a pullout floated right
+   ========================================================================== */
+/* ---------- Top section: 2-column grid ----------------------------
+   Wider left column (~1.6fr) for the body text, narrower right
+   column (~1fr) for the pullout + icon. */
+.chapter-part.part-anaphora .page-071-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+/* Right column: flex column so the pullout sits on top of the icon */
+.chapter-part.part-anaphora .page-071-right {
+  display: flex;
+  flex-direction: column;
+}
+/* ---------- Pullout in the right column of the top section ---------
+   The .commentary ancestor in the selector bumps specificity above
+   .commentary .pullout from book.css (both end up at 0,2,0, but
+   the page-071 rule comes later in the cascade and wins). */
+.chapter-part.part-anaphora .commentary .page-071-pullout {
+  margin: 0 0 14px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .commentary .page-071-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- St John the Baptist icon in the right column -----------
+   Full width of the right column. No float, no large top margin —
+   sits naturally below the pullout in the flex column. */
+.chapter-part.part-anaphora .page-071-image {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-anaphora .page-071-image .image-placeholder {
+  width: 100%;
+  height: 220px;
+  background: #cfcfcf;
+  border: 1px solid #8a8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 8px;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+}
+.chapter-part.part-anaphora .page-071-image figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+/* ---------- Pullout floated to the right (bottom commentary) -------
+   Wider column with bold text. Small top margin since the body text
+   in this section is shorter and the pullout can appear near the top. */
+.chapter-part.part-anaphora .segment-071 .commentary .pullout-right {
+  float: right;
+  width: 300px;
+  margin: 8px 0 6px 16px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .segment-071 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- "The Hymn to the Theotokos" section title ---------------
+   Centered (overrides .commentary .section-title from book.css).
+   The .commentary ancestor bumps specificity above the default. */
+.chapter-part.part-anaphora .commentary .page-071-hymn-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+/* ---------- From css/page-072.css ---------- */
+/* ==========================================================================
+   Page 72 — "The Intercession" (Continued) specific styles
+   --------------------------------------------------------------------------
+   The top liturgical box contains:
+     1. Chapter title "The Intercession (Continued)"
+     2. A 2-column grid: Hymn title + People line (left) | Priest prayer
+        in 2 paragraphs (right) — used to align the People line with
+        the second priest prayer paragraph
+     3. Full-width priest prayer line (continuation)
+     4. A 3-column grid: People (left) | Priest prayer (middle) | Stage
+        directions (right) — 3 stage-direction blocks distributed with
+        space-between
+     5. Aloud priest prayer (brown/orange cue) — "exclaims out loud"
+     6. People: Amen.
+     7. "BLESSING" section title
+     8. Aloud blessing (green cue) — "turns toward the people and
+        blesses them"
+     9. People: And with your spirit.
+    10. Liturgy of the Faithful outline (Intercession highlighted)
+
+   The bottom commentary contains:
+     1. "The Intercession (Continued)" section title (centered)
+     2. Body paragraph with drop cap "F" (blue)
+     3. Right-floated pullout: "We understand that the only real
+        sin, and the root of all sin, is selfishness."
+   ========================================================================== */
+/* ---------- "(Continued)" subtitle on chapter / section titles ------
+   Smaller, italic, not underlined. Used in both the chapter title at
+   the top of the liturgical box and the section title in the bottom
+   commentary. */
+.chapter-part.part-anaphora .page-072-subtitle {
+  font-size: 0.55em;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+/* ---------- 2-column grid for the Hymn + Priest prayer section -----
+   2 columns: left for the Hymn title + People line, right for the
+   Priest prayer (2 paragraphs). The vdivider runs down the middle.
+   `align-self: stretch` on the column children makes both columns
+   the same height. */
+.chapter-part.part-anaphora .preface-grid-hymn-2col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.7fr) 16px minmax(0, 1.3fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+/* Left column: Hymn title at top, People line at bottom (margin-top:
+   auto pushes the People line to the bottom of the column, aligning
+   it with the second priest prayer paragraph on the right). */
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-left {
+  padding: 4px 8px 0 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-left .page-072-people-line {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+/* Hymn title in the left column: "The Hymn to the Theotokos" */
+.chapter-part.part-anaphora .page-072-hymn-title {
+  font-size: 22px;
+  text-align: center;
+  margin: 4px 0 4px;
+}
+.chapter-part.part-anaphora .page-072-hymn-continued {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+.chapter-part.part-anaphora .page-072-hymn-note {
+  text-align: center;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+/* People line: "It is truly meet to bless you, O Theotokos...." */
+.chapter-part.part-anaphora .page-072-people-line {
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-anaphora .page-072-people-line .speaker { color: var(--color-priest); }
+.chapter-part.part-anaphora .page-072-people-line .people-body { color: var(--color-emphasis); font-weight: 700; }
+/* Right column: 2 prayer paragraphs (Priest prayer p1 and p2).
+   `display: flex; flex-direction: column` lets the 2 paragraphs
+   stack, with a small margin between them. */
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-right {
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-prayer);
+  display: flex;
+  flex-direction: column;
+}
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-right p {
+  margin: 0 0 14px;
+  text-align: left;
+}
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-right p:last-child { margin-bottom: 0; }
+.chapter-part.part-anaphora .preface-grid-hymn-2col .col-right .speaker { color: var(--color-priest); }
+/* ---------- Middle 3-col grid: stage direction distribution --------
+   The right column has 3 stage-direction blocks distributed along
+   the full height of the section (deacon at top, "exclaims out
+   loud" in the middle, "turns and blesses" at the bottom). The
+   standard .col-right in book.css uses `justify-content: space-
+   between`, which positions the 3 children at top / middle / bottom. */
+.chapter-part.part-anaphora .page-072-middle-col-right {
+  /* Inherits .col-right flex column, but ensure correct spacing */
+  justify-content: space-between;
+}
+.chapter-part.part-anaphora .page-072-middle-col-right > p { margin: 0; text-align: right; }
+/* ---------- Full-width prayer line between the 2 grids -------------
+   "Priest: ...Among the first, remember, O Lord, His Beatitude..."
+   Spans the full width of the liturgical box, with a small top
+   margin to separate it from the grid above. */
+.chapter-part.part-anaphora .page-072-fullwidth-prayer {
+  margin: 12px 4px 4px;
+  font-size: 15px;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.chapter-part.part-anaphora .page-072-fullwidth-prayer .speaker { color: var(--color-priest); }
+/* ---------- "BLESSING" section title ----------
+   "BLESSING" - centered, decorative, underlined, slightly larger
+   spacing above to separate it from the prayer above. */
+.chapter-part.part-anaphora .page-072-blessing-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-heading);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 16px 0 6px;
+  letter-spacing: 0.04em;
+}
+/* ---------- Bottom commentary ----------
+   "The Intercession (Continued)" commentary with drop cap "F" (blue)
+   and a right-floated pullout. The pullout is local to this page
+   (page-071.css defines its own .pullout-right with a different
+   layout, so we redefine the same idea here for self-containment). */
+.chapter-part.part-anaphora .segment-072 .commentary .pullout-right {
+  float: right;
+  width: 240px;
+  margin: 6px 0 8px 18px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .segment-072 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- From css/page-073.css ---------- */
+/* ==========================================================================
+   Page 73 — "Prayer for the Church" specific styles
+   --------------------------------------------------------------------------
+   Sections:
+     1. Top QUESTIONS box (singular "QUESTION" header)
+     2. "Prayer for the Church" section title
+     3. Commentary with icon of the Apostles floated left, body text
+        wrapping around it, and a right-floated pullout
+     4. Bottom QUESTIONS box (plural "QUESTIONS" header)
+     5. Bottom commentary with drop cap "A" (blue)
+   ========================================================================== */
+/* ---------- Figure floated to the left of the commentary text ----
+   Icon of the "Feasts of St Peter and St Paul and The Synaxion of
+   the 70 Apostles". The body text wraps around the right side of
+   the image. Defined locally for self-containment (a similar
+   .segment-073 .figure-left exists in page-070.css with a different image
+   height). */
+.chapter-part.part-anaphora .segment-073 .figure-left {
+  float: left;
+  width: 230px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.chapter-part.part-anaphora .segment-073 .figure-left .image-placeholder {
+  width: 100%;
+  height: 320px;
+}
+.chapter-part.part-anaphora .segment-073 .figure-left figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+  text-align: center;
+}
+/* ---------- Pullout floated to the right (top commentary) ----------
+   "A parish as a human institution can easily replace Christ with
+   something else." Bold, dark text, sits to the right of the body
+   text and the body text wraps around it. */
+.chapter-part.part-anaphora .segment-073 .commentary .pullout-right {
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-anaphora .segment-073 .commentary .pullout-right p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- From css/chapter-preparation-communion.css ---------- */
+/* ==========================================================================
+   Chapter: Preparation for Communion — merged styles from pages 76–84
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours defined once.
+   Page-number padding rules omitted.
+   ========================================================================== */
+/* ---------- Shared dialogue colours ----------------------------- */
+/* ---------- From css/page-076.css ---------- */
+/* ==========================================================================
+   Page 76 — Opening Greeting / Litany Before the Lord's Prayer /
+              Prayer of Preparation
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title "Opening Greeting" + "Blessing the People"
+     2. 2-col grid: Priest/People blessing (left) | rubrics (right)
+     3. Full-width litany title + opening petitions (5 exchanges)
+     4. 2-col grid: Litany continued (left) | Prayer of Preparation (right)
+     5. Liturgy of the Faithful outline (Litanies highlighted)
+   ========================================================================== */
+/* ---------- Shared dialogue colours -------------------------------- */
+.chapter-part.part-preparation-communion .page-076-underline {
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .page-076-section-title {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+.chapter-part.part-preparation-communion .page-076-section-title:first-child {
+  margin-top: 2px;
+}
+/* ---------- Blessing block (2-column) ----------------------------- */
+.chapter-part.part-preparation-communion .chapter-segment.segment-076 .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-076-blessing-grid .col-left p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-076-blessing-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-preparation-communion .page-076-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-076-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-076-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Full-width litany opening ----------------------------- */
+.chapter-part.part-preparation-communion .page-076-litany-title {
+  margin-top: 10px;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-076-litany-opening {
+  margin: 2px 4px 0;
+}
+.chapter-part.part-preparation-communion .page-076-litany-opening p, .chapter-part.part-preparation-communion .page-076-litany-col p {
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+.chapter-part.part-preparation-communion .page-076-litany-opening p:last-child, .chapter-part.part-preparation-communion .page-076-litany-col p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Litany continued / preparation (2-column) ------------- */
+.chapter-part.part-preparation-communion .page-076-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr) 16px minmax(0, 0.95fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 0;
+}
+.chapter-part.part-preparation-communion .page-076-litany-col {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 8px 0 4px;
+}
+.chapter-part.part-preparation-communion .page-076-divider {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+}
+.chapter-part.part-preparation-communion .page-076-preparation-col {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  padding: 0 4px 0 8px;
+}
+.chapter-part.part-preparation-communion .page-076-preparation-title {
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: center;
+}
+/* ---------- Prayer of Preparation inner grid ---------------------- */
+.chapter-part.part-preparation-communion .page-076-preparation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr) 16px minmax(0, 0.55fr);
+  align-items: start;
+  column-gap: 0;
+}
+.chapter-part.part-preparation-communion .page-076-preparation-prayer {
+  min-width: 0;
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: var(--color-prayer);
+}
+.chapter-part.part-preparation-communion .page-076-preparation-prayer .prayer-text {
+  margin: 0;
+}
+.chapter-part.part-preparation-communion .page-076-preparation-rubric {
+  min-width: 0;
+  padding-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-076-preparation-rubric .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+/* ---------- From css/page-077.css ---------- */
+/* ==========================================================================
+   Page 77 — The Litany Before the Lord's Prayer / The Prayer of Preparation
+   --------------------------------------------------------------------------
+   1. "The Litany Before the Lord's Prayer" — drop cap, liturgical quote,
+      2-col grid (pullout left | body right), QUESTION box
+   2. "The Prayer of Preparation" — 2-col grid (body left | pullout right),
+      QUESTIONS box
+   ========================================================================== */
+.chapter-part.part-preparation-communion .commentary .page-077-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+.chapter-part.part-preparation-communion .commentary > .page-077-section-title:first-child {
+  margin-top: 4px;
+}
+/* ---------- Litany section: pullout left, body right --------------- */
+.chapter-part.part-preparation-communion .page-077-litany-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-077-litany-grid .commentary-body p {
+  margin: 0;
+}
+/* ---------- Preparation section: body left, pullout right ---------- */
+.chapter-part.part-preparation-communion .page-077-preparation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  column-gap: 18px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-077-preparation-grid .commentary-body p {
+  margin: 0;
+}
+.chapter-part.part-preparation-communion .page-077-preparation-grid .pullout {
+  margin: 0;
+  padding: 4px 0 0;
+}
+.chapter-part.part-preparation-communion .page-077-preparation-grid .pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- From css/page-078.css ---------- */
+/* ==========================================================================
+   Page 78 — The Lord's Prayer / History in the Liturgy
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Priest introduction + Lord's Prayer (left-aligned) + doxology
+     2. Liturgy outline (Lord's Prayer highlighted)
+   Commentary:
+     3. St John Chrysostom icon floated left
+     4. History text with drop cap "O", pullout right, Augustine quote box
+   ========================================================================== */
+/* ---------- Liturgical box: Lord's Prayer ------------------------- */
+.chapter-part.part-preparation-communion .page-078-priest-intro, .chapter-part.part-preparation-communion .page-078-priest-doxology {
+  margin: 4px 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-078-priest-intro .speaker, .chapter-part.part-preparation-communion .page-078-priest-doxology .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-preparation-communion .page-078-lords-prayer-title {
+  font-size: 24px;
+  margin: 6px 0 8px;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-078-lords-prayer {
+  margin: 0 4px 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-078-lords-prayer .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-preparation-communion .page-078-lords-prayer .people-body {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-preparation-communion .page-078-liturgical .liturgy-outline {
+  text-align: left;
+}
+/* ---------- History commentary ------------------------------------ */
+.chapter-part.part-preparation-communion .commentary .page-078-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+.chapter-part.part-preparation-communion .page-078-opening {
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-078-opening::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-preparation-communion .page-078-opening > p {
+  margin: 0;
+}
+.chapter-part.part-preparation-communion .page-078-chrysostom {
+  float: left;
+  width: 25%;
+  margin: 0 16px 0 0;
+  padding: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-078-chrysostom .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.chapter-part.part-preparation-communion .page-078-chrysostom figcaption {
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+.chapter-part.part-preparation-communion .page-078-augustine-box {
+  float: right;
+  width: 300px;
+  margin: 4px 0 10px 18px;
+  padding: 10px 14px 12px;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  font-size: 14.5px;
+  line-height: 1.42;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-078-augustine-box p {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-078-augustine-box .drop-cap {
+  font-size: 3em;
+}
+.chapter-part.part-preparation-communion .commentary > p {
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-078-bottom {
+  margin-top: 8px;
+}
+/* ---------- From css/page-079.css ---------- */
+/* ==========================================================================
+   Page 79 — The Lord's Prayer (commentary continued)
+   --------------------------------------------------------------------------
+   1. Chrysostom quote continuation (from page 78)
+   2. "The Lord's Prayer" title + Christ icon floated left
+   3. Full-width commentary paragraphs + liturgy quote in blue
+   4. QUESTIONS box
+   ========================================================================== */
+/* ---------- Continuation from page 78 ----------------------------- */
+.chapter-part.part-preparation-communion .page-079-continuation {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+/* ---------- Section title ----------------------------------------- */
+.chapter-part.part-preparation-communion .commentary .page-079-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+/* ---------- Opening: Christ icon + first two paragraphs ----------- */
+.chapter-part.part-preparation-communion .page-079-opening {
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-079-opening::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-preparation-communion .page-079-opening > p {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-079-opening-second {
+  margin-top: 8px !important;
+  text-indent: 1.5em;
+}
+.chapter-part.part-preparation-communion .page-079-christ {
+  float: left;
+  width: 25%;
+  margin: 0 16px 0 0;
+  padding: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-079-christ .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+.chapter-part.part-preparation-communion .page-079-christ figcaption {
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+/* ---------- Full-width commentary paragraphs -------------------- */
+.chapter-part.part-preparation-communion .commentary > p {
+  text-align: justify;
+  margin-top: 8px;
+}
+/* ---------- From css/page-080.css ---------- */
+/* ==========================================================================
+   Page 80 — Greeting / Inclination / Elevation / Deacon Orar
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Greeting dialogue
+     2. Bowing the Head — 2-col (Deacon | silent-prayer rubric)
+     3. Inclination Prayer — 3-col grid + aloud continuation
+     4. Elevation Prayer — 3-col grid
+     5. Holy Things exchange — 2-col (dialogue | elevation rubrics)
+     6. Liturgy outline (Elevation highlighted)
+   Commentary:
+     7. Seraph floated right + drop-cap text
+   ========================================================================== */
+/* ---------- Shared dialogue colours -------------------------------- */
+.chapter-part.part-preparation-communion .page-080-section-title {
+  font-size: 20px;
+  margin: 8px 0 4px;
+}
+/* ---------- Greeting ------------------------------------------------ */
+.chapter-part.part-preparation-communion .page-080-greeting .dialogue-line {
+  margin: 2px 4px;
+}
+/* ---------- Shared column widths (right vdivider alignment) -------- */
+.chapter-part.part-preparation-communion .chapter-segment.segment-080 .liturgical-box {
+  --p80-people: 0.75fr;
+  --p80-center: 2.1fr;
+  --p80-side: 0.85fr;
+  --p80-main: 2.85fr; /* people + center — keeps right vdivider aligned */
+  --p80-gap: 16px;
+}
+/* ---------- 2-column grids (main | rubric) ------------------------ */
+.chapter-part.part-preparation-communion .chapter-segment.segment-080 .preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-main)) var(--p80-gap) minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-080-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-080-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-080-col-right p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-preparation-communion .page-080-bowing-grid .col-left p, .chapter-part.part-preparation-communion .page-080-holy-things-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-080-bowing-grid .col-left p:last-child, .chapter-part.part-preparation-communion .page-080-holy-things-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- 3-column inclination / elevation grids -------------- */
+.chapter-part.part-preparation-communion .page-080-inclination-grid, .chapter-part.part-preparation-communion .page-080-elevation-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--p80-people)) var(--p80-gap)
+    minmax(0, var(--p80-center)) var(--p80-gap)
+    minmax(0, var(--p80-side));
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-080-people-line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-080-people-line .speaker {
+  color: var(--color-priest);
+}
+.chapter-part.part-preparation-communion .page-080-inclination-grid .prayer-text, .chapter-part.part-preparation-communion .page-080-elevation-grid .prayer-text {
+  margin: 0;
+  color: var(--color-prayer);
+}
+.chapter-part.part-preparation-communion .page-080-cleanse-line {
+  margin-top: 8px !important;
+}
+.chapter-part.part-preparation-communion .page-080-times-note {
+  font-size: 13px;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-080-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .page-080-holy-things-grid {
+  margin-top: 8px;
+}
+/* ---------- Commentary: seraph floated right ---------------------- */
+.chapter-part.part-preparation-communion .commentary .page-080-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+.chapter-part.part-preparation-communion .page-080-seraph {
+  width: 100px;
+  margin: 4px 0 6px 16px;
+}
+.chapter-part.part-preparation-communion .page-080-seraph .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-preparation-communion .commentary > p {
+  text-align: justify;
+}
+/* ---------- From css/page-081.css ---------- */
+/* ==========================================================================
+   Page 81 — Bowing the Head / The Elevation (commentary & questions)
+   --------------------------------------------------------------------------
+   1. Bowing the Head — early Christian icon floated right + drop-cap text
+   2. QUESTION box (Acts, I Corinthians, I Peter)
+   3. The Elevation — drop-cap quote, liturgy colours, Cabasilas pullout
+   4. QUESTIONS box (I Corinthians, Colossians, I Peter)
+   ========================================================================== */
+.chapter-part.part-preparation-communion .commentary .page-081-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+/* ---------- Bowing the Head: 2-col (title + text | image) --------- */
+.chapter-part.part-preparation-communion .page-081-inclination-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-081-inclination-body .page-081-section-title {
+  margin-top: 0;
+}
+.chapter-part.part-preparation-communion .page-081-inclination-body p {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-081-early-christian {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-081-early-christian .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 84px;
+  height: auto;
+  margin: 0 auto;
+  background: var(--color-page-bg);
+}
+/* ---------- The Elevation: liturgy colours ---------------------- */
+.chapter-part.part-preparation-communion .commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-preparation-communion .page-081-cabasilas-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  column-gap: 28px;
+  align-items: start;
+}
+.chapter-part.part-preparation-communion .page-081-cabasilas-grid > p {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-081-cabasilas-pullout {
+  margin: 0;
+  padding: 0;
+}
+.chapter-part.part-preparation-communion .page-081-cabasilas-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .commentary > p {
+  text-align: justify;
+}
+/* ---------- From css/page-082.css ---------- */
+/* ==========================================================================
+   Page 82 — Manual Acts of Preparation / Breaking the Bread (Fraction)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Communion Hymn (left) | Fraction / Commingling / Zeon (center) |
+        rubrics (right)
+     2. Liturgy outline (Fraction highlighted)
+   Commentary:
+     3. Lamb-cube image floated left + paten image floated right
+   ========================================================================== */
+/* ---------- 3-column liturgical grid ------------------------------ */
+.chapter-part.part-preparation-communion .page-082-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-082-main-grid .col-left, .chapter-part.part-preparation-communion .page-082-main-grid .col-center, .chapter-part.part-preparation-communion .page-082-main-grid .col-right {
+  padding-top: 0;
+}
+.chapter-part.part-preparation-communion .page-082-communion-hymn-line {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-082-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .page-082-hymn-text {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-preparation-communion .page-082-hymn-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-082-section-title {
+  font-size: 18px;
+  margin: 6px 0 4px;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-082-section-title:first-child {
+  margin-top: 0;
+}
+.chapter-part.part-preparation-communion .page-082-main-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-082-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-preparation-communion .page-082-fraction-prayer {
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .page-082-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-082-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-082-col-right p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Commentary -------------------------------------------- */
+.chapter-part.part-preparation-communion .commentary .page-082-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 6px;
+}
+.chapter-part.part-preparation-communion .commentary .page-082-fraction-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+.chapter-part.part-preparation-communion .page-082-commentary-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-preparation-communion .page-082-lamb-grid {
+  display: grid;
+  grid-template-columns: 144px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.chapter-part.part-preparation-communion .page-082-lamb-cube {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-082-lamb-cube .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-preparation-communion .page-082-lamb-text p {
+  margin: 0 0 8px;
+}
+.chapter-part.part-preparation-communion .page-082-lamb-text p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-preparation-communion .page-082-paten {
+  width: 220px;
+  margin: 4px 0 8px 16px;
+}
+.chapter-part.part-preparation-communion .page-082-paten .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-preparation-communion .commentary .page-082-commentary-body p {
+  text-align: justify;
+}
+/* ---------- From css/page-083.css ---------- */
+/* ==========================================================================
+   Page 83 — Commingling / Questions
+   --------------------------------------------------------------------------
+   1. Top QUESTIONS box (Lamb of God / unity in Christ)
+   2. Commingling commentary + chalice image floated right
+   3. Bottom QUESTIONS box (participation in death and resurrection)
+   ========================================================================== */
+.chapter-part.part-preparation-communion .page-083-liturgy-quote {
+  color: var(--color-prayer);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .commentary .page-083-commingling-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+.chapter-part.part-preparation-communion .page-083-chalice {
+  width: 240px;
+  margin: 4px 0 8px 16px;
+}
+.chapter-part.part-preparation-communion .page-083-chalice .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-preparation-communion .commentary > p {
+  text-align: justify;
+}
+/* ---------- From css/page-084.css ---------- */
+/* ==========================================================================
+   Page 84 — Manual Acts of Preparation (repeated) / The Rite of Warmth (Zeon)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Communion Hymn label (left) | Zeon dialogue (center) | rubrics (right)
+     2. Liturgy outline (Fraction highlighted)
+   Commentary:
+     3. Zeon history + Cabasilas quote, zeon chalice image right, Pentecost icon left
+   ========================================================================== */
+.chapter-part.part-preparation-communion .page-084-repeated-note {
+  margin: 0 0 6px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-084-main-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-preparation-communion .page-084-main-grid .col-left, .chapter-part.part-preparation-communion .page-084-main-grid .col-center, .chapter-part.part-preparation-communion .page-084-main-grid .col-right {
+  padding-top: 0;
+}
+.chapter-part.part-preparation-communion .page-084-communion-hymn-line {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-084-communion-hymn {
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-preparation-communion .page-084-section-title {
+  font-size: 18px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-084-main-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-preparation-communion .page-084-main-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+.chapter-part.part-preparation-communion .page-084-col-right {
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-preparation-communion .page-084-col-right p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-preparation-communion .page-084-col-right p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- Commentary -------------------------------------------- */
+.chapter-part.part-preparation-communion .commentary .page-084-zeon-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+.chapter-part.part-preparation-communion .page-084-opening-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  column-gap: 16px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.chapter-part.part-preparation-communion .page-084-opening-text .drop-cap-wrap {
+  margin: 0 0 8px;
+}
+.chapter-part.part-preparation-communion .page-084-cabasilas-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-preparation-communion .page-084-zeon-pullout {
+  float: left;
+  width: 190px;
+  margin: 4px 16px 8px 0;
+}
+.chapter-part.part-preparation-communion .page-084-cabasilas-body > p {
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-preparation-communion .page-084-zeon-chalice {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-084-zeon-chalice .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-preparation-communion .page-084-pentecost-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-preparation-communion .page-084-pentecost {
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-084-pentecost .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-preparation-communion .page-084-pentecost figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+  text-align: center;
+}
+.chapter-part.part-preparation-communion .page-084-pentecost-text p {
+  margin: 0;
+  text-align: justify;
+}
+
+/* ---------- From css/chapter-communion.css ---------- */
+/* ==========================================================================
+   Chapter: Communion — merged styles from pages 88–99
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours defined once.
+   Page-number padding rules omitted.
+   ========================================================================== */
+/* ---------- Shared dialogue colours ----------------------------- */
+/* ---------- cue-yellow (page 88) -------------------------------- */
+/* ---------- From css/page-088.css ---------- */
+/* ==========================================================================
+   Page 88 — Communion of the Clergy / Prayer Before Communion
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Clergy communion + pre-communion prayer (left) | rubrics (right)
+     2. Liturgy outline (Communion highlighted)
+   ========================================================================== */
+/* ---------- 2-column liturgical grid ------------------------------ */
+.chapter-part.part-communion .page-088-main-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-088-main-grid .col-left, .chapter-part.part-communion .page-088-main-grid .col-right {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-088-section-title {
+
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.chapter-part.part-communion .page-088-section-title:not(:first-child) {
+
+  margin-top: 10px;
+}
+.chapter-part.part-communion .page-088-section-title + p {
+
+  margin-bottom: 8px;
+}
+.chapter-part.part-communion .page-088-main-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-088-main-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-088-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-communion .page-088-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-088-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-088-indented-rubric {
+  padding-left: 14px;
+}
+/* ---------- From css/page-089.css ---------- */
+/* ==========================================================================
+   Page 89 — Forgive Me / Sinners, of whom I am first
+   --------------------------------------------------------------------------
+   1. "Forgive Me" commentary with drop cap
+   2. QUESTIONS box
+   3. "Sinners, of whom I am first" + Timothy quote + St Paul icon (left)
+      + Chrysostom commentary with pullout (right)
+   4. QUESTIONS box
+   ========================================================================== */
+/* ---------- Centered section titles -------------------------------- */
+.chapter-part.part-communion .commentary .page-089-forgive-title, .chapter-part.part-communion .commentary .page-089-sinners-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-communion .commentary .page-089-sinners-title {
+
+  margin-top: 6px;
+}
+/* ---------- Timothy quote ----------------------------------------- */
+.chapter-part.part-communion .page-089-timothy-quote {
+
+  margin: 0 0 10px;
+  text-align: justify;
+}
+/* ---------- St Paul icon + commentary body ------------------------ */
+.chapter-part.part-communion .page-089-paul-body::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .page-089-paul {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-089-paul .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-communion .page-089-paul figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+.chapter-part.part-communion .commentary .page-089-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-089-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-089-paul-body p {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-089-paul-body p:last-child {
+  margin-bottom: 0;
+}
+/* ---------- From css/page-090.css ---------- */
+/* ==========================================================================
+   Page 90 — Communion of the Priest and Deacon / the People
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col: Communion Hymn + arrow (left) | clergy communion (center) |
+        rubrics (right)
+     2. Full-width span rubric (center + right columns only)
+     3. Communion of the People: wide dialogue (left + center cols) | rubric (right)
+     4. Liturgy outline (Communion highlighted)
+   Commentary:
+     5. St Cyril icon (left) + drop-cap text
+   ========================================================================== */
+/* ---------- 3-column clergy block + spanning rubric -------------- */
+.chapter-part.part-communion .page-090-liturgy-layout {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  grid-template-rows: auto auto auto;
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-090-people-sidebar {
+
+  grid-row: 1 / 3;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 0 4px;
+}
+.chapter-part.part-communion .page-090-communion-hymn-line {
+
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+.chapter-part.part-communion .page-090-communion-hymn {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.chapter-part.part-communion .page-090-arrow {
+
+  position: relative;
+  flex: 1;
+  margin: 4px 0 0 10px;
+  width: 10px;
+  min-height: 24px;
+  border-left: 3px solid var(--color-emphasis);
+}
+.chapter-part.part-communion .page-090-arrow::after {
+
+  content: "";
+  position: absolute;
+  left: -7px;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid var(--color-emphasis);
+}
+.chapter-part.part-communion .page-090-clergy-vdivider {
+
+  grid-row: 1;
+}
+.chapter-part.part-communion .page-090-clergy-vdivider:first-of-type {
+
+  grid-column: 2;
+}
+.chapter-part.part-communion .page-090-clergy-vdivider:last-of-type {
+
+  grid-column: 4;
+}
+.chapter-part.part-communion .page-090-clergy-center {
+
+  grid-row: 1;
+  grid-column: 3;
+  padding: 0 10px;
+}
+.chapter-part.part-communion .page-090-clergy-right {
+
+  grid-row: 1;
+  grid-column: 5;
+  padding: 4px 4px 0 8px;
+}
+.chapter-part.part-communion .page-090-span-rubric {
+
+  grid-row: 2;
+  grid-column: 3 / 6;
+  margin: 8px 4px 12px 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-090-people-dialogue {
+
+  grid-row: 3;
+  grid-column: 1 / 4;
+  padding: 0 10px 0 4px;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-090-people-vdivider {
+
+  grid-row: 3;
+  grid-column: 4;
+  align-self: stretch;
+  margin-top: 12px;
+}
+/* Mid-page divider: omit the top cap diamond so it does not
+   intrude into the spanning rubric line above. */
+.chapter-part.part-communion .page-090-people-vdivider::before {
+
+  display: none;
+}
+.chapter-part.part-communion .page-090-people-right {
+
+  grid-row: 3;
+  grid-column: 5;
+  padding: 0 4px 0 8px;
+  margin-top: 4px;
+  justify-content: flex-start;
+}
+.chapter-part.part-communion .page-090-section-title {
+
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.chapter-part.part-communion .page-090-clergy-center p, .chapter-part.part-communion .page-090-people-dialogue p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-090-clergy-center p:last-child, .chapter-part.part-communion .page-090-people-dialogue p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-090-clergy-right p, .chapter-part.part-communion .page-090-people-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+.chapter-part.part-communion .page-090-clergy-right p:last-child, .chapter-part.part-communion .page-090-people-right p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- Commentary ------------------------------------------ */
+.chapter-part.part-communion .commentary .page-090-commentary-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+.chapter-part.part-communion .page-090-cyril {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-090-cyril .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-communion .page-090-cyril figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+.chapter-part.part-communion .commentary > .drop-cap-wrap {
+
+  text-align: justify;
+}
+.chapter-part.part-communion .commentary > .drop-cap-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* ---------- From css/page-091.css ---------- */
+/* ==========================================================================
+   Page 91 — For the Remission of Sins / Draw Near!
+   --------------------------------------------------------------------------
+   1. Centered section title + full-width intro (drop cap "W")
+   2. 2-column grid: Forerunner image | merged text column
+   3. Full-width QUESTIONS box
+   4. Draw Near commentary (full width)
+   ========================================================================== */
+/* ---------- Section titles ----------------------------------------- */
+.chapter-part.part-communion .commentary .page-091-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-communion .commentary .page-091-draw-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+  color: var(--color-priest);
+}
+/* ---------- Intro paragraph ---------------------------------------- */
+.chapter-part.part-communion .page-091-intro {
+
+  margin: 0 0 12px;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-091-questions {
+
+  margin: 12px 0;
+}
+/* ---------- 2-column top grid: image | text ---------------------- */
+.chapter-part.part-communion .page-091-top-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+.chapter-part.part-communion .page-091-text-col {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.chapter-part.part-communion .commentary .page-091-pullout {
+
+  margin: 0;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-091-pullout > p:first-child {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-091-attribution {
+
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  font-style: italic;
+}
+.chapter-part.part-communion .page-091-peter-quote {
+
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-091-peter-quote em {
+
+  font-style: italic;
+}
+.chapter-part.part-communion .page-091-peter-quote .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-style: normal;
+}
+/* ---------- St John the Forerunner image (left col) ---------------- */
+.chapter-part.part-communion .page-091-forerunner-box {
+
+  margin: 0;
+  padding: 0;
+}
+.chapter-part.part-communion .page-091-forerunner-figure {
+
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.chapter-part.part-communion .page-091-forerunner-image {
+
+  display: block;
+  width: 100%;
+  max-width: 108px;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.chapter-part.part-communion .page-091-forerunner-figure figcaption {
+
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.25;
+}
+.chapter-part.part-communion .page-091-forerunner-quote {
+
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-091-forerunner-quote .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+/* ---------- Draw Near body + bold closing -------------------------- */
+.chapter-part.part-communion .page-091-draw-body {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-091-closing {
+
+  margin: 4px 24px 0 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: justify;
+}
+/* ---------- Deacon prompt at bottom of QUESTIONS box ------------- */
+.chapter-part.part-communion .page-091-deacon-prompt {
+
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+.chapter-part.part-communion .page-091-deacon-quote {
+  color: var(--color-priest);
+  font-style: italic;
+  font-weight: 700;
+}
+/* ---------- From css/page-092.css ---------- */
+/* ==========================================================================
+   Page 92 — Communion of the People / Giving Communion with the Spoon
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Title + repeated note + span rubric
+     2. 2-col: deacon/people dialogue | rubrics
+     3. Prayer Before Communion (full width, Priest and People)
+     4. 3-col: People chant | Priest prayer | communion rubrics
+     5. Liturgy outline (Communion highlighted)
+   Commentary:
+     6. St Zosim icon (left) + spoon history (drop cap "W")
+   ========================================================================== */
+/* ---------- Liturgical titles -------------------------------------- */
+.chapter-part.part-communion .page-092-section-title {
+
+  text-align: center;
+  margin: 0 0 2px;
+  font-size: 22px;
+}
+.chapter-part.part-communion .page-092-repeated-note {
+
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-092-span-rubric {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: justify;
+}
+.chapter-part.part-communion .page-092-prayer-title {
+
+  text-align: center;
+  margin: 10px 0 8px;
+  font-size: 22px;
+}
+/* ---------- Upper 2-column grid ---------------------------------- */
+.chapter-part.part-communion .page-092-upper-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-092-upper-grid .col-left {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-092-upper-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-092-upper-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-092-upper-right {
+
+  justify-content: flex-start;
+  text-align: left;
+}
+.chapter-part.part-communion .page-092-upper-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-092-upper-right p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- Prayer Before Communion (full width) ----------------- */
+.chapter-part.part-communion .page-092-prayer {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-emphasis);
+  text-align: justify;
+}
+.chapter-part.part-communion .page-092-prayer .speaker {
+
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-092-prayer:last-of-type {
+
+  margin-bottom: 12px;
+}
+/* ---------- 3-column communion grid ---------------------------- */
+.chapter-part.part-communion .page-092-communion-grid {
+
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-092-communion-grid .col-left, .chapter-part.part-communion .page-092-communion-grid .col-center, .chapter-part.part-communion .page-092-communion-grid .col-right {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-092-communion-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-092-communion-right p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- Commentary: Giving Communion with the Spoon ---------- */
+.chapter-part.part-communion .commentary .page-092-spoon-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+.chapter-part.part-communion .page-092-spoon-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  column-gap: 14px;
+  align-items: start;
+}
+.chapter-part.part-communion .page-092-zosim {
+
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-092-zosim-image {
+
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.chapter-part.part-communion .page-092-zosim figcaption {
+
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+.chapter-part.part-communion .page-092-spoon-grid > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+/* ---------- From css/page-093.css ---------- */
+/* ==========================================================================
+   Page 93 — The Prayer Before Communion / Communion of the People
+   --------------------------------------------------------------------------
+   1. Prayer Before Communion + right pullout + QUESTION box
+   2. Communion of the People: icon + caption | text + QUESTIONS sidebar
+   3. Full-width QUESTIONS box
+   ========================================================================== */
+/* ---------- Section titles ----------------------------------------- */
+.chapter-part.part-communion .commentary .page-093-prayer-title, .chapter-part.part-communion .commentary .page-093-communion-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-communion .commentary .page-093-communion-title {
+
+  margin-top: 6px;
+}
+/* ---------- Prayer Before Communion opening ------------------------ */
+.chapter-part.part-communion .page-093-prayer-open {
+
+  margin: 0 0 10px;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-093-prayer-open::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .commentary .page-093-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-093-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-093-worthy-question {
+
+  margin: 10px 0 12px;
+}
+.chapter-part.part-communion .page-093-worthy-phrase {
+
+  color: var(--color-prayer);
+  text-decoration: underline;
+  font-weight: 700;
+}
+/* ---------- Communion section: text + sidebar -------------------- */
+.chapter-part.part-communion .page-093-communion-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-093-communion-main::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .page-093-hades {
+
+  float: left;
+  width: 200px;
+  margin: 4px 14px 6px 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-093-hades-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-communion .page-093-icon-caption {
+
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+.chapter-part.part-communion .page-093-icon-caption .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-style: normal;
+}
+.chapter-part.part-communion .page-093-communion-main > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-093-eternity-questions {
+
+  margin: 0;
+}
+.chapter-part.part-communion .page-093-healing-questions {
+
+  margin: 0;
+}
+.chapter-part.part-communion .page-093-healing-phrase {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+/* ---------- From css/page-094.css ---------- */
+/* ==========================================================================
+   Page 94 — After Communion / Hymns of the Resurrection
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title + Hymns of the Resurrection
+     2. 3-column grid: People | Deacon hymns | Rubrics
+     3. Full-width Priest blessing + People response
+     4. 3-column grid: People | Priest prayers | Rubrics (continued)
+     5. Full-width Priest doxology + People Amen
+     4. Liturgy outline (Conclusion highlighted)
+   Commentary:
+     5. After Communion teaching | QUESTION sidebar
+   ========================================================================== */
+/* ---------- Liturgical titles -------------------------------------- */
+.chapter-part.part-communion .liturgical-box > .chapter-title {
+
+  margin: 4px 0 2px;
+}
+.chapter-part.part-communion .page-094-hymns-title {
+
+  text-align: center;
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+/* ---------- 3-column liturgy grid ---------------------------------- */
+.chapter-part.part-communion .page-094-liturgy-layout {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-094-col-left {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-094-col-center {
+
+  padding: 0 10px;
+}
+.chapter-part.part-communion .page-094-col-center p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-communion .page-094-col-center p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-094-hymn-line {
+
+  margin: 0 0 8px;
+}
+.chapter-part.part-communion .page-094-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-094-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-094-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-094-fullwidth-prayer {
+
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+/* ---------- Lower 3-column grid: People | Priest | Rubrics -------- */
+.chapter-part.part-communion .page-094-lower-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-094-lower-grid .col-left {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-094-lower-grid .col-center {
+
+  padding: 0 10px;
+}
+.chapter-part.part-communion .page-094-lower-grid .col-right {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .liturgical-box .prayer-continuation {
+
+  margin: 10px 4px 6px;
+}
+.chapter-part.part-communion .liturgical-box .dialogue-line {
+
+  margin: 0 4px 10px;
+}
+.chapter-part.part-communion .liturgical-box .dialogue-line .people-body {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+/* ---------- Commentary: After Communion -------------------------- */
+.chapter-part.part-communion .page-094-after-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .commentary .page-094-after-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-communion .page-094-after-body > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-094-after-body .citation {
+
+  display: block;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-094-question {
+  margin: 0;
+}
+/* ---------- From css/page-095.css ---------- */
+/* ==========================================================================
+   Page 95 — Hymns of the Resurrection
+   --------------------------------------------------------------------------
+   1. St Athanasius: left pullout + right icon + drop-cap text (full width)
+   2. 2-column layout: large Christ image (left) | Q1 + True Light + Q2 (right)
+   ========================================================================== */
+/* ---------- Section titles ----------------------------------------- */
+.chapter-part.part-communion .commentary .page-095-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+.chapter-part.part-communion .commentary .page-095-true-light-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+  color: var(--color-question-header);
+}
+/* ---------- St Athanasius section (full width) --------------------- */
+.chapter-part.part-communion .page-095-athanasius::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .commentary .page-095-pullout {
+
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-095-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-095-athanasius-figure {
+
+  width: 170px;
+  margin: 4px 0 6px 16px;
+}
+.chapter-part.part-communion .page-095-athanasius-figure .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-communion .page-095-athanasius-figure figcaption {
+
+  font-size: 14px;
+}
+.chapter-part.part-communion .page-095-athanasius > .drop-cap-wrap {
+
+  margin: 0 0 12px;
+  text-align: justify;
+}
+/* ---------- Main 2-column layout: Christ | right column -------------- */
+.chapter-part.part-communion .page-095-main-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+  column-gap: 14px;
+  align-items: start;
+}
+.chapter-part.part-communion .page-095-witness-question {
+
+  grid-column: 1 / -1;
+}
+.chapter-part.part-communion .page-095-christ-figure {
+
+  margin: 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-095-christ-image {
+
+  display: block;
+  width: 100%;
+  max-width: 416px;
+  height: auto;
+  margin: 0 auto;
+}
+.chapter-part.part-communion .page-095-christ-figure figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+.chapter-part.part-communion .page-095-right-col {
+
+  min-width: 0;
+}
+/* ---------- QUESTION boxes (header top-right) ---------------------- */
+.chapter-part.part-communion .question-box-095 {
+
+  position: relative;
+  margin: 0 0 12px;
+}
+.chapter-part.part-communion .question-box-095.page-095-witness-question {
+
+  margin: 24px 0 12px;
+}
+.chapter-part.part-communion .page-095-fear-question {
+
+  margin-top: 0;
+}
+.chapter-part.part-communion .page-095-true-light {
+
+  margin-bottom: 8px;
+}
+.chapter-part.part-communion .box-header-095 {
+
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.chapter-part.part-communion .question-prompt-095 {
+
+  margin: 0 0 10px;
+  padding-right: 140px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+/* ---------- We Have Seen the True Light (right column) ------------- */
+.chapter-part.part-communion .page-095-true-light > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-095-hymn-quote {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+/* ---------- From css/page-096.css ---------- */
+/* ==========================================================================
+   Page 96 — Litany of Thanksgiving / Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Upper 2-column: hymn + litany|prayer | upper rubrics
+     2. Full-width priest doxology
+     3. Lower 2-column: dismissal dialogue | lower rubrics
+   Commentary:
+     4. That All Day Long We May Meditate Upon Thy Righteousness — text + pullout
+   ========================================================================== */
+/* ---------- Upper 2-column: main | upper rubrics ------------------- */
+.chapter-part.part-communion .page-096-upper-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-096-upper-main {
+
+  min-width: 0;
+}
+.chapter-part.part-communion .page-096-upper-vdivider {
+
+  align-self: stretch;
+}
+.chapter-part.part-communion .page-096-upper-rubrics {
+
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-096-upper-rubrics p, .chapter-part.part-communion .page-096-lower-rubrics p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-096-upper-rubrics p:last-child, .chapter-part.part-communion .page-096-lower-rubrics p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- Inner 2-column: Litany | Prayer of Thanksgiving -------- */
+.chapter-part.part-communion .page-096-liturgy-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) 16px minmax(0, 1.05fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 6px;
+}
+.chapter-part.part-communion .page-096-col-left {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-096-col-left p {
+
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+.chapter-part.part-communion .page-096-col-left p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-096-people-hymn {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.chapter-part.part-communion .page-096-people-hymn .people-body {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+.chapter-part.part-communion .page-096-holiness-phrase {
+
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.chapter-part.part-communion .page-096-litany-title, .chapter-part.part-communion .page-096-thanks-title {
+
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.chapter-part.part-communion .page-096-thanks-title {
+
+  margin-top: 0;
+}
+.chapter-part.part-communion .page-096-col-center {
+
+  padding: 0 10px;
+}
+.chapter-part.part-communion .page-096-col-center .prayer-text {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+/* ---------- Full-width priest doxology ----------------------------- */
+.chapter-part.part-communion .page-096-doxology {
+
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+.chapter-part.part-communion .page-096-doxology .speaker {
+
+  color: var(--color-priest);
+}
+/* ---------- Lower 2-column: dismissal | lower rubrics -------------- */
+.chapter-part.part-communion .page-096-lower-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+.chapter-part.part-communion .page-096-lower-left p {
+
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+.chapter-part.part-communion .page-096-lower-left p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-096-lower-rubrics {
+
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+/* ---------- Commentary --------------------------------------------- */
+.chapter-part.part-communion .commentary .page-096-commentary-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+  color: var(--color-question-header);
+}
+.chapter-part.part-communion .page-096-commentary-body::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .page-096-commentary-body > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+.chapter-part.part-communion .commentary .page-096-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-096-pullout p {
+  font-size: 17px;
+  line-height: 1.35;
+}
+/* ---------- From css/page-097.css ---------- */
+/* ==========================================================================
+   Page 97 — The Litany and Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   1. QUESTIONS box (meditation on God all day)
+   2. 2-column layout: Schmemann commentary + One Leper Returns sidebar
+   3. QUESTION box (thanksgiving in prayer)
+   ========================================================================== */
+/* ---------- Section title -------------------------------------------- */
+.chapter-part.part-communion .commentary .page-097-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+/* ---------- QUESTION boxes (header top-right) ---------------------- */
+.chapter-part.part-communion .question-box-097 {
+
+  position: relative;
+  margin: 0 0 12px;
+}
+.chapter-part.part-communion .box-header-097 {
+
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.chapter-part.part-communion .question-prompt-097 {
+
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .question-box-097 > .question-prompt:first-of-type {
+
+  padding-right: 140px;
+}
+.chapter-part.part-communion .page-097-top-questions .question-prompt-097:first-of-type {
+
+  margin-top: 0;
+}
+.chapter-part.part-communion .page-097-thanks-question {
+
+  margin-top: 12px;
+}
+/* ---------- 2-column: commentary | leper sidebar ------------------- */
+.chapter-part.part-communion .page-097-thanksgiving-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+}
+.chapter-part.part-communion .page-097-main::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .commentary .page-097-pullout {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+.chapter-part.part-communion .commentary .page-097-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-097-main > .drop-cap-wrap, .chapter-part.part-communion .page-097-main > p {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-097-main > p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- One Leper Returns sidebar ------------------------------ */
+.chapter-part.part-communion .page-097-leper-box {
+
+  margin: 0;
+  border: 1.5px solid #4a6a9a;
+  background: #fbf9f1;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+}
+.chapter-part.part-communion .page-097-leper-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.chapter-part.part-communion .page-097-leper-body {
+
+  padding: 10px 12px 12px;
+}
+.chapter-part.part-communion .page-097-leper-title {
+
+  margin: 0 0 8px;
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-heading);
+}
+.chapter-part.part-communion .page-097-leper-text {
+
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: justify;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-097-leper-text .drop-cap {
+
+  font-size: 2.4em;
+}
+.chapter-part.part-communion .page-097-leper-text .citation {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-style: normal;
+}
+/* ---------- From css/page-098.css ---------- */
+/* ==========================================================================
+   Page 98 — Prayer Before the Ambon / Consuming the Gifts / Dismissal
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Prayer Before the Ambon — 2-col (prayers | rubrics)
+     2. Consuming the Holy Gifts — 3-col (People | prayer + title | rubrics)
+     3. Blessing + Dismissal — 1-col full width
+     4. Liturgy outline (Conclusion highlighted)
+     5. End-of-liturgy line
+   ========================================================================== */
+/* ---------- 2-column liturgical grid ------------------------------ */
+.chapter-part.part-communion .chapter-segment.segment-098 .preface-grid-two-col {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-098-section-title {
+
+  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 22px;
+}
+.chapter-part.part-communion .page-098-section-title:first-child {
+
+  margin-top: 2px;
+}
+.chapter-part.part-communion .page-098-ambon-grid .col-left {
+
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-098-ambon-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-098-ambon-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+/* ---------- 3-column: Consuming the Holy Gifts ------------------- */
+.chapter-part.part-communion .page-098-consuming-grid {
+
+  margin-top: 10px;
+}
+.chapter-part.part-communion .page-098-consuming-grid .col-left {
+
+  padding-top: 34px;
+}
+.chapter-part.part-communion .page-098-consuming-grid .col-left p {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-098-consuming-title {
+
+  margin: 0 0 6px;
+  font-size: 20px;
+  text-align: center;
+}
+.chapter-part.part-communion .page-098-consuming-grid .col-center p {
+
+  margin: 0;
+}
+.chapter-part.part-communion .page-098-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+.chapter-part.part-communion .page-098-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.chapter-part.part-communion .page-098-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-098-times-note {
+
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-text);
+}
+/* ---------- 1-column: blessing through dismissal ----------------- */
+.chapter-part.part-communion .page-098-single-col {
+
+  margin-top: 10px;
+}
+.chapter-part.part-communion .page-098-blessing-line p, .chapter-part.part-communion .page-098-dismissal p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.chapter-part.part-communion .page-098-blessing-line p:last-child, .chapter-part.part-communion .page-098-dismissal p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-098-blessing-line {
+
+  margin-bottom: 10px;
+}
+.chapter-part.part-communion .page-098-dismissal {
+
+  margin: 4px 0 8px;
+}
+.chapter-part.part-communion .page-098-single-col .page-098-section-title {
+
+  margin-top: 0;
+}
+.chapter-part.part-communion .page-098-saint-blank {
+
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+.chapter-part.part-communion .page-098-end-line {
+  margin: 10px 0 0;
+  text-align: center;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+}
+/* ---------- From css/page-099.css ---------- */
+/* ==========================================================================
+   Page 99 — The Prayer Before the Ambon (commentary)
+   --------------------------------------------------------------------------
+   1. Intro paragraph + QUESTIONS box (top right)
+   2. 2-column: Preserve the Church | Pantocrator icon
+   3. Full-width Dismissal section
+   4. QUESTIONS box + John 14 quote
+   ========================================================================== */
+/* ---------- Section title -------------------------------------------- */
+.chapter-part.part-communion .commentary .page-099-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+/* ---------- Intro: text wraps around top QUESTIONS box -------------- */
+.chapter-part.part-communion .page-099-intro::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+.chapter-part.part-communion .page-099-top-questions {
+
+  float: right;
+  width: 300px;
+  margin: 0 0 10px 16px;
+}
+.chapter-part.part-communion .page-099-box-header {
+
+  text-align: right;
+}
+.chapter-part.part-communion .page-099-top-questions .question-prompt {
+
+  padding-right: 0;
+}
+.chapter-part.part-communion .page-099-intro > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+/* ---------- 2-column: text | icon ----------------------------------- */
+.chapter-part.part-communion .page-099-church-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  column-gap: 14px;
+  align-items: start;
+  margin: 12px 0;
+}
+.chapter-part.part-communion .page-099-col-title {
+
+  margin: 0 0 8px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+  letter-spacing: 0.02em;
+}
+.chapter-part.part-communion .page-099-left-col p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-099-left-col p:last-child {
+
+  margin-bottom: 0;
+}
+.chapter-part.part-communion .page-099-icon {
+
+  margin: 28px 0 0;
+  text-align: center;
+}
+.chapter-part.part-communion .page-099-icon .figure-image {
+
+  display: block;
+  width: 216px;
+  height: 216px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* ---------- Dismissal: 2-column (body | quotes) --------------------- */
+.chapter-part.part-communion .page-099-dismissal-section {
+
+  margin: 10px 0 0;
+}
+.chapter-part.part-communion .page-099-dismissal-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  column-gap: 20px;
+  align-items: start;
+}
+.chapter-part.part-communion .page-099-dismissal-body {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+.chapter-part.part-communion .page-099-dismissal-quotes {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 4px;
+}
+.chapter-part.part-communion .page-099-pullout {
+
+  margin: 0;
+  padding: 0;
+}
+.chapter-part.part-communion .page-099-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+/* ---------- Bottom QUESTIONS box ------------------------------------ */
+.chapter-part.part-communion .page-099-bottom-questions {
+
+  margin-top: 12px;
+}
+.chapter-part.part-communion .page-099-bottom-questions .bible-quote {
+  text-align: right;
+}

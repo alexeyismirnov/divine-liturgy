@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Page 98 — Prayer Before the Ambon / Consuming the Gifts / Dismissal
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Prayer Before the Ambon — 2-col (prayers | rubrics)
+     2. Consuming the Holy Gifts — 3-col (People | prayer + title | rubrics)
+     3. Blessing + Dismissal — 1-col full width
+     4. Liturgy outline (Conclusion highlighted)
+     5. End-of-liturgy line
+   ========================================================================== */
+
+.book-page[data-page-number="98"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- 2-column liturgical grid ------------------------------ */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-098-section-title {
+  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 22px;
+}
+
+.page-098-section-title:first-child {
+  margin-top: 2px;
+}
+
+.page-098-ambon-grid .col-left {
+  padding-top: 0;
+}
+
+.page-098-ambon-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-ambon-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 3-column: Consuming the Holy Gifts ------------------- */
+.page-098-consuming-grid {
+  margin-top: 10px;
+}
+
+.page-098-consuming-grid .col-left {
+  padding-top: 34px;
+}
+
+.page-098-consuming-grid .col-left p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-consuming-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.page-098-consuming-grid .col-center p {
+  margin: 0;
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.page-098-col-right {
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.page-098-col-right p {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-098-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.page-098-times-note {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* ---------- 1-column: blessing through dismissal ----------------- */
+.page-098-single-col {
+  margin-top: 10px;
+}
+
+.page-098-blessing-line p,
+.page-098-dismissal p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-blessing-line p:last-child,
+.page-098-dismissal p:last-child {
+  margin-bottom: 0;
+}
+
+.page-098-blessing-line {
+  margin-bottom: 10px;
+}
+
+.page-098-dismissal {
+  margin: 4px 0 8px;
+}
+
+.page-098-single-col .page-098-section-title {
+  margin-top: 0;
+}
+
+.page-098-saint-blank {
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+.page-098-end-line {
+  margin: 10px 0 0;
+  text-align: center;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+}

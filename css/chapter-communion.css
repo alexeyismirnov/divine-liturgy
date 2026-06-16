@@ -1,0 +1,1995 @@
+/* ==========================================================================
+   Chapter: Communion — merged styles from pages 88–99
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours defined once.
+   Page-number padding rules omitted.
+   ========================================================================== */
+
+.book-chapter {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-chapter h2 {
+  margin-top: 18px;
+}
+
+.book-chapter > .chapter-title {
+  margin-bottom: 12px;
+}
+
+.book-chapter .commentary > .section-title:first-child,
+.book-chapter .commentary > h2:first-child {
+  margin-top: 18px;
+}
+
+.book-chapter .col-center > h2,
+.book-chapter .col-left > h2 {
+  margin-top: 4px;
+}
+
+/* ---------- Shared dialogue colours ----------------------------- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- cue-yellow (page 88) -------------------------------- */
+:root {
+  --color-cue-yellow: #d4a017;
+}
+.cue-yellow { color: var(--color-cue-yellow); }
+
+
+
+/* ---------- From css/page-088.css ---------- */
+/* ==========================================================================
+   Page 88 — Communion of the Clergy / Prayer Before Communion
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Clergy communion + pre-communion prayer (left) | rubrics (right)
+     2. Liturgy outline (Communion highlighted)
+   ========================================================================== */
+
+/* ---------- 2-column liturgical grid ------------------------------ */
+.page-088-main-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-088-main-grid .col-left,
+.page-088-main-grid .col-right {
+
+  padding-top: 0;
+}
+
+.page-088-section-title {
+
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.page-088-section-title:not(:first-child) {
+
+  margin-top: 10px;
+}
+
+.page-088-section-title + p {
+
+  margin-bottom: 8px;
+}
+
+.page-088-main-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-088-main-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+
+
+
+.page-088-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-088-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-088-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-088-indented-rubric {
+  padding-left: 14px;
+}
+
+/* ---------- From css/page-089.css ---------- */
+/* ==========================================================================
+   Page 89 — Forgive Me / Sinners, of whom I am first
+   --------------------------------------------------------------------------
+   1. "Forgive Me" commentary with drop cap
+   2. QUESTIONS box
+   3. "Sinners, of whom I am first" + Timothy quote + St Paul icon (left)
+      + Chrysostom commentary with pullout (right)
+   4. QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Centered section titles -------------------------------- */
+.commentary .page-089-forgive-title,
+.commentary .page-089-sinners-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-089-sinners-title {
+
+  margin-top: 6px;
+}
+
+/* ---------- Timothy quote ----------------------------------------- */
+.page-089-timothy-quote {
+
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- St Paul icon + commentary body ------------------------ */
+.page-089-paul-body::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-089-paul {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+
+.page-089-paul .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-089-paul figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.commentary .page-089-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-089-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-089-paul-body p {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-089-paul-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- From css/page-090.css ---------- */
+/* ==========================================================================
+   Page 90 — Communion of the Priest and Deacon / the People
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. 3-col: Communion Hymn + arrow (left) | clergy communion (center) |
+        rubrics (right)
+     2. Full-width span rubric (center + right columns only)
+     3. Communion of the People: wide dialogue (left + center cols) | rubric (right)
+     4. Liturgy outline (Communion highlighted)
+   Commentary:
+     5. St Cyril icon (left) + drop-cap text
+   ========================================================================== */
+
+/* ---------- 3-column clergy block + spanning rubric -------------- */
+.page-090-liturgy-layout {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  grid-template-rows: auto auto auto;
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-090-people-sidebar {
+
+  grid-row: 1 / 3;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 8px 0 4px;
+}
+
+.page-090-communion-hymn-line {
+
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+.page-090-communion-hymn {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-090-arrow {
+
+  position: relative;
+  flex: 1;
+  margin: 4px 0 0 10px;
+  width: 10px;
+  min-height: 24px;
+  border-left: 3px solid var(--color-emphasis);
+}
+
+.page-090-arrow::after {
+
+  content: "";
+  position: absolute;
+  left: -7px;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid var(--color-emphasis);
+}
+
+.page-090-clergy-vdivider {
+
+  grid-row: 1;
+}
+
+.page-090-clergy-vdivider:first-of-type {
+
+  grid-column: 2;
+}
+
+.page-090-clergy-vdivider:last-of-type {
+
+  grid-column: 4;
+}
+
+.page-090-clergy-center {
+
+  grid-row: 1;
+  grid-column: 3;
+  padding: 0 10px;
+}
+
+.page-090-clergy-right {
+
+  grid-row: 1;
+  grid-column: 5;
+  padding: 4px 4px 0 8px;
+}
+
+.page-090-span-rubric {
+
+  grid-row: 2;
+  grid-column: 3 / 6;
+  margin: 8px 4px 12px 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-090-people-dialogue {
+
+  grid-row: 3;
+  grid-column: 1 / 4;
+  padding: 0 10px 0 4px;
+  margin-top: 4px;
+}
+
+.page-090-people-vdivider {
+
+  grid-row: 3;
+  grid-column: 4;
+  align-self: stretch;
+  margin-top: 12px;
+}
+
+/* Mid-page divider: omit the top cap diamond so it does not
+   intrude into the spanning rubric line above. */
+.page-090-people-vdivider::before {
+
+  display: none;
+}
+
+.page-090-people-right {
+
+  grid-row: 3;
+  grid-column: 5;
+  padding: 0 4px 0 8px;
+  margin-top: 4px;
+  justify-content: flex-start;
+}
+
+.page-090-section-title {
+
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.page-090-clergy-center p,
+.page-090-people-dialogue p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-090-clergy-center p:last-child,
+.page-090-people-dialogue p:last-child {
+
+  margin-bottom: 0;
+}
+
+
+
+
+.page-090-clergy-right p,
+.page-090-people-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.page-090-clergy-right p:last-child,
+.page-090-people-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary ------------------------------------------ */
+.commentary .page-090-commentary-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+.page-090-cyril {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 6px 0;
+  text-align: center;
+}
+
+.page-090-cyril .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-090-cyril figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.commentary > .drop-cap-wrap {
+
+  text-align: justify;
+}
+
+.commentary > .drop-cap-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ---------- From css/page-091.css ---------- */
+/* ==========================================================================
+   Page 91 — For the Remission of Sins / Draw Near!
+   --------------------------------------------------------------------------
+   1. Centered section title + full-width intro (drop cap "W")
+   2. 2-column grid: Forerunner image | merged text column
+   3. Full-width QUESTIONS box
+   4. Draw Near commentary (full width)
+   ========================================================================== */
+
+/* ---------- Section titles ----------------------------------------- */
+.commentary .page-091-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-091-draw-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+  color: var(--color-priest);
+}
+
+/* ---------- Intro paragraph ---------------------------------------- */
+.page-091-intro {
+
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.page-091-questions {
+
+  margin: 12px 0;
+}
+
+/* ---------- 2-column top grid: image | text ---------------------- */
+.page-091-top-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.page-091-text-col {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.commentary .page-091-pullout {
+
+  margin: 0;
+  padding: 0;
+}
+
+.commentary .page-091-pullout > p:first-child {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-091-attribution {
+
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.page-091-peter-quote {
+
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-091-peter-quote em {
+
+  font-style: italic;
+}
+
+.page-091-peter-quote .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+/* ---------- St John the Forerunner image (left col) ---------------- */
+.page-091-forerunner-box {
+
+  margin: 0;
+  padding: 0;
+}
+
+.page-091-forerunner-figure {
+
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.page-091-forerunner-image {
+
+  display: block;
+  width: 100%;
+  max-width: 108px;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.page-091-forerunner-figure figcaption {
+
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.25;
+}
+
+.page-091-forerunner-quote {
+
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.page-091-forerunner-quote .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ---------- Draw Near body + bold closing -------------------------- */
+.page-091-draw-body {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-091-closing {
+
+  margin: 4px 24px 0 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* ---------- Deacon prompt at bottom of QUESTIONS box ------------- */
+.page-091-deacon-prompt {
+
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.page-091-deacon-quote {
+  color: var(--color-priest);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ---------- From css/page-092.css ---------- */
+/* ==========================================================================
+   Page 92 — Communion of the People / Giving Communion with the Spoon
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Title + repeated note + span rubric
+     2. 2-col: deacon/people dialogue | rubrics
+     3. Prayer Before Communion (full width, Priest and People)
+     4. 3-col: People chant | Priest prayer | communion rubrics
+     5. Liturgy outline (Communion highlighted)
+   Commentary:
+     6. St Zosim icon (left) + spoon history (drop cap "W")
+   ========================================================================== */
+
+/* ---------- Liturgical titles -------------------------------------- */
+.page-092-section-title {
+
+  text-align: center;
+  margin: 0 0 2px;
+  font-size: 22px;
+}
+
+.page-092-repeated-note {
+
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.page-092-span-rubric {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+.page-092-prayer-title {
+
+  text-align: center;
+  margin: 10px 0 8px;
+  font-size: 22px;
+}
+
+/* ---------- Upper 2-column grid ---------------------------------- */
+.page-092-upper-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-092-upper-grid .col-left {
+
+  padding-top: 0;
+}
+
+.page-092-upper-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-092-upper-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-092-upper-right {
+
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.page-092-upper-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-092-upper-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+
+
+/* ---------- Prayer Before Communion (full width) ----------------- */
+.page-092-prayer {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-emphasis);
+  text-align: justify;
+}
+
+.page-092-prayer .speaker {
+
+  color: var(--color-text);
+}
+
+.page-092-prayer:last-of-type {
+
+  margin-bottom: 12px;
+}
+
+/* ---------- 3-column communion grid ---------------------------- */
+.page-092-communion-grid {
+
+  margin-top: 4px;
+}
+
+.page-092-communion-grid .col-left,
+.page-092-communion-grid .col-center,
+.page-092-communion-grid .col-right {
+
+  padding-top: 0;
+}
+
+.page-092-communion-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-092-communion-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+/* ---------- Commentary: Giving Communion with the Spoon ---------- */
+.commentary .page-092-spoon-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+.page-092-spoon-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.page-092-zosim {
+
+  margin: 0;
+  text-align: center;
+}
+
+.page-092-zosim-image {
+
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.page-092-zosim figcaption {
+
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.page-092-spoon-grid > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+/* ---------- From css/page-093.css ---------- */
+/* ==========================================================================
+   Page 93 — The Prayer Before Communion / Communion of the People
+   --------------------------------------------------------------------------
+   1. Prayer Before Communion + right pullout + QUESTION box
+   2. Communion of the People: icon + caption | text + QUESTIONS sidebar
+   3. Full-width QUESTIONS box
+   ========================================================================== */
+
+/* ---------- Section titles ----------------------------------------- */
+.commentary .page-093-prayer-title,
+.commentary .page-093-communion-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-093-communion-title {
+
+  margin-top: 6px;
+}
+
+/* ---------- Prayer Before Communion opening ------------------------ */
+.page-093-prayer-open {
+
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.page-093-prayer-open::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.commentary .page-093-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-093-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-093-worthy-question {
+
+  margin: 10px 0 12px;
+}
+
+.page-093-worthy-phrase {
+
+  color: var(--color-prayer);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ---------- Communion section: text + sidebar -------------------- */
+.page-093-communion-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.page-093-communion-main::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-093-hades {
+
+  float: left;
+  width: 200px;
+  margin: 4px 14px 6px 0;
+  text-align: center;
+}
+
+.page-093-hades-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-093-icon-caption {
+
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+.page-093-icon-caption .citation {
+
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page-093-communion-main > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+
+.page-093-eternity-questions {
+
+  margin: 0;
+}
+
+.page-093-healing-questions {
+
+  margin: 0;
+}
+
+.page-093-healing-phrase {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- From css/page-094.css ---------- */
+/* ==========================================================================
+   Page 94 — After Communion / Hymns of the Resurrection
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter title + Hymns of the Resurrection
+     2. 3-column grid: People | Deacon hymns | Rubrics
+     3. Full-width Priest blessing + People response
+     4. 3-column grid: People | Priest prayers | Rubrics (continued)
+     5. Full-width Priest doxology + People Amen
+     4. Liturgy outline (Conclusion highlighted)
+   Commentary:
+     5. After Communion teaching | QUESTION sidebar
+   ========================================================================== */
+
+/* ---------- Liturgical titles -------------------------------------- */
+.liturgical-box > .chapter-title {
+
+  margin: 4px 0 2px;
+}
+
+.page-094-hymns-title {
+
+  text-align: center;
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+/* ---------- 3-column liturgy grid ---------------------------------- */
+.page-094-liturgy-layout {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-094-col-left {
+
+  padding-top: 0;
+}
+
+.page-094-col-center {
+
+  padding: 0 10px;
+}
+
+.page-094-col-center p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-094-col-center p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-094-hymn-line {
+
+  margin: 0 0 8px;
+}
+
+
+
+.page-094-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.page-094-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-094-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-094-fullwidth-prayer {
+
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ---------- Lower 3-column grid: People | Priest | Rubrics -------- */
+.page-094-lower-grid {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.15fr) 16px minmax(0, 1.13fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-094-lower-grid .col-left {
+
+  padding-top: 0;
+}
+
+.page-094-lower-grid .col-center {
+
+  padding: 0 10px;
+}
+
+.page-094-lower-grid .col-right {
+
+  padding-top: 0;
+}
+
+.liturgical-box .prayer-continuation {
+
+  margin: 10px 4px 6px;
+}
+
+.liturgical-box .dialogue-line {
+
+  margin: 0 4px 10px;
+}
+
+.liturgical-box .dialogue-line .people-body {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Commentary: After Communion -------------------------- */
+.page-094-after-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.commentary .page-094-after-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.page-094-after-body > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+
+.page-094-after-body .citation {
+
+  display: block;
+  margin-top: 4px;
+}
+
+.page-094-question {
+  margin: 0;
+}
+
+/* ---------- From css/page-095.css ---------- */
+/* ==========================================================================
+   Page 95 — Hymns of the Resurrection
+   --------------------------------------------------------------------------
+   1. St Athanasius: left pullout + right icon + drop-cap text (full width)
+   2. 2-column layout: large Christ image (left) | Q1 + True Light + Q2 (right)
+   ========================================================================== */
+
+/* ---------- Section titles ----------------------------------------- */
+.commentary .page-095-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary .page-095-true-light-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+  color: var(--color-question-header);
+}
+
+/* ---------- St Athanasius section (full width) --------------------- */
+.page-095-athanasius::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.commentary .page-095-pullout {
+
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+
+.commentary .page-095-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-095-athanasius-figure {
+
+  width: 170px;
+  margin: 4px 0 6px 16px;
+}
+
+.page-095-athanasius-figure .figure-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-095-athanasius-figure figcaption {
+
+  font-size: 14px;
+}
+
+.page-095-athanasius > .drop-cap-wrap {
+
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+/* ---------- Main 2-column layout: Christ | right column -------------- */
+.page-095-main-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.page-095-witness-question {
+
+  grid-column: 1 / -1;
+}
+
+.page-095-christ-figure {
+
+  margin: 0;
+  text-align: center;
+}
+
+.page-095-christ-image {
+
+  display: block;
+  width: 100%;
+  max-width: 416px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-095-christ-figure figcaption {
+
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.page-095-right-col {
+
+  min-width: 0;
+}
+
+/* ---------- QUESTION boxes (header top-right) ---------------------- */
+.question-box-095 {
+
+  position: relative;
+  margin: 0 0 12px;
+}
+
+.question-box-095.page-095-witness-question {
+
+  margin: 24px 0 12px;
+}
+
+.page-095-fear-question {
+
+  margin-top: 0;
+}
+
+.page-095-true-light {
+
+  margin-bottom: 8px;
+}
+
+.box-header-095 {
+
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.question-prompt-095 {
+
+  margin: 0 0 10px;
+  padding-right: 140px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ---------- We Have Seen the True Light (right column) ------------- */
+.page-095-true-light > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+
+.page-095-hymn-quote {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- From css/page-096.css ---------- */
+/* ==========================================================================
+   Page 96 — Litany of Thanksgiving / Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Upper 2-column: hymn + litany|prayer | upper rubrics
+     2. Full-width priest doxology
+     3. Lower 2-column: dismissal dialogue | lower rubrics
+   Commentary:
+     4. That All Day Long We May Meditate Upon Thy Righteousness — text + pullout
+   ========================================================================== */
+
+/* ---------- Upper 2-column: main | upper rubrics ------------------- */
+.page-096-upper-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-096-upper-main {
+
+  min-width: 0;
+}
+
+.page-096-upper-vdivider {
+
+  align-self: stretch;
+}
+
+.page-096-upper-rubrics {
+
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+
+.page-096-upper-rubrics p,
+.page-096-lower-rubrics p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-096-upper-rubrics p:last-child,
+.page-096-lower-rubrics p:last-child {
+
+  margin-bottom: 0;
+}
+
+/* ---------- Inner 2-column: Litany | Prayer of Thanksgiving -------- */
+.page-096-liturgy-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) 16px minmax(0, 1.05fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 6px;
+}
+
+.page-096-col-left {
+
+  padding-top: 0;
+}
+
+.page-096-col-left p {
+
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-096-col-left p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-096-people-hymn {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-096-people-hymn .people-body {
+
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-096-holiness-phrase {
+
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-096-litany-title,
+.page-096-thanks-title {
+
+  font-size: 20px;
+  margin: 0 0 6px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.page-096-thanks-title {
+
+  margin-top: 0;
+}
+
+
+
+
+.page-096-col-center {
+
+  padding: 0 10px;
+}
+
+.page-096-col-center .prayer-text {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+
+/* ---------- Full-width priest doxology ----------------------------- */
+.page-096-doxology {
+
+  margin: 8px 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-prayer);
+}
+
+.page-096-doxology .speaker {
+
+  color: var(--color-priest);
+}
+
+/* ---------- Lower 2-column: dismissal | lower rubrics -------------- */
+.page-096-lower-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: start;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-096-lower-left p {
+
+  margin: 0 0 7px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-096-lower-left p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-096-lower-rubrics {
+
+  justify-content: flex-start;
+  text-align: right;
+  padding-top: 0;
+}
+
+/* ---------- Commentary --------------------------------------------- */
+.commentary .page-096-commentary-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+  color: var(--color-question-header);
+}
+
+.page-096-commentary-body::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-096-commentary-body > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+
+.commentary .page-096-pullout {
+
+  float: right;
+  width: 220px;
+  margin: 4px 0 8px 16px;
+  padding: 0;
+}
+
+.commentary .page-096-pullout p {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+/* ---------- From css/page-097.css ---------- */
+/* ==========================================================================
+   Page 97 — The Litany and Prayer of Thanksgiving
+   --------------------------------------------------------------------------
+   1. QUESTIONS box (meditation on God all day)
+   2. 2-column layout: Schmemann commentary + One Leper Returns sidebar
+   3. QUESTION box (thanksgiving in prayer)
+   ========================================================================== */
+
+/* ---------- Section title -------------------------------------------- */
+.commentary .page-097-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 10px;
+}
+
+/* ---------- QUESTION boxes (header top-right) ---------------------- */
+.question-box-097 {
+
+  position: relative;
+  margin: 0 0 12px;
+}
+
+.box-header-097 {
+
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.question-prompt-097 {
+
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.question-box-097 > .question-prompt:first-of-type {
+
+  padding-right: 140px;
+}
+
+.page-097-top-questions .question-prompt-097:first-of-type {
+
+  margin-top: 0;
+}
+
+.page-097-thanks-question {
+
+  margin-top: 12px;
+}
+
+/* ---------- 2-column: commentary | leper sidebar ------------------- */
+.page-097-thanksgiving-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+}
+
+.page-097-main::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.commentary .page-097-pullout {
+
+  float: left;
+  width: 200px;
+  margin: 4px 16px 8px 0;
+  padding: 0;
+}
+
+.commentary .page-097-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-097-main > .drop-cap-wrap,
+.page-097-main > p {
+
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-097-main > p:last-child {
+
+  margin-bottom: 0;
+}
+
+/* ---------- One Leper Returns sidebar ------------------------------ */
+.page-097-leper-box {
+
+  margin: 0;
+  border: 1.5px solid #4a6a9a;
+  background: #fbf9f1;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.page-097-leper-image {
+
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-097-leper-body {
+
+  padding: 10px 12px 12px;
+}
+
+.page-097-leper-title {
+
+  margin: 0 0 8px;
+  font-family: 'Cardo', serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-heading);
+}
+
+.page-097-leper-text {
+
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: justify;
+  color: var(--color-text);
+}
+
+.page-097-leper-text .drop-cap {
+
+  font-size: 2.4em;
+}
+
+.page-097-leper-text .citation {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-style: normal;
+}
+
+/* ---------- From css/page-098.css ---------- */
+/* ==========================================================================
+   Page 98 — Prayer Before the Ambon / Consuming the Gifts / Dismissal
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Prayer Before the Ambon — 2-col (prayers | rubrics)
+     2. Consuming the Holy Gifts — 3-col (People | prayer + title | rubrics)
+     3. Blessing + Dismissal — 1-col full width
+     4. Liturgy outline (Conclusion highlighted)
+     5. End-of-liturgy line
+   ========================================================================== */
+
+/* ---------- 2-column liturgical grid ------------------------------ */
+.chapter-segment.segment-098 .preface-grid-two-col {
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-098-section-title {
+
+  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 22px;
+}
+
+.page-098-section-title:first-child {
+
+  margin-top: 2px;
+}
+
+.page-098-ambon-grid .col-left {
+
+  padding-top: 0;
+}
+
+.page-098-ambon-grid .col-left p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-ambon-grid .col-left p:last-child {
+
+  margin-bottom: 0;
+}
+
+/* ---------- 3-column: Consuming the Holy Gifts ------------------- */
+.page-098-consuming-grid {
+
+  margin-top: 10px;
+}
+
+.page-098-consuming-grid .col-left {
+
+  padding-top: 34px;
+}
+
+.page-098-consuming-grid .col-left p {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-consuming-title {
+
+  margin: 0 0 6px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.page-098-consuming-grid .col-center p {
+
+  margin: 0;
+}
+
+
+
+.page-098-col-right {
+
+  justify-content: flex-start;
+  text-align: left;
+  padding-top: 0;
+}
+
+.page-098-col-right p {
+
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-098-col-right p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-098-times-note {
+
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* ---------- 1-column: blessing through dismissal ----------------- */
+.page-098-single-col {
+
+  margin-top: 10px;
+}
+
+.page-098-blessing-line p,
+.page-098-dismissal p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page-098-blessing-line p:last-child,
+.page-098-dismissal p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-098-blessing-line {
+
+  margin-bottom: 10px;
+}
+
+.page-098-dismissal {
+
+  margin: 4px 0 8px;
+}
+
+.page-098-single-col .page-098-section-title {
+
+  margin-top: 0;
+}
+
+.page-098-saint-blank {
+
+  font-style: italic;
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+.page-098-end-line {
+  margin: 10px 0 0;
+  text-align: center;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+}
+
+/* ---------- From css/page-099.css ---------- */
+/* ==========================================================================
+   Page 99 — The Prayer Before the Ambon (commentary)
+   --------------------------------------------------------------------------
+   1. Intro paragraph + QUESTIONS box (top right)
+   2. 2-column: Preserve the Church | Pantocrator icon
+   3. Full-width Dismissal section
+   4. QUESTIONS box + John 14 quote
+   ========================================================================== */
+
+/* ---------- Section title -------------------------------------------- */
+.commentary .page-099-title {
+
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+/* ---------- Intro: text wraps around top QUESTIONS box -------------- */
+.page-099-intro::after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-099-top-questions {
+
+  float: right;
+  width: 300px;
+  margin: 0 0 10px 16px;
+}
+
+.page-099-box-header {
+
+  text-align: right;
+}
+
+.page-099-top-questions .question-prompt {
+
+  padding-right: 0;
+}
+
+.page-099-intro > .drop-cap-wrap {
+
+  margin: 0;
+  text-align: justify;
+}
+
+/* ---------- 2-column: text | icon ----------------------------------- */
+.page-099-church-layout {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  column-gap: 14px;
+  align-items: start;
+  margin: 12px 0;
+}
+
+.page-099-col-title {
+
+  margin: 0 0 8px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+  letter-spacing: 0.02em;
+}
+
+.page-099-left-col p {
+
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-099-left-col p:last-child {
+
+  margin-bottom: 0;
+}
+
+.page-099-icon {
+
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.page-099-icon .figure-image {
+
+  display: block;
+  width: 216px;
+  height: 216px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- Dismissal: 2-column (body | quotes) --------------------- */
+.page-099-dismissal-section {
+
+  margin: 10px 0 0;
+}
+
+.page-099-dismissal-grid {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  column-gap: 20px;
+  align-items: start;
+}
+
+.page-099-dismissal-body {
+
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-099-dismissal-quotes {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 4px;
+}
+
+.page-099-pullout {
+
+  margin: 0;
+  padding: 0;
+}
+
+.page-099-pullout p {
+
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- Bottom QUESTIONS box ------------------------------------ */
+.page-099-bottom-questions {
+
+  margin-top: 12px;
+}
+
+.page-099-bottom-questions .bible-quote {
+  text-align: right;
+}

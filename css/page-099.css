@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Page 99 — The Prayer Before the Ambon (commentary)
+   --------------------------------------------------------------------------
+   1. Intro paragraph + QUESTIONS box (top right)
+   2. 2-column: Preserve the Church | Pantocrator icon
+   3. Full-width Dismissal section
+   4. QUESTIONS box + John 14 quote
+   ========================================================================== */
+
+.book-page[data-page-number="99"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Section title -------------------------------------------- */
+.commentary .page-099-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+/* ---------- Intro: text wraps around top QUESTIONS box -------------- */
+.page-099-intro::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-099-top-questions {
+  float: right;
+  width: 300px;
+  margin: 0 0 10px 16px;
+}
+
+.page-099-box-header {
+  text-align: right;
+}
+
+.page-099-top-questions .question-prompt {
+  padding-right: 0;
+}
+
+.page-099-intro > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+/* ---------- 2-column: text | icon ----------------------------------- */
+.page-099-church-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  column-gap: 14px;
+  align-items: start;
+  margin: 12px 0;
+}
+
+.page-099-col-title {
+  margin: 0 0 8px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+  letter-spacing: 0.02em;
+}
+
+.page-099-left-col p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-099-left-col p:last-child {
+  margin-bottom: 0;
+}
+
+.page-099-icon {
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.page-099-icon .figure-image {
+  display: block;
+  width: 216px;
+  height: 216px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- Dismissal: 2-column (body | quotes) --------------------- */
+.page-099-dismissal-section {
+  margin: 10px 0 0;
+}
+
+.page-099-dismissal-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  column-gap: 20px;
+  align-items: start;
+}
+
+.page-099-dismissal-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-099-dismissal-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 4px;
+}
+
+.page-099-pullout {
+  margin: 0;
+  padding: 0;
+}
+
+.page-099-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- Bottom QUESTIONS box ------------------------------------ */
+.page-099-bottom-questions {
+  margin-top: 12px;
+}
+
+.page-099-bottom-questions .bible-quote {
+  text-align: right;
+}
