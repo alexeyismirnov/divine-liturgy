@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Page 4 — History of the Divine Liturgy
+   --------------------------------------------------------------------------
+     1. Section title + subtitle + horizontal diamond divider
+     2. Opening text with left-floated synagogue icon (placeholder)
+     3. Continued text with right-floated Last Supper image
+   ========================================================================== */
+
+.book-page[data-page-number="4"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Titles ---------------------------------------------------- */
+.page-004-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 6px;
+}
+
+.page-004-subtitle {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 10px;
+}
+
+.book-page[data-page-number="4"] .hdivider {
+  margin: 0 0 14px;
+}
+
+/* ---------- Text + floated figures ------------------------------------ */
+.page-004-opening::after,
+.page-004-continued::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-004-opening p,
+.page-004-continued p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-004-synagogue-image {
+  float: left;
+  width: 210px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+.page-004-synagogue-image .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-004-last-supper {
+  float: right;
+  width: 273px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.page-004-last-supper .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-004-synagogue-image figcaption,
+.page-004-last-supper figcaption {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}

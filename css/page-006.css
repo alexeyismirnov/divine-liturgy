@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Page 6 — History of the Divine Liturgy (continued)
+   --------------------------------------------------------------------------
+     1. Eastward orientation (continued from page 5) | Christ icon (328px)
+     2. Altar + developments (full width, 1-col)
+     3. QUESTIONS box (light blue/grey)
+   ========================================================================== */
+
+.book-page[data-page-number="6"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- First paragraph + icon grid --------------------------------- */
+.page-006-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 328px;
+  column-gap: 18px;
+  align-items: start;
+  margin: 0 0 8px;
+}
+
+.page-006-main-grid > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-006-icon {
+  margin: 0;
+  text-align: center;
+}
+
+.page-006-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.commentary > p {
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+/* ---------- QUESTIONS box (blue/grey variant) --------------------------- */
+.page-006-questions {
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 0;
+}
+
+.page-006-bible-quote {
+  font-style: italic;
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-006-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+  font-style: normal;
+}

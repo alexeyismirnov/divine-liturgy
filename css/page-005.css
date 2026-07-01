@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Page 5 — History of the Divine Liturgy (continued)
+   --------------------------------------------------------------------------
+     1. Synaxis / Eucharist combined; Sundays, Saturdays, fast days
+     2. Synagogue-pattern churches + QUESTION box (2-col)
+     3. Orientation paragraph (continues on page 6)
+     4. Church / synagogue schematic diagram (placeholder)
+   ========================================================================== */
+
+.book-page[data-page-number="5"] {
+  padding-bottom: 48px;
+}
+
+.commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- Text + QUESTION box grid --------------------------------- */
+.page-005-middle-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  column-gap: 18px;
+  align-items: start;
+  margin: 4px 0 12px;
+}
+
+.page-005-text p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-005-indent {
+  text-indent: 1.5em;
+}
+
+.page-005-question {
+  margin: 0;
+}
+
+.page-005-question > .question-prompt {
+  margin: 0;
+}
+
+/* ---------- Schematic diagram --------------------------------------- */
+.page-005-diagram {
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+.page-005-diagram .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-005-diagram figcaption {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}

@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Page 2 — What Is the Divine Liturgy?
+   --------------------------------------------------------------------------
+   Introductory page (no liturgical box):
+     1. St John Chrysostom epigraph (all caps)
+     2. Horizontal diamond-chain divider (same as column .vdivider)
+     3. Section title + opening paragraph (drop cap "N")
+     4. Body text with left-floated altar icon
+     5. Two-column scripture quotes
+     6. Closing paragraph (continues on page 3)
+   ========================================================================== */
+
+.book-page[data-page-number="2"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Epigraph ------------------------------------------------ */
+.page-002-epigraph {
+  margin: 0 0 10px;
+  padding: 0 12px;
+  text-align: center;
+  border: none;
+}
+
+.page-002-epigraph-text {
+  margin: 0 0 4px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-heading);
+}
+
+.page-002-epigraph-attribution {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* ---------- Horizontal divider below epigraph ------------------------- */
+.book-page[data-page-number="2"] .hdivider {
+  margin: 8px 0 14px;
+}
+
+/* ---------- Section title --------------------------------------------- */
+.page-002-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+/* ---------- Body text with left-floated icon -------------------------- */
+.page-002-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-002-altar-icon {
+  float: left;
+  width: 210px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+/* Real altar icon (replaces the .image-placeholder div).
+   Fills the figure width; height follows the image aspect ratio. */
+.page-002-altar-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Two scripture quotes (even horizontal spacing) -------------- */
+.page-002-scripture-pair {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 14px 0 12px;
+  padding: 0;
+}
+
+.page-002-scripture-quote {
+  margin: 0;
+  flex: 0 1 auto;
+  text-align: center;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-heading);
+}
+
+.page-002-scripture-cite {
+  display: block;
+  margin-top: 4px;
+  font-family: 'Cardo', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text);
+}

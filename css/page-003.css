@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Page 3 — What Is the Divine Liturgy? (continued)
+   --------------------------------------------------------------------------
+     1. Opening paragraph (full width, continued from page 2)
+     2. 2-col grid: “Therefore…” + II Corinthians quote | Christ icon
+     3. QUESTIONS box (light blue/grey, header top-right)
+   ========================================================================== */
+
+.book-page[data-page-number="3"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Opening paragraph ----------------------------------------- */
+.page-003-opening {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- Main 2-column grid ---------------------------------------- */
+.page-003-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  column-gap: 18px;
+  align-items: start;
+  margin: 0 0 18px;
+}
+
+.page-003-left p {
+  margin: 0 0 12px;
+  text-align: justify;
+}
+
+.page-003-scripture-quote {
+  margin: 0;
+  padding: 0 4px 0 0;
+  border: none;
+  text-align: left;
+}
+
+.page-003-scripture-quote p {
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-heading);
+}
+
+.page-003-scripture-cite {
+  margin-top: 6px;
+  text-align: right;
+  font-family: 'Cardo', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text);
+}
+
+.page-003-christ-bread {
+  margin: 0;
+  width: 210px;
+  text-align: center;
+}
+
+/* Match the rendered size of .page-002-altar-icon (210px wide). */
+.page-003-christ-bread .figure-image {
+  display: block;
+  width: 100%;
+  height: calc(210px * 1215 / 663);
+  object-fit: contain;
+  object-position: top;
+}
+
+/* ---------- QUESTIONS box (blue/grey variant) ----------------------- */
+.page-003-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-003 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-003-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-003-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-003-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}

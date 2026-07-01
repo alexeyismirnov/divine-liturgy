@@ -241,6 +241,38 @@ body:has(.book-page) {
 .vdivider::before { top: -3px; }
 .vdivider::after  { bottom: -3px; }
 
+/* ---------- Decorative Horizontal Dividers ----------
+   Horizontal counterpart to .vdivider: interlocking diamond
+   outlines tiled left-to-right, with filled diamond caps at
+   each end. The chain itself is an inline SVG <pattern>.
+*/
+.hdivider {
+  width: 100%;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+
+.hdivider-svg {
+  display: block;
+  width: 100%;
+  height: 16px;
+}
+
+.hdivider::before,
+.hdivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  background: var(--color-divider);
+  z-index: 1;
+}
+.hdivider::before { left: -3px; }
+.hdivider::after  { right: -3px; }
+
 /* ---------- Continuation line below the columns ----------
    Used for the words of institution ("Take! Eat!", "Drink of it…",
    "And likewise…") and the People responses. Left-aligned by
