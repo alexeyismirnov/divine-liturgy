@@ -3,6 +3,11 @@
 # out of the public repo (each is ~3MB).
 IMG_*.jpeg
 
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
 # Editor / OS noise
 .DS_Store
 *.swp
