@@ -16,22 +16,18 @@
   text-align: justify;
 }
 
-/* ---------- Text + QUESTION box grid --------------------------------- */
+/* ---------- 2-col grid: synagogue text | question box ---------------- */
 .page-005-middle-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
   column-gap: 18px;
   align-items: start;
-  margin: 4px 0 12px;
+  margin: 4px 0 8px;
 }
 
-.page-005-text p {
-  margin: 0 0 8px;
+.page-005-synagogue {
+  margin: 0;
   text-align: justify;
-}
-
-.page-005-indent {
-  text-indent: 1.5em;
 }
 
 .page-005-question {
@@ -40,6 +36,16 @@
 
 .page-005-question > .question-prompt {
   margin: 0;
+}
+
+/* ---------- Full-width paragraph below the grid ---------------------- */
+.page-005-indent {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 8px;
+  text-align: justify;
+  text-indent: 1.5em;
 }
 
 /* ---------- Schematic diagram --------------------------------------- */
