@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Page 8 — The Rite of Preparation
+   --------------------------------------------------------------------------
+     1. Section title + horizontal diamond divider
+     2. Opening paragraph (drop cap "O")
+     3. Historical quote paragraph
+     4. Today's preparation paragraph
+     5. Vestments paragraph with right-floated bishop diagram
+   ========================================================================== */
+
+.book-page[data-page-number="8"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ------------------------------------------------------- */
+.page-008-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 6px;
+}
+
+.book-page[data-page-number="8"] .hdivider {
+  margin: 0 0 14px;
+}
+
+/* ---------- Historical quote -------------------------------------------- */
+.page-008-history-quote {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-style: italic;
+}
+
+/* ---------- Vestments block with floated diagram ------------------------ */
+.page-008-vestments-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-008-vestments-block > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-008-vestments-figure {
+  float: right;
+  width: 390px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.page-008-vestments-figure .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

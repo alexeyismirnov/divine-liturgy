@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Page 10 — Censing
+   --------------------------------------------------------------------------
+     1. Section title
+     2. Censing commentary | angel-deacon illustration
+     3. "An angel clothed as a deacon" subtitle + paragraph
+     4. QUESTIONS box with scripture quotes
+     5. Footnotes 1–5
+   ========================================================================== */
+
+.book-page[data-page-number="10"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ------------------------------------------------------- */
+.page-010-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 10px;
+}
+
+/* ---------- Opening text + angel figure --------------------------------- */
+.page-010-opening-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  column-gap: 18px;
+  align-items: start;
+  margin: 0 0 8px;
+}
+
+.page-010-opening-grid > p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-010-angel-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.page-010-angel-figure .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ---------- Subtitle + body paragraph ----------------------------------- */
+.page-010-subtitle {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 8px;
+}
+
+.commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- QUESTIONS box ----------------------------------------------- */
+.page-010-questions {
+  margin: 14px 0 16px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.page-010-bible-quote {
+  font-style: italic;
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-010-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+/* ---------- Footnotes --------------------------------------------------- */
+.page-010-footnotes {
+  margin: 0;
+  padding: 0 0 0 1.2em;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-010-footnotes li {
+  margin-bottom: 4px;
+}
+
+.page-010-footnotes li:last-child {
+  margin-bottom: 0;
+}

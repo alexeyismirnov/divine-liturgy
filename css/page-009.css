@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Page 9 — The Rite of Preparation (continued)
+   --------------------------------------------------------------------------
+     1. Opening paragraph (prosphora, diskos, IC XC NI KA)
+     2. Full-width diskos arrangement diagram
+     3. Bold summary paragraph
+     4. Asteriskos image | text | QUESTION box (3-col)
+     5. Closing paragraph on Proskomidia
+   ========================================================================== */
+
+.book-page[data-page-number="9"] {
+  padding-bottom: 48px;
+}
+
+.commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+/* ---------- Diskos diagram ---------------------------------------------- */
+.page-009-diskos-diagram {
+  margin: 4px 0 10px;
+  text-align: center;
+}
+
+.page-009-diskos-diagram .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ---------- Bold summary ------------------------------------------------ */
+.page-009-summary {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* ---------- Asteriskos + text + question grid --------------------------- */
+.page-009-lower-grid {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 220px;
+  column-gap: 16px;
+  align-items: start;
+  margin: 0 0 12px;
+}
+
+.page-009-asteriskos-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.page-009-asteriskos-figure .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.page-009-asteriskos-figure figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+
+.page-009-asteriskos-text p {
+  margin: 0;
+  text-align: justify;
+}
+
+.page-009-question {
+  margin: 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.page-009-question > .question-prompt {
+  margin: 0;
+}

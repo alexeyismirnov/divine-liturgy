@@ -645,3 +645,28 @@ body:has(.book-page) {
   font-style: italic;
   font-weight: 600;
 }
+
+/* ==========================================================================
+   Page 6 — Christ icon wraps with first paragraph (in book.css so layout
+   always applies with the shared stylesheet)
+   ========================================================================== */
+.book-page[data-page-number="6"] .page-006-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.book-page[data-page-number="6"] .page-006-wrap .page-006-icon {
+  float: right;
+  width: 30%;
+  max-width: 30%;
+  margin: 4px 0 8px 18px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.book-page[data-page-number="6"] .page-006-wrap .page-006-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -6,6 +6,27 @@
   <title>Divine Liturgy &mdash; Page 6</title>
   <link rel="stylesheet" href="../css/book.css">
   <link rel="stylesheet" href="../css/page-006.css">
+  <style>
+    /* Page 6 icon wrap — inline so layout is not lost to cached book.css */
+    .book-page[data-page-number="6"] .page-006-wrap::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .book-page[data-page-number="6"] .page-006-wrap .page-006-icon {
+      float: right;
+      width: 30%;
+      max-width: 30%;
+      margin: 4px 0 8px 18px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .book-page[data-page-number="6"] .page-006-wrap .page-006-icon .figure-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +37,11 @@
        ===================================================================== -->
   <section class="commentary">
 
-    <div class="page-006-main-grid">
+    <div class="page-006-wrap">
+
+      <div class="page-006-icon">
+        <img class="figure-image" src="../assets/christ-in-majesty-tetramorph.png" alt="Christ in Majesty with the tetramorph">
+      </div>
 
       <p class="page-006-continued">
         <strong><em>&ldquo;two or three are gathered together&rdquo;</em></strong>
@@ -37,10 +62,6 @@
         hope in their Savior&rsquo;s return and their entrance into the
         kingdom of God.
       </p>
-
-      <figure class="page-006-icon">
-        <img class="figure-image" src="../assets/christ-in-majesty-tetramorph.png" alt="Christ in Majesty with the tetramorph">
-      </figure>
 
     </div>
 
