@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Page 14 — The Great Litany
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. "The Great Litany" title
+     2. 2-col grid: Deacon/People dialogue | rubrics
+     3. Liturgy of the Word outline (Great Litany highlighted)
+   Commentary:
+     4. Section title + drop-cap introduction
+     5. Petition-by-petition commentary (red bold openings)
+   ========================================================================== */
+
+.book-page[data-page-number="14"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- 2-column grid (dialogue | rubrics) ---------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-014-litany-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-014-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Color-coded dialogue ------------------------------------ */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Right column (rubrics) ---------------------------------- */
+.page-014-col-right {
+  justify-content: flex-start;
+}
+
+.page-014-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.page-014-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Liturgy of the Word outline ----------------------------- */
+.page-014-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-014-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary ---------------------------------------------- */
+.page-014-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-014-petition {
+  color: var(--color-priest);
+  font-weight: 700;
+}

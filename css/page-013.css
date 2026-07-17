@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Page 13 — Main Parts of an Orthodox Church
+   --------------------------------------------------------------------------
+     1. Title
+     2. Full-width church floor-plan diagram
+     3. Drop-cap sobor quote
+     4. Iconostasis paragraph with right-floated pullout
+     5. Sanctuary / Altar paragraph
+     6. QUESTIONS box
+   ========================================================================== */
+
+.book-page[data-page-number="13"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ------------------------------------------------------- */
+.page-013-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+/* ---------- Church parts diagram ---------------------------------------- */
+.page-013-diagram {
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.page-013-diagram .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Body paragraphs --------------------------------------------- */
+.commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- Right pullout ----------------------------------------------- */
+.commentary .pullout.page-013-pullout {
+  float: right;
+  width: 210px;
+  margin: 4px 0 10px 36px;
+  padding: 0;
+}
+
+.commentary .pullout.page-013-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* ---------- QUESTIONS box ----------------------------------------------- */
+.page-013-questions {
+  margin: 12px 0 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.page-013-questions > .question-prompt {
+  margin: 0;
+}

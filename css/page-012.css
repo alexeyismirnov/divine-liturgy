@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Page 12 — The Liturgy of the Word / Opening Blessing of the Kingdom
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Chapter titles (Liturgy of the Word / Catechumens)
+     2. "Opening Blessing of the Kingdom"
+     3. 2-col grid: Deacon/Priest/People dialogue | rubrics
+     4. Liturgy of the Word outline (Blessing the Kingdom highlighted)
+   Commentary:
+     5. Section title + drop-cap Schmemann quote
+   Bottom:
+     6. QUESTIONS box (header top-right) with scripture quotes
+   ========================================================================== */
+
+.book-page[data-page-number="12"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Titles inside liturgical box ---------------------------- */
+.page-012-alt-title {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.page-012-section-title {
+  font-size: 22px;
+  margin: 6px 0 4px;
+}
+
+/* ---------- 2-column grid (dialogue | rubrics) ---------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 4px;
+}
+
+.page-012-opening-grid .col-left p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-012-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Color-coded dialogue ------------------------------------
+   Deacon : red    (.deacon-text)
+   Priest : blue   (.priest-text)
+   People : green  (.people-response), bold
+*/
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Right column (rubrics) ---------------------------------- */
+.page-012-col-right {
+  justify-content: flex-start;
+  color: var(--color-priest);
+}
+
+.page-012-rubric-note {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+}
+
+.page-012-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-priest);
+}
+
+.page-012-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Liturgy of the Word outline ----------------------------- */
+.page-012-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-012-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary ---------------------------------------------- */
+.page-012-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+/* ---------- QUESTIONS box (header top-right, like page 3) ----------- */
+.page-012-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-012 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-012-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-012-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-012-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
