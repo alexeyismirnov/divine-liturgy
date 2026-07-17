@@ -24,23 +24,23 @@
   margin-bottom: 12px;
 }
 
-/* ---------- Page 6 icon wrap (from book.css / page-006 inline) ---------- */
-.book-section .page-006-wrap::after {
+/* ---------- Page 6 icon wrap (segment-006; also inlined in section HTML) -- */
+.book-section .segment-006 .page-006-wrap::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.book-section .page-006-wrap .page-006-icon {
+.book-section .segment-006 .page-006-wrap .page-006-icon {
   float: right;
-  width: 30%;
-  max-width: 30%;
+  width: 36%;
+  max-width: 36%;
   margin: 4px 0 8px 18px;
   box-sizing: border-box;
   text-align: center;
 }
 
-.book-section .page-006-wrap .page-006-icon .figure-image {
+.book-section .segment-006 .page-006-wrap .page-006-icon .figure-image {
   display: block;
   width: 100%;
   height: auto;
