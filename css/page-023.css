@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Page 23 — Commending (Dedicating) Ourselves to God
+   --------------------------------------------------------------------------
+     1. Title + opening paragraph (liturgical quote in red)
+     2. Body text with right-floated crucifix
+     3. QUESTIONS box (scripture quotes + reflection prompts)
+   ========================================================================== */
+
+.book-page[data-page-number="23"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ----------------------------------------------------- */
+.page-023-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.commentary > .page-023-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.page-023-liturgy-quote {
+  color: var(--color-priest);
+}
+
+.page-023-opening .drop-cap {
+  color: var(--color-priest);
+}
+
+/* ---------- Body wrap (crucifix floated right) ------------------------ */
+.page-023-body-wrap {
+  overflow: hidden;
+}
+
+.page-023-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-023-crucifix {
+  float: right;
+  width: 32%;
+  max-width: 220px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.page-023-crucifix .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-023-body-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-023-body-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- QUESTIONS box ------------------------------------------- */
+.page-023-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-023 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-023-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-023-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 80px;
+  margin: 0 0 6px;
+}
+
+.page-023-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}

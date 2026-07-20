@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Page 18 — Prayer of the First Antiphon / History of the Antiphons
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Middle-column silent-prayer note
+     2. "Prayer of the First Antiphon" title
+     3. 3-col grid: Deacon/People | Priest quiet prayer | rubric
+     4. Closing doxology + Amen
+     5. "The First Antiphon" (People)
+     6. Liturgy of the Word outline (1st Antiphon highlighted)
+   Commentary:
+     7. History of the Antiphons (drop-cap + quoted history)
+   ========================================================================== */
+
+.book-page[data-page-number="18"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Middle-column convention note --------------------------- */
+.page-018-middle-note {
+  margin: 2px 4px 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+  text-align: center;
+}
+
+/* ---------- Titles -------------------------------------------------- */
+.page-018-prayer-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.page-018-antiphon-title {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.commentary .page-018-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+/* ---------- 3-column prayer grid ------------------------------------ */
+.page-018-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-018-prayer-grid .col-left p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-018-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-018-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-018-col-right {
+  justify-content: flex-start;
+}
+
+.page-018-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+/* ---------- Color-coded dialogue ------------------------------------ */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Closing doxology + Amen --------------------------------- */
+.page-018-closing-lines {
+  margin-top: 8px;
+}
+
+.page-018-closing-lines .dialogue-line,
+.page-018-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+/* ---------- First Antiphon chant ------------------------------------ */
+.page-018-antiphon {
+  margin: 0 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+/* ---------- Liturgy of the Word outline ----------------------------- */
+.page-018-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-018-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary ---------------------------------------------- */
+.commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}

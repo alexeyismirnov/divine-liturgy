@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Page 21 — The Lord Jesus Christ — Fully God and Fully Man
+   --------------------------------------------------------------------------
+     1. Title + drop-cap opening paragraph
+     2. Anastasis fresco (left) + Athanasius pullout (right) + quoted text
+     3. QUESTIONS box (death trampled by death)
+   ========================================================================== */
+
+.book-page[data-page-number="21"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ----------------------------------------------------- */
+.page-021-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+/* ---------- Body wrap (image + pullout + Athanasius quote) ------------- */
+.page-021-body-wrap {
+  overflow: hidden;
+}
+
+.page-021-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-021-anastasis {
+  float: left;
+  width: 34%;
+  max-width: 240px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+.page-021-anastasis .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-021-anastasis figcaption {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: left;
+}
+
+.commentary .pullout.page-021-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 10px 18px;
+  padding: 0;
+}
+
+.commentary .pullout.page-021-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-021-pullout-cite {
+  margin-top: 6px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-style: italic;
+  text-align: right !important;
+}
+
+.page-021-body-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+/* ---------- QUESTIONS box ------------------------------------------- */
+.page-021-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-021 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-021-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-021-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-021-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}

@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Page 20 — The Little Litany / The Second Antiphon
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. "The Little Litany" title
+     2. 2-col grid: first four Deacon/People lines | first rubric
+     3. 3-col grid: commemoration | Prayer of the Second Antiphon | second rubric
+     4. 1-col closing doxology + Amen
+     5. "The Second Antiphon" (People psalm + Only-begotten Son hymn)
+     6. Liturgy of the Word outline (Little Litany + 2nd Antiphon highlighted)
+   Commentary:
+     7. The Second Antiphon — Justinian hymn history + QUESTION box
+   ========================================================================== */
+
+.book-page[data-page-number="20"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Titles -------------------------------------------------- */
+.page-020-litany-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.page-020-prayer-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.page-020-antiphon-title {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.commentary .page-020-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+/* ---------- 2-column opening grid ----------------------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-020-opening-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-020-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 3-column prayer grid ------------------------------------ */
+.page-020-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 6px;
+}
+
+.page-020-prayer-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-020-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-020-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-020-col-right {
+  justify-content: flex-start;
+}
+
+.page-020-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+/* ---------- Color-coded dialogue ------------------------------------ */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- 1-col closing doxology + Amen ----------------------------- */
+.page-020-closing-lines {
+  margin-top: 8px;
+}
+
+.page-020-closing-lines .dialogue-line,
+.page-020-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+/* ---------- Second Antiphon chant + hymn ---------------------------- */
+.page-020-antiphon,
+.page-020-hymn {
+  margin: 0 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.page-020-hymn {
+  margin-bottom: 4px;
+}
+
+.page-020-hymn-opening u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Liturgy of the Word outline ----------------------------- */
+.page-020-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-020-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary + QUESTION box ------------------------------- */
+.page-020-commentary-wrap {
+  overflow: hidden;
+}
+
+.page-020-commentary-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-020-question {
+  float: right;
+  width: 250px;
+  margin: 0 0 10px 18px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.page-020-question > .question-prompt {
+  margin-top: 0;
+}
+
+.page-020-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-020-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.commentary > .page-020-commentary-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.commentary > .page-020-commentary-wrap > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
