@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Page 33 — Reading of the Gospel / Questions
+   --------------------------------------------------------------------------
+   1. Top commentary: Schmemann text + two floated illustrations
+      (jesus-christ-risen.png, women-at-tomb.png)
+   2. QUESTIONS box (2 Timothy + Psalm 19)
+   3. Bottom commentary: St Justin Popovich on Scripture
+   ========================================================================== */
+
+.book-page[data-page-number="33"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Section titles ------------------------------------------- */
+.commentary .page-033-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* ---------- Top body wrap (dual floats + text) ----------------------- */
+.page-033-top-wrap {
+  overflow: hidden;
+}
+
+.page-033-top-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-033-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.page-033-top-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-033-illustration-left {
+  float: left;
+  /* Hug image width at height 218px (asset 764×1157 → ~144px wide). */
+  width: 144px;
+  margin: 4px 14px 8px 0;
+  text-align: center;
+}
+
+.page-033-illustration-right {
+  float: right;
+  /* Hug image width at height 188px (asset 755×684 → ~207px wide). */
+  width: 207px;
+  margin: 4px 0 8px 14px;
+  text-align: center;
+}
+
+.page-033-illustration-left .figure-image {
+  height: 218px; /* was 168px; ~+30% while preserving float/layout */
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-033-illustration-right .figure-image {
+  height: 188px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-033-left-caption {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+.page-033-left-caption .citation {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
+
+/* ---------- QUESTIONS box (blue/grey, header top-right) ------------ */
+.page-033-question {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  /* Bottom margin creates visible cream-page gap below the blue box. */
+  margin: 14px 0 28px;
+  padding: 10px 18px 14px;
+}
+
+.box-header-033 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-033-question-lead {
+  padding-right: 130px;
+}
+
+.page-033-prayer-quote {
+  color: var(--color-prayer);
+  font-style: italic;
+}
+
+.page-033-bible-quote-left {
+  text-align: justify;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-033-bible-quote-right {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-033-bible-quote-right .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+/* ---------- Bottom commentary (St Justin Popovich) ------------------- */
+.page-033-bottom {
+  margin-top: 0;
+  display: flow-root; /* BFC — contain the floated drop-cap */
+}
+
+.page-033-bottom-wrap {
+  padding-top: 0;
+}
+
+.page-033-bottom-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-033-bottom-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.page-033-bottom-opening {
+  margin: 0 0 10px;
+}

@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Page 32 — Reading of the Epistle / Prayer Before the Gospel / Gospel
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. "Reading of the Epistle" title
+     2. Epistle 2-col grid: dialogue (left) + rubrics (right, 3 blocks)
+     3. "The Prayer Before the Gospel" title
+     4. Prayer 3-col grid: Alleluia (left) | prayer + blessing (center) | rubric (right)
+     5. "Reading of the Gospel" title
+     6. Gospel 2-col grid: dialogue (left) + rubrics (right)
+     7. Liturgy of the Word outline (Scripture Readings highlighted)
+   ========================================================================== */
+
+.book-page[data-page-number="32"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Titles ----------------------------------------------------- */
+.page-032-epistle-title {
+  font-size: 24px;
+  margin: 2px 0 6px;
+}
+
+.page-032-gospel-title {
+  font-size: 22px;
+  margin: 12px 0 6px;
+}
+
+.page-032-prayer-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 10px 0 6px;
+  color: var(--color-heading);
+}
+
+/* ---------- Color-coded dialogue --------------------------------------- */
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- 2-column grids ------------------------------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+/* Epistle + Gospel: dialogue left, rubrics right */
+.page-032-epistle-grid .col-left p,
+.page-032-gospel-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.page-032-epistle-grid .col-left p:last-child,
+.page-032-gospel-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* Prayer: 3-col — Alleluia (left) | prayer/blessing (center) | rubric (right) */
+.page-032-prayer-grid {
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.55fr) 16px minmax(0, 0.88fr);
+  margin-top: 2px;
+}
+
+.page-032-alleluia-col p {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  line-height: 1.38;
+}
+
+.page-032-alleluia-col p:last-child {
+  margin-bottom: 0;
+}
+
+.page-032-alleluia-note {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.page-032-prayer-center p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.page-032-prayer-center p:last-child {
+  margin-bottom: 0;
+}
+
+.page-032-prayer-center .prayer-text {
+  color: var(--color-prayer);
+  text-align: left;
+}
+
+/* ---------- Right column (rubrics) ------------------------------------- */
+.page-032-col-right {
+  justify-content: flex-start;
+}
+
+.page-032-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.page-032-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Liturgy outline -------------------------------------------- */
+.page-032-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-032-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

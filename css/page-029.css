@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Page 29 — Questions (Scriptures) + The Little Entrance
+   --------------------------------------------------------------------------
+     1. QUESTIONS box (Scriptures vital to early Christians)
+     2. "The Little Entrance" commentary with right-floated enthroned
+        Gospel image placeholder + left pullout
+   ========================================================================== */
+
+.book-page[data-page-number="29"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Top QUESTIONS box ---------------------------------------- */
+.page-029-questions {
+  position: relative;
+  background: #e8f0e9;
+  border: 1.5px solid var(--color-question-border);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 0 0 14px;
+  padding: 10px 18px 14px;
+}
+
+.box-header-029 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-029-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-029-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-029-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+/* ---------- Commentary body (image + pullout + text wrap) ------------ */
+.page-029-body-wrap {
+  overflow: hidden;
+}
+
+.page-029-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-029-entrance-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-heading);
+  margin-right: 0.15em;
+}
+
+.page-029-opening {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.page-029-enthroned {
+  float: right;
+  width: 276px; /* ~+20% to scale the enthroned image */
+  margin: 4px 0 10px 16px;
+  text-align: center;
+}
+
+.page-029-enthroned .figure-image {
+  height: 276px; /* ~+20% while preserving float/layout rules */
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-029-enthroned figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: left;
+}
+
+.commentary .pullout.page-029-pullout {
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+
+.commentary .pullout.page-029-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.page-029-body-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}

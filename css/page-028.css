@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Page 28 — The Little Entrance
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. "The Little Entrance" title
+     2. Middle-column silent-prayer convention note
+     3. 3-col grid: People note | quiet clergy (Deacon/Priest) | rubrics (first part)
+     4. 2-col grid: Deacon "Wisdom!" + People response | final rubric
+     5. Liturgy of the Word outline (Little Entrance highlighted)
+   Commentary:
+     5. The Little Entrance — drop-cap history + gospel-book placeholder
+   ========================================================================== */
+
+.book-page[data-page-number="28"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Titles -------------------------------------------------- */
+.page-028-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.commentary .page-028-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+/* ---------- Middle-column convention note --------------------------- */
+.page-028-middle-note {
+  margin: 2px 4px 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+  text-align: center;
+}
+
+/* ---------- 3-column entrance grid (first part) --------------------- */
+.page-028-entrance-grid {
+  /* `.preface-grid` from book.css provides the 3-column structure. */
+  margin-top: 2px;
+}
+
+.page-028-entrance-grid .col-left p,
+.page-028-entrance-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.page-028-entrance-grid .col-left p:last-child,
+.page-028-entrance-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 2-column grid from "Wisdom! Let us attend!" ----------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.page-028-wisdom-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.page-028-wisdom-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-028-people-note {
+  margin-bottom: 6px;
+}
+
+/* ---------- Color-coded dialogue ------------------------------------
+   Deacon : red    (.deacon-text)
+   Priest : blue   (.priest-text)
+   People : green  (.people-response), bold
+*/
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.priest-text {
+  color: var(--color-prayer);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Right column (rubrics) ---------------------------------- */
+.page-028-col-right {
+  justify-content: flex-start;
+}
+
+.page-028-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.38;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.page-028-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Liturgy of the Word outline ----------------------------- */
+.page-028-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-028-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary + gospel-book placeholder -------------------- */
+.page-028-commentary-wrap {
+  overflow: hidden;
+}
+
+.page-028-commentary-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-028-gospel {
+  float: right;
+  width: 150px;
+  margin: 4px 0 10px 16px;
+  text-align: center;
+}
+
+.page-028-gospel .figure-image {
+  /* Use width-based scaling so the floated container width is respected.
+     Avoid a fixed height + width:auto combination that can overflow/clamp
+     and make the image look truncated under `overflow: hidden` wrappers. */
+  max-height: 180px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.commentary > .page-028-commentary-wrap > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}

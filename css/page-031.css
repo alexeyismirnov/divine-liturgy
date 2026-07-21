@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Page 31 — The Little Entrance (continued) / Ancient of Days / Question
+   --------------------------------------------------------------------------
+     1. Commentary continuing from page 30, wrapping around right-floated
+        Ancient of Days icon placeholder + Daniel 7 caption
+     2. QUESTION box (Hebrews 4 & 10)
+   ========================================================================== */
+
+.book-page[data-page-number="31"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Body wrap (icon + Daniel caption + text wrap) ------------ */
+.page-031-body-wrap {
+  overflow: hidden;
+}
+
+.page-031-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-031-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.page-031-body-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-031-body-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.page-031-ancient {
+  float: right;
+  width: 300px;
+  margin: 0 0 12px 18px;
+  text-align: center;
+}
+
+.page-031-ancient .figure-image {
+  max-height: 290px;
+  width: auto;
+  margin: 0 auto;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+.page-031-ancient-caption {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.page-031-ancient-title {
+  display: block;
+  margin: 0 0 6px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+}
+
+.page-031-ancient-caption p {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: justify;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+/* ---------- QUESTION box (blue/grey, header top-right) --------------- */
+.page-031-question {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 16px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-031 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-031-question > .question-prompt:first-of-type {
+  padding-right: 130px;
+}
+
+.page-031-bible-quote {
+  text-align: justify;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-031-bible-quote .citation {
+  display: inline;
+  margin-left: 6px;
+  white-space: normal;
+}
