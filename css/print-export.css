@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Print / PDF export styles
+   --------------------------------------------------------------------------
+   Applied when generating section PDFs so only the cream book card is
+   captured — no gray room background, no card shadow, no outer margins.
+   Zoom is forced to 1 so leaf size matches the designed 820×1060 card.
+   ========================================================================== */
+
+body:has(.book-page) {
+  zoom: 1 !important;
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--color-page-bg, #fdfdf7) !important;
+}
+
+.book-page {
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Page numbers are for the web edition only. */
+.page-number {
+  display: none !important;
+}

@@ -69,3 +69,24 @@ No server is required, though Chrome/Chromium will block the
 Google Fonts request under `file://` in some configurations;
 serving from a local HTTP server (`python3 -m http.server`) avoids
 this.
+
+## PDF export
+
+Section PDFs use **A4 portrait** leaves. Each original book page is
+captured as the cream `.book-page` card (no gray viewport margins,
+no page numbers) and scaled to fit centered on A4.
+
+```bash
+npm install
+npx playwright install chromium   # first time only
+npm run export:introduction
+npm run export:liturgy-of-the-word
+npm run export:liturgy-of-the-faithful
+```
+
+Output (gitignored under `pdf/`):
+- `pdf/introduction-rite-of-preparation.pdf` (pages 2–6, 8–10)
+- `pdf/liturgy-of-the-word.pdf` (pages 12–25, 28–37)
+- `pdf/liturgy-of-the-faithful.pdf` (pages 44–51, 54–59, 62–66, 68–73, 76–84, 88–99)
+
+Regenerate as needed.

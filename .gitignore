@@ -3,6 +3,11 @@
 # out of the public repo (each is ~3MB).
 IMG_*.jpeg
 
+# Generated section PDFs (run `npm run export:introduction` to rebuild)
+pdf/
+
+# Node / Playwright
+node_modules/
 # Firebase
 .firebase/
 firebase-debug.log
