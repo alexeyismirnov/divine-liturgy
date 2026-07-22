@@ -1,0 +1,2962 @@
+/* ==========================================================================
+   Section: The Liturgy of the Word — merged from chapters (pages 12–37)
+   --------------------------------------------------------------------------
+   Each chapter's CSS is scoped under .chapter-part.part-<slug> to avoid clashes.
+   Shared dialogue colours and section layout rules are defined once.
+   ========================================================================== */
+
+.book-section {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-section h2 {
+  margin-top: 18px;
+}
+
+.book-section .chapter-part > .chapter-title {
+  margin-bottom: 12px;
+}
+
+.book-section .chapter-part > .page-012-alt-title {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+
+.book-section .chapter-part .commentary > .section-title:first-child,
+.book-section .chapter-part .commentary > h2:first-child,
+.book-section .chapter-part .commentary > h1:first-child {
+  margin-top: 18px;
+}
+
+.book-section .chapter-part .col-center > h2,
+.book-section .chapter-part .col-left > h2 {
+  margin-top: 4px;
+}
+
+.book-section .chapter-part .chapter-segment + .chapter-segment {
+  margin-top: 24px;
+}
+
+.book-section .chapter-part + .chapter-part {
+  margin-top: 28px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(74, 58, 118, 0.25);
+}
+
+/* ---------- Shared dialogue colours ----------------------------- */
+.deacon-text     { color: var(--color-priest); }
+.priest-text     { color: var(--color-prayer); }
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+/* ---------- Shared 2-column liturgical grid --------------------- */
+.preface-grid-two-col {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 0.85fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+
+/* ---------- From css/chapter-opening-litany-antiphons.css ---------- */
+/* ==========================================================================
+   Chapter: Opening blessing, Great Litany, and Antiphons
+   --------------------------------------------------------------------------
+   Merged styles from pages 12–25. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours and
+   .preface-grid-two-col are defined once.
+   ========================================================================== */
+
+
+
+
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-012-alt-title {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-section-title {
+  font-size: 22px;
+  margin: 6px 0 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-opening-grid .col-left p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-012-col-right {
+  justify-content: flex-start;
+  color: var(--color-priest);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-rubric-note {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-priest);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-012 .commentary > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-012 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-012-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-013-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-013-diagram {
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-013-diagram .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-013 .commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-013 .commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-013-pullout {
+  float: right;
+  width: 210px;
+  margin: 4px 0 10px 36px;
+  padding: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-013-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-013-questions {
+  margin: 12px 0 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-013-questions > .question-prompt {
+  margin: 0;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-014-litany-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-014 .commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-014 .commentary > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-petition {
+  color: var(--color-priest);
+  font-weight: 700;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-015-top-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 0 0 14px;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-015 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-top-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-samaritan-strip {
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-samaritan-strip .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-samaritan-strip figcaption {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-section-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-emphasis);
+  margin: 0 0 10px;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-mercy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  column-gap: 16px;
+  align-items: start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-mercy-grid > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-mercy-icon {
+  margin: 0;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-mercy-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-bottom-questions {
+  margin: 14px 0 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-bottom-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-015-bottom-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-016-continued-title {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-litany-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-litany-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-016-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-continued-inline {
+  font-size: 0.9em;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-016 .commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-016-petition {
+  color: var(--color-priest);
+  font-weight: 700;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-016-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 10px 36px;
+  padding: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-016-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-016 .commentary > p .citation {
+  font-style: normal;
+  white-space: nowrap;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-017-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-wrap {
+  margin-bottom: 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-icon {
+  float: right;
+  width: 28%;
+  max-width: 180px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-icon .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-icon figcaption {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-wrap > .drop-cap-wrap {
+  margin: 0 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-017 .commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-017 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-017-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-018-middle-note {
+  margin: 2px 4px 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-prayer-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-antiphon-title {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .page-018-history-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-prayer-grid .col-left p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-closing-lines {
+  margin-top: 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-closing-lines .dialogue-line, .chapter-part.part-opening-litany-antiphons .page-018-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-antiphon {
+  margin: 0 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-018-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-018 .commentary > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-018 .commentary > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-019-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-019 .commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-019 .commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-questions-top {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 4px 0 14px;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-019 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-q1-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-q1-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-david {
+  float: left;
+  width: 28%;
+  max-width: 170px;
+  margin: 4px 16px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-david .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-david figcaption {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-david-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 11.5px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-questions-top > .page-019-q1-wrap > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-q1-bottom {
+  text-align: center;
+  margin-top: 10px;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .page-019-prayers-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-019-pullout {
+  float: right;
+  width: 210px;
+  margin: 4px 0 10px 20px;
+  padding: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-019-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-019-pullout em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-questions-bottom {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-019-questions-bottom > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-020-litany-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-prayer-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-antiphon-title {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .page-020-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-opening-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-prayer-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-closing-lines {
+  margin-top: 8px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-closing-lines .dialogue-line, .chapter-part.part-opening-litany-antiphons .page-020-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-antiphon, .chapter-part.part-opening-litany-antiphons .page-020-hymn {
+  margin: 0 4px 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-hymn {
+  margin-bottom: 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-hymn-opening u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-commentary-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-commentary-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-question {
+  float: right;
+  width: 250px;
+  margin: 0 0 10px 18px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-question > .question-prompt {
+  margin-top: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-020-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary > .page-020-commentary-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary > .page-020-commentary-wrap > .drop-cap-wrap {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .quote-green {
+  color: var(--color-emphasis);
+  font-weight: 600;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-021-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-021 .commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-anastasis {
+  float: left;
+  width: 34%;
+  max-width: 240px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-anastasis .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-anastasis figcaption {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: left;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-021-pullout {
+  float: right;
+  width: 220px;
+  margin: 4px 0 10px 18px;
+  padding: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .pullout.page-021-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-pullout-cite {
+  margin-top: 6px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  font-style: italic;
+  text-align: right !important;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-body-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-021 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-021-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-022-litany-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-prayer-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .page-022-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 8px 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-opening-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-prayer-grid {
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr);
+  margin-top: 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-prayer-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-prayer-grid .col-right p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-closing-grid {
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+  margin-top: 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-closing-grid .col-left .dialogue-line, .chapter-part.part-opening-litany-antiphons .page-022-closing-grid .col-left .prayer-continuation {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-closing-grid .col-left .dialogue-line {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-scripture-quote {
+  margin: 12px 8px 10px;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.45;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-scripture-quote .citation {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-commentary-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-commentary-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-chrysostom {
+  float: left;
+  width: 25%;
+  max-width: 150px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-chrysostom .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-chrysostom figcaption {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary > .page-022-commentary-wrap > p {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-question {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-022 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-022-question > .question-prompt {
+  padding-right: 120px;
+  margin-top: 0;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-023-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-023 .commentary > .page-023-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-liturgy-quote {
+  color: var(--color-priest);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-opening .drop-cap {
+  color: var(--color-priest);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-crucifix {
+  float: right;
+  width: 32%;
+  max-width: 220px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-crucifix .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-body-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-body-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-023 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 80px;
+  margin: 0 0 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-023-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .segment-024 .preface-grid-two-col {
+  grid-template-columns:
+    minmax(0, 1.25fr) 16px minmax(0, 0.75fr);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-antiphon-title {
+  font-size: 26px;
+  margin: 2px 0 4px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-feast-note {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+
+.chapter-part.part-opening-litany-antiphons .page-024-beatitudes-grid .col-left p {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-beatitudes-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-beatitudes .speaker {
+  color: var(--color-priest);
+}
+
+
+.chapter-part.part-opening-litany-antiphons .page-024-col-right {
+  justify-content: flex-end;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-opening-litany-antiphons .commentary .page-024-oktoechos-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 12px 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-damascus {
+  float: right;
+  width: 28%;
+  max-width: 180px;
+  margin: 4px 0 8px 18px;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-damascus .figure-image {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-damascus figcaption {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-damascus-dates {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-body-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-body-wrap > .drop-cap-wrap {
+  margin: 0 0 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-024-closing {
+  margin-bottom: 0;
+}
+
+
+
+.chapter-part.part-opening-litany-antiphons .page-025-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-025 .commentary > .page-025-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-opening-quote {
+  color: var(--color-emphasis);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-opening .drop-cap {
+  color: var(--color-emphasis);
+}
+
+.chapter-part.part-opening-litany-antiphons .chapter-segment.segment-025 .commentary > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-intro-wrap {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-intro-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-intro-wrap > p {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-virtue-note {
+  float: right;
+  width: 220px;
+  margin: 4px 0 10px 18px;
+  padding: 8px 12px;
+  background: #eef3ea;
+  border: 1px solid var(--color-question-border);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-christ {
+  float: left;
+  width: 42%;
+  max-width: 286px;
+  margin: 4px 18px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-christ .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+  .chapter-part.part-opening-litany-antiphons margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-025-body-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-quote {
+  padding-left: 12px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-opening-litany-antiphons .box-header-025 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-025-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+
+
+/* ---------- From css/chapter-little-entrance-readings-litanies.css ---------- */
+/* ==========================================================================
+   Chapter: The Little Entrance, Scripture readings, Litanies
+   --------------------------------------------------------------------------
+   Merged styles from pages 28–37. Conflicting selectors are scoped to
+   .chapter-segment.segment-NNN where needed. Shared dialogue colours and
+   .preface-grid-two-col are defined once. Page-number padding rules are
+   omitted. Selectors that used .book-page[data-page-number="N"] are remapped
+   to .segment-NNN.
+   ========================================================================== */
+
+
+
+
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .page-028-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-middle-note {
+  margin: 2px 4px 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-priest);
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-entrance-grid {
+  /* `.preface-grid` from book.css provides the 3-column structure. */
+  margin-top: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-entrance-grid .col-left p, .chapter-part.part-little-entrance-readings-litanies .page-028-entrance-grid .col-center p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-entrance-grid .col-left p:last-child, .chapter-part.part-little-entrance-readings-litanies .page-028-entrance-grid .col-center p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-wisdom-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-wisdom-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-people-note {
+  margin-bottom: 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.38;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-commentary-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-commentary-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-gospel {
+  float: right;
+  width: 150px;
+  margin: 4px 0 10px 16px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-028-gospel .figure-image {
+  /* Use width-based scaling so the floated container width is respected.
+     Avoid a fixed height + width:auto combination that can overflow/clamp
+     and make the image look truncated under `overflow: hidden` wrappers. */
+  max-height: 180px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary > .page-028-commentary-wrap > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-questions {
+  position: relative;
+  background: #e8f0e9;
+  border: 1.5px solid var(--color-question-border);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 0 0 14px;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .box-header-029 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-entrance-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-heading);
+  margin-right: 0.15em;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-opening {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-enthroned {
+  float: right;
+  width: 276px; /* ~+20% to scale the enthroned image */
+  margin: 4px 0 10px 16px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-enthroned .figure-image {
+  height: 276px; /* ~+20% while preserving float/layout rules */
+  width: auto;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-enthroned figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .pullout.page-029-pullout {
+  float: left;
+  width: 200px;
+  margin: 6px 16px 8px 0;
+  padding: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .pullout.page-029-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-029-body-wrap > p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-030 .page-030-prayer-grid {
+  grid-template-columns:
+    minmax(0, 0.7fr) 16px minmax(0, 2.3fr);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-030 .page-030-deacon-cue-grid {
+  grid-template-columns:
+    minmax(0, 1.2fr) 16px minmax(0, 0.9fr);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-prayer-title {
+  font-size: 24px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-title {
+  font-size: 22px;
+  margin: 10px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .page-030-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-continued {
+  font-family: 'Cardo', 'EB Garamond', Georgia, serif;
+  font-size: 0.72em;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-prayer-grid .col-left p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-prayer-col {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-prayer-col .prayer-text {
+  margin: 0;
+  text-align: left;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-deacon-cue-grid {
+  grid-template-columns:
+    minmax(0, 1.2fr) 16px minmax(0, 0.9fr);
+  margin-top: 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-deacon-cue-grid .col-left p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-doxology {
+  margin-top: 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-doxology > p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-doxology > p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-doxology .prayer-text {
+  color: var(--color-prayer);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-grid {
+  grid-template-columns:
+    minmax(0, 1.15fr) 16px minmax(0, 1.15fr) 16px minmax(0, 0.95fr);
+  margin-top: 4px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.38;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-center p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-hymn-center p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-030-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary > .drop-cap-wrap {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-body-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-body-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-ancient {
+  float: right;
+  width: 300px;
+  margin: 0 0 12px 18px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-ancient .figure-image {
+  max-height: 290px;
+  width: auto;
+  margin: 0 auto;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-ancient-caption {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-ancient-title {
+  display: block;
+  margin: 0 0 6px;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-ancient-caption p {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: justify;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-question {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 16px 0 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .box-header-031 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-question > .question-prompt:first-of-type {
+  padding-right: 130px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-bible-quote {
+  text-align: justify;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-031-bible-quote .citation {
+  display: inline;
+  margin-left: 6px;
+  white-space: normal;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-epistle-title {
+  font-size: 24px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-gospel-title {
+  font-size: 22px;
+  margin: 12px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-prayer-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  margin: 10px 0 6px;
+  color: var(--color-heading);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-epistle-grid .col-left p, .chapter-part.part-little-entrance-readings-litanies .page-032-gospel-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-epistle-grid .col-left p:last-child, .chapter-part.part-little-entrance-readings-litanies .page-032-gospel-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-prayer-grid {
+  grid-template-columns:
+    minmax(0, 0.72fr) 16px minmax(0, 1.55fr) 16px minmax(0, 0.88fr);
+  margin-top: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-alleluia-col p {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  line-height: 1.38;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-alleluia-col p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-alleluia-note {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-prayer-center p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-prayer-center p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-prayer-center .prayer-text {
+  color: var(--color-prayer);
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-col-right .stage-top {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-col-right .stage-top:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-032-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .page-033-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-top-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-top-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-opening {
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-top-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-illustration-left {
+  float: left;
+  /* Hug image width at height 218px (asset 764×1157 → ~144px wide). */
+  width: 144px;
+  margin: 4px 14px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-illustration-right {
+  float: right;
+  /* Hug image width at height 188px (asset 755×684 → ~207px wide). */
+  width: 207px;
+  margin: 4px 0 8px 14px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-illustration-left .figure-image {
+  height: 218px; /* was 168px; ~+30% while preserving float/layout */
+  width: auto;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-illustration-right .figure-image {
+  height: 188px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-left-caption {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+  font-family: 'Cardo', serif;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-left-caption .citation {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-question {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  /* Bottom margin creates visible cream-page gap below the blue box. */
+  margin: 14px 0 28px;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .box-header-033 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-question-lead {
+  padding-right: 130px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-prayer-quote {
+  color: var(--color-prayer);
+  font-style: italic;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bible-quote-left {
+  text-align: justify;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bible-quote-right {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bible-quote-right .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bottom {
+  margin-top: 0;
+  display: flow-root; /* BFC — contain the floated drop-cap */
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bottom-wrap {
+  padding-top: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bottom-wrap > p {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bottom-wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-033-bottom-opening {
+  margin: 0 0 10px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-title {
+  font-size: 26px;
+  margin: 2px 0 8px;
+  line-height: 1.2;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-subtitle {
+  display: block;
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-litany p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-litany p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-times-note {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-prayer-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-prayer-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-col-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-closing-lines {
+  margin-top: 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-closing-lines .dialogue-line, .chapter-part.part-little-entrance-readings-litanies .page-034-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-034-opening {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-continuation {
+  margin: 0 0 8px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-question-top, .chapter-part.part-little-entrance-readings-litanies .page-035-question-bottom {
+  position: relative;
+  background: #e8f0e9;
+  border: 1.5px solid var(--color-question-border);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 12px 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .box-header-035 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-question-top > .question-prompt:first-of-type, .chapter-part.part-little-entrance-readings-litanies .page-035-question-bottom > .question-prompt:first-of-type {
+  padding-right: 130px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-bible-quote {
+  font-style: italic;
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-bible-quote u {
+  text-decoration: underline;
+  color: var(--color-bible-underline);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .page-035-standing-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 10px 0 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-body-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-body-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-opening {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-body-wrap > p {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-justin {
+  float: left;
+  width: 190px;
+  margin: 4px 16px 8px 0;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-justin .figure-image {
+  width: 100%;
+  height: auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-035-justin figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  line-height: 1.3;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .pullout.page-035-pullout {
+  float: right;
+  width: 220px;
+  margin: 6px 0 8px 16px;
+  padding: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary .pullout.page-035-pullout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-title {
+  font-size: 26px;
+  margin: 2px 0 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-title, .chapter-part.part-little-entrance-readings-litanies .page-036-dismissal-title, .chapter-part.part-little-entrance-readings-litanies .page-036-end-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-dismissal-title, .chapter-part.part-little-entrance-readings-litanies .page-036-end-title {
+  margin-top: 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-end-title {
+  margin-top: 10px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr) 16px minmax(0, 1fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening-grid .col-left p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-grid .col-left p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-grid .col-center {
+  min-width: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-right {
+  justify-content: flex-start;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-right .stage-top, .chapter-part.part-little-entrance-readings-litanies .page-036-prayer-right .stage-bottom {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-prayer-right .stage-bottom:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-closing-lines {
+  margin-top: 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-closing-lines .dialogue-line, .chapter-part.part-little-entrance-readings-litanies .page-036-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-dismissal {
+  margin: 0 4px 4px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 8px;
+  padding: 8px 4px 6px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-antimension-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-antimension-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-antimension-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-036 .page-036-antimension-image {
+  float: right;
+  width: auto;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-036 .page-036-antimension-image .figure-image {
+  height: 275px; /* +25% from 220px placeholder */
+  width: auto;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-036-opening {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-continued {
+  font-size: 0.92em;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-catechumens-wrap {
+  overflow: hidden;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-catechumens-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-037 .page-037-zaccheus {
+  float: right;
+  /* Hug image width at height 300px (asset 992×1077 → ~276px; +25% from 220px placeholder). */
+  width: 276px;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .segment-037 .page-037-zaccheus .figure-image {
+  display: block;
+  height: 300px; /* +25% from 240px placeholder */
+  width: auto; /* override book.css width:100% */
+  max-width: none;
+  margin: 0 auto;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-zaccheus figcaption {
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-zaccheus figcaption .citation {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0;
+  padding: 10px 18px 14px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .box-header-037 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chapter-part.part-little-entrance-readings-litanies .page-037-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}

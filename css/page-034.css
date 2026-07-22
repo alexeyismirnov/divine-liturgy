@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Page 34 — Litany of Fervent Supplication (The Augmented Litany)
+   --------------------------------------------------------------------------
+   Liturgical box:
+     1. Title
+     2. Full-width litany dialogue (Deacon / People)
+     3. 3-col grid: final petition | Prayer of Fervent Supplication | rubric
+     4. Closing doxology + Amen
+     5. Liturgy of the Word outline (Litany of Fervent Supplication highlighted)
+   Commentary:
+     6. Drop-cap commentary
+   ========================================================================== */
+
+.book-page[data-page-number="34"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Title ---------------------------------------------------- */
+.page-034-title {
+  font-size: 26px;
+  margin: 2px 0 8px;
+  line-height: 1.2;
+}
+
+.page-034-subtitle {
+  display: block;
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'Cardo', serif;
+  margin-top: 2px;
+}
+
+/* ---------- Full-width litany ---------------------------------------- */
+.page-034-litany p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-034-litany p:last-child {
+  margin-bottom: 0;
+}
+
+.deacon-text {
+  color: var(--color-priest);
+}
+
+.people-response {
+  color: var(--color-emphasis);
+  font-weight: 700;
+}
+
+.page-034-times-note {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* ---------- 3-column prayer grid ------------------------------------- */
+.page-034-prayer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) 16px minmax(0, 2.1fr) 16px minmax(0, 0.8fr);
+  align-items: stretch;
+  column-gap: 0;
+  margin-top: 8px;
+}
+
+.page-034-prayer-grid .col-left p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+.page-034-prayer-grid .col-left p:last-child {
+  margin-bottom: 0;
+}
+
+.page-034-prayer-title {
+  font-size: 18px;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.page-034-prayer-grid .col-center p {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page-034-col-right {
+  justify-content: flex-start;
+}
+
+.page-034-col-right .stage-top {
+  margin: 0;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+
+/* ---------- Closing doxology + Amen ---------------------------------- */
+.page-034-closing-lines {
+  margin-top: 8px;
+}
+
+.page-034-closing-lines .dialogue-line,
+.page-034-closing-lines .prayer-continuation {
+  margin: 2px 4px;
+}
+
+/* ---------- Liturgy of the Word outline ------------------------------ */
+.page-034-outline {
+  background: rgba(0, 0, 0, 0.04);
+  margin-top: 10px;
+  padding: 8px 4px 6px;
+}
+
+.page-034-outline .outline-current {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Commentary ----------------------------------------------- */
+.page-034-commentary-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 8px;
+}
+
+.page-034-opening {
+  margin: 0;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}

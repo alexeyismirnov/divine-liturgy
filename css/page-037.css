@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Page 37 — The Antimension (continued) / Prayer for the Catechumens /
+               Questions / The Dismissal of the Catechumens
+   --------------------------------------------------------------------------
+     1. The Antimension (continued) — drop-cap commentary
+     2. The Prayer for the Catechumens — right-floated Zaccheus placeholder
+     3. QUESTIONS box (mission / evangelism scriptures)
+     4. The Dismissal of the Catechumens — drop-cap commentary
+   ========================================================================== */
+
+.book-page[data-page-number="37"] {
+  padding-bottom: 48px;
+}
+
+/* ---------- Section titles (centered) -------------------------------- */
+.page-037-section-title {
+  text-align: center;
+  padding-left: 0;
+  margin: 4px 0 10px;
+}
+
+.page-037-continued {
+  font-size: 0.92em;
+}
+
+.commentary > .drop-cap-wrap {
+  margin: 0 0 10px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.42;
+}
+
+/* ---------- Prayer for the Catechumens (image + text wrap) ----------- */
+.page-037-catechumens-wrap {
+  overflow: hidden;
+}
+
+.page-037-catechumens-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.book-page[data-page-number="37"] .page-037-zaccheus {
+  float: right;
+  /* Hug image width at height 300px (asset 992×1077 → ~276px; +25% from 220px placeholder). */
+  width: 276px;
+  margin: 4px 0 8px 16px;
+  text-align: center;
+}
+
+.book-page[data-page-number="37"] .page-037-zaccheus .figure-image {
+  display: block;
+  height: 300px; /* +25% from 240px placeholder */
+  width: auto; /* override book.css width:100% */
+  max-width: none;
+  margin: 0 auto;
+}
+
+.page-037-zaccheus figcaption {
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  font-family: 'Cardo', serif;
+  text-align: center;
+}
+
+.page-037-zaccheus figcaption .citation {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ---------- QUESTIONS box (header top-right) ------------------------- */
+.page-037-questions {
+  position: relative;
+  background: #e8edf4;
+  border: 1.5px solid #4a6a9a;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.18);
+  margin: 14px 0;
+  padding: 10px 18px 14px;
+}
+
+.box-header-037 {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  margin: 0;
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  color: var(--color-question-header);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.page-037-questions > .question-prompt:first-of-type {
+  padding-right: 140px;
+}
+
+.page-037-bible-quote {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.page-037-bible-quote .citation {
+  display: block;
+  text-align: right;
+  margin-left: 0;
+  margin-top: 4px;
+}
