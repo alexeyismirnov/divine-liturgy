@@ -2,9 +2,10 @@
 /**
  * Export a liturgy section as a multi-page PDF.
  *
- * Each original book page becomes one A4 leaf. The cream .book-page card
- * is screenshotted (no gray viewport) and scaled to fit centered on A4
- * while preserving aspect ratio. Uniform A4 size is required for print.
+ * Each original book page becomes one A4 leaf. Chromium renders the cream
+ * .book-page card to a *text-based* PDF (real fonts / selectable text),
+ * scaled and centered on A4 while preserving aspect ratio. Uniform A4
+ * size is required for print.
  *
  * Usage:
  *   node scripts/export-section-pdf.mjs [section-id]
@@ -19,7 +20,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-import { PDFDocument, rgb } from 'pdf-lib';
+import { PDFDocument } from 'pdf-lib';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -32,8 +33,8 @@ const A4_HEIGHT_PT = 841.89;
 /** Small inset so content doesn't kiss the paper edge when printed. */
 const A4_MARGIN_PT = 18;
 
-/** Cream page background (matches --color-page-bg #fdfdf7). */
-const PAGE_BG = rgb(253 / 255, 253 / 255, 247 / 255);
+/** CSS px per inch as used by Chromium's PDF layout. */
+const CSS_DPI = 96;
 
 /** Section id → ordered list of page numbers (as they appear in the book). */
 const SECTIONS = {
@@ -108,14 +109,68 @@ function pageFilename(n) {
   return `page-${String(n).padStart(3, '0')}.html`;
 }
 
+/** Fit book card into the A4 content box (inside margins). */
+function fitScale(widthPx, heightPx) {
+  const contentWpx = ((A4_WIDTH_PT - 2 * A4_MARGIN_PT) / 72) * CSS_DPI;
+  const contentHpx = ((A4_HEIGHT_PT - 2 * A4_MARGIN_PT) / 72) * CSS_DPI;
+  const scale = Math.min(contentWpx / widthPx, contentHpx / heightPx, 1);
+  return Math.max(0.1, Math.min(2, scale));
+}
+
+/**
+ * Layout CSS so the book card is zoom-scaled and flex-centered on a full
+ * A4 sheet. Chromium then prints at scale 1 with zero margins — text stays
+ * vector/font-based, and leftover space is cream (same as the old png path).
+ */
+function layoutCss(scale) {
+  const marginIn = A4_MARGIN_PT / 72;
+  return `
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 210mm !important;
+  height: 297mm !important;
+  overflow: hidden !important;
+  background: var(--color-page-bg, #fdfdf7) !important;
+}
+body {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding: ${marginIn}in !important;
+}
+body:has(.book-page) {
+  zoom: 1 !important;
+}
+.book-page {
+  margin: 0 !important;
+  box-shadow: none !important;
+  zoom: ${scale} !important;
+  flex: 0 0 auto !important;
+}
+.page-number {
+  display: none !important;
+}
+*, *::before, *::after {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+`;
+}
+
 async function renderPageLeaf(browser, baseUrl, pageNum, exportCss) {
   const page = await browser.newPage({
-    deviceScaleFactor: 2, // sharper text/images in the PDF
-    viewport: { width: 900, height: 1600 },
+    viewport: { width: 900, height: 2000 },
   });
   const url = `${baseUrl}/pages/${pageFilename(pageNum)}`;
   try {
     await page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 });
+    // Measure first with base export styles (no zoom), then re-apply with fit scale.
     await page.addStyleTag({ content: exportCss });
     await page.evaluate(async () => {
       if (document.fonts?.ready) await document.fonts.ready;
@@ -130,7 +185,6 @@ async function renderPageLeaf(browser, baseUrl, pageNum, exportCss) {
         ),
       );
     });
-    // Brief settle after fonts/images (Playwright has no waitForTimeout in some versions).
     await new Promise((r) => setTimeout(r, 250));
 
     const book = page.locator('.book-page').first();
@@ -140,12 +194,26 @@ async function renderPageLeaf(browser, baseUrl, pageNum, exportCss) {
       throw new Error(`Could not measure .book-page on ${pageFilename(pageNum)}`);
     }
 
-    const pngBytes = await book.screenshot({ type: 'png', omitBackground: false });
+    const scale = fitScale(box.width, box.height);
+    await page.addStyleTag({ content: layoutCss(scale) });
+
+    // Text-based PDF: Chromium embeds real fonts / glyphs (selectable &
+    // Acrobat-editable), unlike the previous screenshot → png pipeline.
+    const pdfBytes = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      preferCSSPageSize: true,
+      scale: 1,
+      margin: { top: '0', right: '0', bottom: '0', left: '0' },
+      pageRanges: '1',
+    });
+
     return {
       pageNum,
-      pngBytes,
+      pdfBytes,
       widthPx: box.width,
       heightPx: box.height,
+      scale,
     };
   } finally {
     await page.close();
@@ -154,26 +222,10 @@ async function renderPageLeaf(browser, baseUrl, pageNum, exportCss) {
 
 async function mergeLeaves(leaves) {
   const out = await PDFDocument.create();
-  const contentW = A4_WIDTH_PT - 2 * A4_MARGIN_PT;
-  const contentH = A4_HEIGHT_PT - 2 * A4_MARGIN_PT;
-
   for (const leaf of leaves) {
-    const png = await out.embedPng(leaf.pngBytes);
-    const scale = Math.min(contentW / png.width, contentH / png.height);
-    const drawW = png.width * scale;
-    const drawH = png.height * scale;
-    const x = (A4_WIDTH_PT - drawW) / 2;
-    const y = (A4_HEIGHT_PT - drawH) / 2;
-
-    const page = out.addPage([A4_WIDTH_PT, A4_HEIGHT_PT]);
-    page.drawRectangle({
-      x: 0,
-      y: 0,
-      width: A4_WIDTH_PT,
-      height: A4_HEIGHT_PT,
-      color: PAGE_BG,
-    });
-    page.drawImage(png, { x, y, width: drawW, height: drawH });
+    const doc = await PDFDocument.load(leaf.pdfBytes);
+    const pages = await out.copyPages(doc, doc.getPageIndices());
+    for (const p of pages) out.addPage(p);
   }
   return out.save();
 }
@@ -199,7 +251,7 @@ async function main() {
 
   const { server, baseUrl } = await startStaticServer();
   console.log(`Serving ${ROOT} at ${baseUrl}`);
-  console.log(`Exporting "${section.title}" (${section.pages.length} pages, A4)…`);
+  console.log(`Exporting "${section.title}" (${section.pages.length} pages, A4, text PDF)…`);
 
   const browser = await chromium.launch({ headless: true });
   try {
@@ -207,7 +259,9 @@ async function main() {
     for (const n of section.pages) {
       process.stdout.write(`  page ${n}… `);
       const leaf = await renderPageLeaf(browser, baseUrl, n, exportCss);
-      console.log(`${Math.round(leaf.widthPx)}×${Math.round(leaf.heightPx)}px`);
+      console.log(
+        `${Math.round(leaf.widthPx)}×${Math.round(leaf.heightPx)}px @ scale ${leaf.scale.toFixed(3)}`,
+      );
       leaves.push(leaf);
     }
 

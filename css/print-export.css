@@ -1,13 +1,15 @@
 /* ==========================================================================
    Print / PDF export styles
    --------------------------------------------------------------------------
-   Applied when generating section PDFs so only the cream book card is
-   captured — no gray room background, no card shadow, no outer margins.
-   Zoom is forced to 1 so leaf size matches the designed 820×1060 card.
+   Applied when generating section PDFs via Chromium's text PDF engine
+   (Playwright page.pdf). Keeps only the cream .book-page card — no gray
+   room background, no card shadow, no web-only page numbers — and forces
+   print color so parchment boxes and cue colors survive into the PDF.
    ========================================================================== */
 
-body:has(.book-page) {
-  zoom: 1 !important;
+@page {
+  size: A4 portrait;
+  margin: 0;
 }
 
 html,
@@ -15,6 +17,12 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   background: var(--color-page-bg, #fdfdf7) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+body:has(.book-page) {
+  zoom: 1 !important;
 }
 
 .book-page {
@@ -25,4 +33,11 @@ body {
 /* Page numbers are for the web edition only. */
 .page-number {
   display: none !important;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }

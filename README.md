@@ -73,8 +73,9 @@ this.
 ## PDF export
 
 Section PDFs use **A4 portrait** leaves. Each original book page is
-captured as the cream `.book-page` card (no gray viewport margins,
-no page numbers) and scaled to fit centered on A4.
+rendered by Chromium as a **text-based PDF** (selectable / Acrobat-
+editable fonts, not a screenshot). The cream `.book-page` card (no gray
+viewport margins, no page numbers) is scaled to fit centered on A4.
 
 ```bash
 npm install
@@ -88,5 +89,25 @@ Output (gitignored under `pdf/`):
 - `pdf/introduction-rite-of-preparation.pdf` (pages 2–6, 8–10)
 - `pdf/liturgy-of-the-word.pdf` (pages 12–25, 28–37)
 - `pdf/liturgy-of-the-faithful.pdf` (pages 44–51, 54–59, 62–66, 68–73, 76–84, 88–99)
+
+## DOCX export
+
+Layout-approximating Word documents for the same sections. Multi-column
+grids become tables; images are **gray stubs** labeled with the asset
+filename (no binary images embedded). Visual fidelity is approximate —
+good for editing text while keeping column structure.
+
+```bash
+npm run export:docx:introduction
+npm run export:docx:liturgy-of-the-word
+npm run export:docx:liturgy-of-the-faithful
+npm run export:docx:all   # all sections → one file
+```
+
+Output (gitignored under `docx/`):
+- `docx/introduction-rite-of-preparation.docx`
+- `docx/liturgy-of-the-word.docx`
+- `docx/liturgy-of-the-faithful.docx`
+- `docx/study-of-divine-liturgy.docx` (combined)
 
 Regenerate as needed.

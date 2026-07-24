@@ -6,6 +6,9 @@ IMG_*.jpeg
 # Generated section PDFs (run `npm run export:introduction` to rebuild)
 pdf/
 
+# Generated section DOCX (run `npm run export:docx:introduction` to rebuild)
+docx/
+
 # Node / Playwright
 node_modules/
 # Firebase
