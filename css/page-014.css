@@ -74,7 +74,7 @@
 }
 
 /* ---------- Commentary ---------------------------------------------- */
-.page-014-commentary-title {
+.commentary .page-014-commentary-title {
   text-align: center;
   padding-left: 0;
   margin: 4px 0 8px;
@@ -95,4 +95,23 @@
 .page-014-petition {
   color: var(--color-priest);
   font-weight: 700;
+}
+
+/* ---------- Footnotes --------------------------------------------------- */
+.page-014-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-014-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.page-014-footnotes li:last-child {
+  margin-bottom: 0;
 }

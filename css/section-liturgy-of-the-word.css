@@ -312,6 +312,24 @@
   font-weight: 700;
 }
 
+.chapter-part.part-opening-litany-antiphons .page-014-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.chapter-part.part-opening-litany-antiphons .page-014-footnotes li:last-child {
+  margin-bottom: 0;
+}
+
 
 
 .chapter-part.part-opening-litany-antiphons .page-015-top-questions {

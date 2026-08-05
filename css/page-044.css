@@ -1,16 +1,21 @@
 /* ==========================================================================
    Page 44 — "The Liturgy of the Faithful / The Offertory" specific styles
    --------------------------------------------------------------------------
-   The page is a single liturgical box containing:
-     1. Chapter title + "The Offertory"
-     2. First Prayer of the Faithful — 3-col grid (Deacon/People |
-        Priest prayer | stage direction)
+   Above the box:
+     1. Chapter title ("The Liturgy of the Faithful")
+   Liturgical box:
+     2. "The Offertory" + First Prayer of the Faithful — 3-col grid
+        (Deacon/People | Priest prayer | stage direction)
      3. First-prayer closing lines (priest ending, People, Deacon, People)
      4. Second Prayer of the Faithful — 2-col grid (deacon petitions |
         Priest prayer), with "(if a deacon is serving:)" in the left column
      5. Second-prayer closing lines (priest ending, People: Amen)
      6. Liturgy of the Faithful outline (Two Litanies highlighted)
    ========================================================================== */
+
+.book-page[data-page-number="44"] > .chapter-title {
+  margin-bottom: 20px;
+}
 
 /* ---------- 3-column grid for the First Prayer --------------------
    Narrow left column for the Deacon/People dialogue, wide center for

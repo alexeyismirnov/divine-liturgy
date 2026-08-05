@@ -93,10 +93,18 @@ body:has(.book-page) {
   margin: 4px 0 6px;
 }
 
+/* Commentary section titles default to left (in-flow / nested headings). */
 .commentary .section-title {
   text-align: left;
   margin: 10px 0 8px;
   padding-left: 6px;
+}
+
+/* Banner titles that are direct children of .commentary are centered.
+   Page CSS loaded after this can still override (e.g. intentionally left). */
+.commentary > .section-title {
+  text-align: center;
+  padding-left: 0;
 }
 
 /* ==========================================================================

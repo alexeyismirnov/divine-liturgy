@@ -1,24 +1,10 @@
 /* ==========================================================================
-   Page 45 — "The Liturgy of the Faithful" commentary (The Offertory)
+   Page 45 — "The Offertory" commentary
    --------------------------------------------------------------------------
-   1. Chapter title + "The Offertory" section with left pullout + drop cap
+   1. "The Offertory" section with left pullout + drop cap
    2. "Prayers of the Faithful" — 2-col grid (commentary | fresco image)
    3. QUESTIONS box
    ========================================================================== */
-
-/* ---------- Chapter title at top of commentary page -------------- */
-.page-045-chapter-title {
-  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
-  font-weight: 400;
-  font-size: 32px;
-  text-align: center;
-  color: var(--color-heading);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  letter-spacing: 0.02em;
-  margin: 4px 0 6px;
-}
 
 .commentary .page-045-offertory-title {
   text-align: center;

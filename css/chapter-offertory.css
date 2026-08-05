@@ -11,6 +11,10 @@
   padding-bottom: 36px;
 }
 
+.book-chapter > .chapter-title {
+  margin-bottom: 12px;
+}
+
 .book-chapter h2 {
   margin-top: 18px;
 }
@@ -39,15 +43,12 @@
 /* ==========================================================================
    Page 44 — "The Liturgy of the Faithful / The Offertory" specific styles
    --------------------------------------------------------------------------
-   The page is a single liturgical box containing:
-     1. Chapter title + "The Offertory"
-     2. First Prayer of the Faithful — 3-col grid (Deacon/People |
-        Priest prayer | stage direction)
-     3. First-prayer closing lines (priest ending, People, Deacon, People)
-     4. Second Prayer of the Faithful — 2-col grid (deacon petitions |
-        Priest prayer), with "(if a deacon is serving:)" in the left column
-     5. Second-prayer closing lines (priest ending, People: Amen)
-     6. Liturgy of the Faithful outline (Two Litanies highlighted)
+   Chapter title sits above the liturgical box. The box contains:
+     1. "The Offertory" + First Prayer of the Faithful — 3-col grid
+     2. First-prayer closing lines
+     3. Second Prayer of the Faithful — 2-col grid
+     4. Second-prayer closing lines
+     5. Liturgy of the Faithful outline (Two Litanies highlighted)
    ========================================================================== */
 
 /* ---------- 3-column grid for the First Prayer --------------------
@@ -146,26 +147,12 @@
 /* ---------- From css/page-045.css ---------- */
 
 /* ==========================================================================
-   Page 45 — "The Liturgy of the Faithful" commentary (The Offertory)
+   Page 45 — "The Offertory" commentary
    --------------------------------------------------------------------------
-   1. Chapter title + "The Offertory" section with left pullout + drop cap
+   1. "The Offertory" section with left pullout + drop cap
    2. "Prayers of the Faithful" — 2-col grid (commentary | fresco image)
    3. QUESTIONS box
    ========================================================================== */
-
-/* ---------- Chapter title at top of commentary page -------------- */
-.page-045-chapter-title {
-  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
-  font-weight: 400;
-  font-size: 32px;
-  text-align: center;
-  color: var(--color-heading);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  letter-spacing: 0.02em;
-  margin: 4px 0 6px;
-}
 
 .commentary .page-045-offertory-title {
   text-align: center;

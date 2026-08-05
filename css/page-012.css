@@ -1,8 +1,9 @@
 /* ==========================================================================
    Page 12 — The Liturgy of the Word / Opening Blessing of the Kingdom
    --------------------------------------------------------------------------
-   Liturgical box:
+   Above the box:
      1. Chapter titles (Liturgy of the Word / Catechumens)
+   Liturgical box:
      2. "Opening Blessing of the Kingdom"
      3. 2-col grid: Deacon/Priest/People dialogue | rubrics
      4. Liturgy of the Word outline (Blessing the Kingdom highlighted)
@@ -16,10 +17,14 @@
   padding-bottom: 48px;
 }
 
-/* ---------- Titles inside liturgical box ---------------------------- */
+/* ---------- Chapter titles above liturgical box --------------------- */
+.book-page[data-page-number="12"] > .chapter-title {
+  margin-bottom: 12px;
+}
+
 .page-012-alt-title {
   font-size: 22px;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 
 .page-012-section-title {
@@ -104,7 +109,7 @@
 }
 
 /* ---------- Commentary ---------------------------------------------- */
-.page-012-commentary-title {
+.commentary .page-012-commentary-title {
   text-align: center;
   padding-left: 0;
   margin: 4px 0 10px;
