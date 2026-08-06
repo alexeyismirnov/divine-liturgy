@@ -119,9 +119,9 @@
 
 /* ---------- "The Aer" commentary section ----------------------- */
 .commentary > .page-046-aer-title {
-  text-align: left;
+  text-align: center;
+  padding-left: 0;
   margin: 10px 0 8px;
-  padding-left: 6px;
 }
 
 .page-046-aer-grid {

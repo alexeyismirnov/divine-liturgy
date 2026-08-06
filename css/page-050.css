@@ -102,9 +102,9 @@
 
 /* ---------- Symbolic Meaning commentary --------------------------- */
 .commentary > .page-050-symbolic-title {
-  text-align: left;
+  text-align: center;
+  padding-left: 0;
   margin: 10px 0 8px;
-  padding-left: 6px;
 }
 
 .page-050-symbolic-body p {

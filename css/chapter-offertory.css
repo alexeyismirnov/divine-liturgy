@@ -24,6 +24,13 @@
   margin-top: 18px;
 }
 
+/* Commentary banner titles (direct children) stay centered in chapter view. */
+.book-chapter .commentary > .section-title,
+.book-chapter .commentary > :is(h1, h2)[class*="-title"] {
+  text-align: center;
+  padding-left: 0;
+}
+
 .book-chapter .col-center > h2,
 .book-chapter .col-left > h2 {
   margin-top: 4px;
@@ -330,9 +337,9 @@
 
 /* ---------- "The Aer" commentary section ----------------------- */
 .page-046-aer-title {
-  text-align: left;
+  text-align: center;
+  padding-left: 0;
   margin: 10px 0 8px;
-  padding-left: 6px;
 }
 
 .page-046-aer-grid {
@@ -713,9 +720,9 @@
 
 /* ---------- History of the Great Entrance commentary ------------- */
 .page-048-history-title {
-  text-align: left;
+  text-align: center;
+  padding-left: 0;
   margin: 10px 0 8px;
-  padding-left: 6px;
 }
 
 .page-048-history-body p {
@@ -890,9 +897,9 @@
 
 /* ---------- Symbolic Meaning commentary --------------------------- */
 .page-050-symbolic-title {
-  text-align: left;
+  text-align: center;
+  padding-left: 0;
   margin: 10px 0 8px;
-  padding-left: 6px;
 }
 
 .page-050-symbolic-body p {
