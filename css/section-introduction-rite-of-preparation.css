@@ -440,6 +440,24 @@
   line-height: 1.3;
 }
 
+.page-005-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-005-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.page-005-footnotes li:last-child {
+  margin-bottom: 0;
+}
+
 
 /* ---------- From css/page-006.css ---------- */
 
@@ -478,6 +496,24 @@
   margin-left: 0;
   margin-top: 4px;
   font-style: normal;
+}
+
+.page-006-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-006-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.page-006-footnotes li:last-child {
+  margin-bottom: 0;
 }
 
 
