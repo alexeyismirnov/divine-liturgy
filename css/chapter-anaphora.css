@@ -344,6 +344,49 @@
   font-weight: 700;
 }
 
+/* ---------- Footnotes --------------------------------------------------- */
+.page-063-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-063-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.page-063-footnotes li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- From css/page-065.css ---------- */
+.page-065-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-065-footnotes li {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.page-065-footnotes li p {
+  margin: 0 0 6px;
+  text-align: justify;
+}
+
+.page-065-footnotes li p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- From css/page-066.css ---------- */
 
 /* ==========================================================================
@@ -430,6 +473,34 @@
    the cup, saying: …") is centred in the original scan. */
 .prayer-continuation-centered {
   text-align: center;
+}
+
+/* ---------- Footnote 10 (continued from page 65) -------------------- */
+.page-066-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+  list-style: none;
+}
+
+.page-066-footnotes > li {
+  list-style: none;
+  margin: 0;
+  text-align: justify;
+}
+
+.page-066-footnotes > li p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.page-066-footnotes > li p:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- From css/page-067.css ---------- */

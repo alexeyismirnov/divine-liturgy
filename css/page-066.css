@@ -7,6 +7,10 @@
    grid down to the bottom of the "Remembrance" section.
    ========================================================================== */
 
+.book-page[data-page-number="66"] {
+  padding-bottom: 36px;
+}
+
 /* ---------- Outer 2-column layout for the "Remembrance" section ----------
    Wraps the prayer grid (top) + words of institution (below) on the
    left, a long vertical separator in the middle, and the right column
@@ -82,4 +86,32 @@
    the cup, saying: …") is centred in the original scan. */
 .prayer-continuation-centered {
   text-align: center;
+}
+
+/* ---------- Footnote 10 (continued from page 65) -------------------- */
+.page-066-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+  list-style: none;
+}
+
+.page-066-footnotes > li {
+  list-style: none;
+  margin: 0;
+  text-align: justify;
+}
+
+.page-066-footnotes > li p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.page-066-footnotes > li p:last-child {
+  margin-bottom: 0;
 }

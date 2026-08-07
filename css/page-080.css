@@ -156,3 +156,51 @@
 .commentary > p {
   text-align: justify;
 }
+
+/* ---------- Footnotes --------------------------------------------------- */
+.page-080-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-080-footnotes li {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.page-080-footnotes li p {
+  margin: 0 0 6px;
+  text-align: justify;
+}
+
+.page-080-footnotes li p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Footnotes --------------------------------------------------- */
+.page-080-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-080-footnotes li {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.page-080-footnotes li p {
+  margin: 0 0 6px;
+  text-align: justify;
+}
+
+.page-080-footnotes li p:last-child {
+  margin-bottom: 0;
+}

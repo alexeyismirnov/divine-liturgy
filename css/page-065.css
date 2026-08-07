@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Page 65 — Sanctus / Isaiah footnote styles
+   ========================================================================== */
+
+.book-page[data-page-number="65"] {
+  padding-bottom: 60px;
+}
+
+/* ---------- Footnotes --------------------------------------------------- */
+.page-065-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-065-footnotes li {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.page-065-footnotes li p {
+  margin: 0 0 6px;
+  text-align: justify;
+}
+
+.page-065-footnotes li p:last-child {
+  margin-bottom: 0;
+}
