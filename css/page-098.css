@@ -147,3 +147,21 @@
   letter-spacing: 0.03em;
   color: var(--color-heading);
 }
+
+.page-098-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.page-098-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.page-098-footnotes li:last-child {
+  margin-bottom: 0;
+}

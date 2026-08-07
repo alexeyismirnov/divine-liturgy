@@ -139,3 +139,20 @@
 .page-099-bottom-questions .bible-quote {
   text-align: right;
 }
+
+/* ---------- Footnote 18 (continued from page 98) -------------------- */
+.page-099-footnotes {
+  margin: 12px 0 0;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+  list-style: none;
+}
+
+.page-099-footnotes > li {
+  list-style: none;
+  margin: 0;
+  text-align: justify;
+}

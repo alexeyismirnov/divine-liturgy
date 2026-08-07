@@ -5132,6 +5132,24 @@
   letter-spacing: 0.03em;
   color: var(--color-heading);
 }
+
+.chapter-part.part-communion .page-098-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.chapter-part.part-communion .page-098-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.chapter-part.part-communion .page-098-footnotes li:last-child {
+  margin-bottom: 0;
+}
 /* ---------- From css/page-099.css ---------- */
 /* ==========================================================================
    Page 99 — The Prayer Before the Ambon (commentary)
@@ -5268,4 +5286,21 @@
 }
 .chapter-part.part-communion .page-099-bottom-questions .bible-quote {
   text-align: right;
+}
+
+/* ---------- Footnote 18 (continued from page 98) -------------------- */
+.chapter-part.part-communion .page-099-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+  list-style: none;
+}
+
+.chapter-part.part-communion .page-099-footnotes > li {
+  list-style: none;
+  margin: 0;
+  text-align: justify;
 }
