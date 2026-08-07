@@ -1135,6 +1135,24 @@
   font-family: 'Cardo', serif;
   text-align: center;
 }
+
+.chapter-part.part-litanies-creed .page-056-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.chapter-part.part-litanies-creed .page-056-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.chapter-part.part-litanies-creed .page-056-footnotes li:last-child {
+  margin-bottom: 0;
+}
 /* ---------- From css/page-057.css ---------- */
 /* ==========================================================================
    Page 57 — The Holy Kiss (continued)
@@ -1266,6 +1284,24 @@
   font-family: 'Cardo', serif;
   text-align: center;
 }
+
+.chapter-part.part-litanies-creed .page-058-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.chapter-part.part-litanies-creed .page-058-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.chapter-part.part-litanies-creed .page-058-footnotes li:last-child {
+  margin-bottom: 0;
+}
 /* ---------- From css/page-059.css ---------- */
 /* ==========================================================================
    Page 59 — The Doors / The Nicene Creed
@@ -1331,6 +1367,24 @@
   font-size: 15px;
   line-height: 1.45;
   text-align: justify;
+}
+
+.chapter-part.part-litanies-creed .page-059-footnotes {
+  margin: 12px 0 24px;
+  padding: 8px 0 0 1.2em;
+  border-top: 1px solid var(--color-text);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.chapter-part.part-litanies-creed .page-059-footnotes li {
+  margin-bottom: 4px;
+  text-align: justify;
+}
+
+.chapter-part.part-litanies-creed .page-059-footnotes li:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- From css/chapter-anaphora.css ---------- */
