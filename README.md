@@ -83,12 +83,16 @@ npx playwright install chromium   # first time only
 npm run export:introduction
 npm run export:liturgy-of-the-word
 npm run export:liturgy-of-the-faithful
+npm run export:appendices
+npm run export:all   # all sections → one file
 ```
 
 Output (gitignored under `pdf/`):
 - `pdf/introduction-rite-of-preparation.pdf` (pages 2–6, 8–10)
 - `pdf/liturgy-of-the-word.pdf` (pages 12–25, 28–37)
 - `pdf/liturgy-of-the-faithful.pdf` (pages 44–51, 54–59, 62–66, 68–73, 76–84, 88–99)
+- `pdf/appendices.pdf` (pages 101, 104–105)
+- `pdf/study-of-divine-liturgy.pdf` (combined)
 
 ## DOCX export
 
@@ -101,6 +105,7 @@ good for editing text while keeping column structure.
 npm run export:docx:introduction
 npm run export:docx:liturgy-of-the-word
 npm run export:docx:liturgy-of-the-faithful
+npm run export:docx:appendices
 npm run export:docx:all   # all sections → one file
 ```
 
@@ -108,6 +113,7 @@ Output (gitignored under `docx/`):
 - `docx/introduction-rite-of-preparation.docx`
 - `docx/liturgy-of-the-word.docx`
 - `docx/liturgy-of-the-faithful.docx`
+- `docx/appendices.docx`
 - `docx/study-of-divine-liturgy.docx` (combined)
 
 Regenerate as needed.

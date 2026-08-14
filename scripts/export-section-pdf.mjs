@@ -10,8 +10,12 @@
  * Usage:
  *   node scripts/export-section-pdf.mjs [section-id]
  *   npm run export:introduction
+ *   npm run export:appendices
+ *   npm run export:all
  *
  * Default section: introduction-rite-of-preparation
+ * Known ids: introduction-rite-of-preparation, liturgy-of-the-word,
+ * liturgy-of-the-faithful, appendices, all
  */
 
 import { createServer } from 'node:http';
@@ -21,6 +25,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
+import { knownSectionIds, pageFilename, resolveExport } from './lib/sections.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -35,34 +40,6 @@ const A4_MARGIN_PT = 18;
 
 /** CSS px per inch as used by Chromium's PDF layout. */
 const CSS_DPI = 96;
-
-/** Section id → ordered list of page numbers (as they appear in the book). */
-const SECTIONS = {
-  'introduction-rite-of-preparation': {
-    title: 'An introduction. The Rite of Preparation',
-    outfile: 'introduction-rite-of-preparation.pdf',
-    pages: [2, 3, 4, 5, 6, 8, 9, 10],
-  },
-  'liturgy-of-the-word': {
-    title: 'The Liturgy of the Word',
-    outfile: 'liturgy-of-the-word.pdf',
-    pages: [
-      12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-      28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
-    ],
-  },
-  'liturgy-of-the-faithful': {
-    title: 'The Liturgy of the Faithful',
-    outfile: 'liturgy-of-the-faithful.pdf',
-    pages: [
-      44, 45, 46, 47, 48, 49, 50, 51,
-      54, 55, 56, 57, 58, 59,
-      62, 63, 64, 65, 66, 68, 69, 70, 71, 72, 73,
-      76, 77, 78, 79, 80, 81, 82, 83, 84,
-      88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99,
-    ],
-  },
-};
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -103,10 +80,6 @@ function startStaticServer() {
     });
     server.on('error', reject);
   });
-}
-
-function pageFilename(n) {
-  return `page-${String(n).padStart(3, '0')}.html`;
 }
 
 /** Fit book card into the A4 content box (inside margins). */
@@ -232,9 +205,9 @@ async function mergeLeaves(leaves) {
 
 async function main() {
   const sectionId = process.argv[2] || 'introduction-rite-of-preparation';
-  const section = SECTIONS[sectionId];
+  const section = resolveExport(sectionId, 'pdf');
   if (!section) {
-    console.error(`Unknown section "${sectionId}". Known: ${Object.keys(SECTIONS).join(', ')}`);
+    console.error(`Unknown section "${sectionId}". Known: ${knownSectionIds(true).join(', ')}`);
     process.exit(1);
   }
 

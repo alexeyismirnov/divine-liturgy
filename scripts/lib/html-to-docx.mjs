@@ -3,16 +3,21 @@
  *
  * Strategy:
  *  - Multi-column CSS grids → Word tables (divider tracks omitted)
+ *  - CSS column-count glossaries → 2-col table (balanced by text length)
  *  - Floated figure + text → 2-col table (image stub | text)
  *  - <img> → gray shaded stub with basename of src
  *  - Decorative dividers / SVG → skipped
  *  - Speakers / cues / prayers keep approximate colors & emphasis
+ *  - <span class="footnote-ref">N</span> → Word FootnoteReferenceRun
+ *  - <ol class="page-NNN-footnotes"> collected as Word footnotes (not body text)
+ *  - Split notes (.footnote-continued on the next page) are merged
  */
 
 import path from 'node:path';
 import {
   AlignmentType,
   BorderStyle,
+  FootnoteReferenceRun,
   HeadingLevel,
   Paragraph,
   ShadingType,
@@ -95,14 +100,107 @@ function isDivider(el) {
   );
 }
 
+function isFootnoteList(el) {
+  return el?.name === 'ol' && /\bpage-\d+-footnotes\b/.test(classOf(el));
+}
+
 function isSkipped(el) {
   if (!el || el.type !== 'tag') return true;
   if (el.name === 'script' || el.name === 'style' || el.name === 'br') return true;
   if (isDivider(el)) return true;
   if (hasClass(el, 'page-number')) return true;
+  if (isFootnoteList(el)) return true;
   // Decorative-only nodes marked aria-hidden that aren't meaningful content wrappers.
   if (el.attribs?.['aria-hidden'] === 'true' && isDivider(el)) return true;
   return false;
+}
+
+function footnoteIdFromLi(li) {
+  const id = li?.attribs?.id || '';
+  const fromId = id.match(/^fn-(\d+)$/);
+  if (fromId) return Number(fromId[1]);
+  const value = li?.attribs?.value;
+  if (value && /^\d+$/.test(value)) return Number(value);
+  return null;
+}
+
+const FOOTNOTE_RUN = { size: 18, color: COLORS.text };
+
+function footnoteParagraphFromEl($, el) {
+  const runs = [];
+  for (const child of el.children || []) {
+    runs.push(...convertInlines($, child, FOOTNOTE_RUN));
+  }
+  if (!runs.length) {
+    const text = decodeText($(el).text()).trim();
+    if (text) {
+      runs.push(
+        new TextRun({
+          text,
+          font: 'Georgia',
+          size: FOOTNOTE_RUN.size,
+          color: FOOTNOTE_RUN.color,
+        }),
+      );
+    }
+  }
+  if (!runs.length) {
+    return new Paragraph({ children: [new TextRun({ text: '' })] });
+  }
+  return new Paragraph({
+    alignment: AlignmentType.JUSTIFIED,
+    spacing: { after: 80, line: 240 },
+    children: runs,
+  });
+}
+
+function footnoteParagraphsFromLi($, li) {
+  const paragraphs = $(li).children('p').toArray();
+  if (paragraphs.length) {
+    return paragraphs.map((p) => footnoteParagraphFromEl($, p));
+  }
+  return [footnoteParagraphFromEl($, li)];
+}
+
+/**
+ * Accumulator for HTML footnotes across sequential book pages.
+ * Continuation lists (li.footnote-continued) append to the last numbered note.
+ */
+export function createFootnoteState() {
+  return { byId: new Map(), lastId: null };
+}
+
+/**
+ * Harvest <ol class="page-NNN-footnotes"> from a book page into `state`.
+ */
+export function collectPageFootnotes($, pageEl, state) {
+  const lists = $(pageEl)
+    .find('ol')
+    .toArray()
+    .filter((el) => isFootnoteList(el));
+  for (const ol of lists) {
+    for (const li of $(ol).children('li').toArray()) {
+      const paras = footnoteParagraphsFromLi($, li);
+      const id = footnoteIdFromLi(li);
+      if (id != null) {
+        const existing = state.byId.get(id) || [];
+        state.byId.set(id, existing.concat(paras));
+        state.lastId = id;
+      } else if (hasClass(li, 'footnote-continued') && state.lastId != null) {
+        const existing = state.byId.get(state.lastId) || [];
+        state.byId.set(state.lastId, existing.concat(paras));
+      }
+    }
+  }
+}
+
+/** Convert collected footnotes into the `Document({ footnotes })` map. */
+export function footnotesForDocument(state) {
+  const footnotes = {};
+  for (const [id, children] of state.byId) {
+    footnotes[String(id)] = { children: ensureBlockChildren(children) };
+  }
+  return footnotes;
 }
 
 function frToDxa(frs, total = CONTENT_WIDTH_DXA) {
@@ -156,9 +254,42 @@ function floatSideFromClass(c) {
   if (/\bfigure-right\b|\bpullout-right\b|-right\b/.test(c)) return 'right';
   if (/\bfigure-left\b|\bpullout-left\b|-left\b/.test(c)) return 'left';
   // Common page-local float wrappers (image / altar / icon in the name → often left).
-  if (/synagogue|altar|icon|christ-|image/.test(c)) return 'left';
+  if (/synagogue|altar|icon|christ-|image|cover/.test(c)) return 'left';
   if (/last-supper|ascension|figure/.test(c)) return 'right';
   return null;
+}
+
+function isCssColumns(el) {
+  return /page-\d+-glossary/.test(classOf(el));
+}
+
+/**
+ * Approximate CSS column-count:2 by splitting children into two table cells.
+ * Balances by text length so a long last-left entry (e.g. Kondak) can still
+ * sit near the bottom of column 1.
+ */
+function convertCssColumns($, el, availWidth = CONTENT_WIDTH_DXA) {
+  const kids = contentChildren($, el);
+  if (!kids.length) return [];
+  if (kids.length === 1) return convertBlocks($, kids[0], availWidth);
+
+  const weights = kids.map((k) => Math.max(1, decodeText($(k).text()).trim().length));
+  const total = weights.reduce((a, b) => a + b, 0);
+  let acc = 0;
+  let split = Math.ceil(kids.length / 2);
+  for (let i = 0; i < kids.length; i++) {
+    acc += weights[i];
+    if (acc >= total / 2) {
+      split = i + 1;
+      break;
+    }
+  }
+  split = Math.min(Math.max(split, 1), kids.length - 1);
+
+  const widths = frToDxa([1, 1], availWidth);
+  const left = kids.slice(0, split).flatMap((k) => convertBlocks($, k, nestWidth(widths[0])));
+  const right = kids.slice(split).flatMap((k) => convertBlocks($, k, nestWidth(widths[1])));
+  return [makeTable(widths, [left, right])];
 }
 
 function contentChildren($, el) {
@@ -217,12 +348,20 @@ function convertInlines($, node, base = {}) {
     }
     if (isSkipped(n) && n.name !== 'span') return;
 
+    if (hasClass(n, 'footnote-ref')) {
+      const id = parseInt(decodeText($(n).text()).trim(), 10);
+      if (Number.isFinite(id) && id > 0) {
+        runs.push(new FootnoteReferenceRun(id));
+        return;
+      }
+    }
+
     const c = classOf(n);
     const next = { ...style };
 
     if (n.name === 'strong' || n.name === 'b') next.bold = true;
     if (n.name === 'em' || n.name === 'i') next.italics = true;
-    if (n.name === 'sup' || hasClass(n, 'footnote-ref') || hasClass(n, 'gloss-mark')) {
+    if (n.name === 'sup' || hasClass(n, 'gloss-mark')) {
       next.superScript = true;
       next.size = 16;
     }
@@ -330,9 +469,7 @@ function ensureBlockChildren(nodes) {
   return list.length ? list : [emptyPara()];
 }
 
-function imageStub(filename, caption, availWidth = CONTENT_WIDTH_DXA) {
-  const label = caption ? `${filename}\n${caption}` : filename;
-  const lines = label.split('\n');
+function imageStub(filename, caption, availWidth = CONTENT_WIDTH_DXA, captionRuns) {
   const w = Math.max(200, availWidth);
   const stubBorder = {
     top: THIN(COLORS.stubBorder),
@@ -340,6 +477,34 @@ function imageStub(filename, caption, availWidth = CONTENT_WIDTH_DXA) {
     left: THIN(COLORS.stubBorder),
     right: THIN(COLORS.stubBorder),
   };
+  const captionParas = [];
+  if (captionRuns?.length) {
+    captionParas.push(
+      new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { after: 200 },
+        children: captionRuns,
+      }),
+    );
+  } else if (caption) {
+    for (const line of caption.split('\n')) {
+      captionParas.push(
+        new Paragraph({
+          alignment: AlignmentType.CENTER,
+          spacing: { after: 200 },
+          children: [
+            new TextRun({
+              text: line,
+              font: 'Georgia',
+              size: 16,
+              italics: true,
+              color: COLORS.stubText,
+            }),
+          ],
+        }),
+      );
+    }
+  }
   return new Table({
     width: { size: w, type: WidthType.DXA },
     columnWidths: [w],
@@ -360,32 +525,17 @@ function imageStub(filename, caption, availWidth = CONTENT_WIDTH_DXA) {
             children: [
               new Paragraph({
                 alignment: AlignmentType.CENTER,
-                spacing: { before: 200, after: 60 },
+                spacing: { before: 200, after: captionParas.length ? 60 : 200 },
                 children: [
                   new TextRun({
-                    text: lines[0] || '[image]',
+                    text: filename || '[image]',
                     font: 'Courier New',
                     size: 18,
                     color: COLORS.stubText,
                   }),
                 ],
               }),
-              ...lines.slice(1).map(
-                (line) =>
-                  new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { after: 200 },
-                    children: [
-                      new TextRun({
-                        text: line,
-                        font: 'Georgia',
-                        size: 16,
-                        italics: true,
-                        color: COLORS.stubText,
-                      }),
-                    ],
-                  }),
-              ),
+              ...captionParas,
               new Paragraph({
                 spacing: { after: 120 },
                 children: [new TextRun({ text: '' })],
@@ -402,8 +552,22 @@ function figureToBlocks($, figure, availWidth = CONTENT_WIDTH_DXA) {
   const img = $(figure).find('img').first();
   const src = img.attr('src') || '';
   const filename = src ? path.basename(src) : '[image]';
-  const caption = decodeText($(figure).find('figcaption').first().text()).trim();
-  return [imageStub(filename, caption, availWidth)];
+  const capEl = $(figure).find('figcaption').get(0);
+  let captionRuns;
+  if (capEl) {
+    captionRuns = [];
+    for (const child of capEl.children || []) {
+      captionRuns.push(
+        ...convertInlines($, child, {
+          size: 16,
+          italics: true,
+          color: COLORS.stubText,
+        }),
+      );
+    }
+  }
+  const caption = captionRuns?.length ? '' : decodeText($(figure).find('figcaption').first().text()).trim();
+  return [imageStub(filename, caption, availWidth, captionRuns)];
 }
 
 function makeTable(colWidths, cellContents, { borders = NO_BORDER, cellShading } = {}) {
@@ -561,6 +725,10 @@ export function convertBlocks($, el, availWidth = CONTENT_WIDTH_DXA) {
     if (floated) return floated;
   }
 
+  if (isCssColumns(el)) {
+    return convertCssColumns($, el, availWidth);
+  }
+
   // Explicit multi-column containers
   if (isGridContainer(el)) {
     return convertGrid($, el, availWidth);
@@ -569,6 +737,7 @@ export function convertBlocks($, el, availWidth = CONTENT_WIDTH_DXA) {
   // Blockquote / commentary / section wrappers: unwrap and convert children
   if (
     el.name === 'section' ||
+    el.name === 'article' ||
     el.name === 'aside' ||
     el.name === 'blockquote' ||
     el.name === 'div' ||
@@ -589,6 +758,7 @@ export function convertBlocks($, el, availWidth = CONTENT_WIDTH_DXA) {
       'p',
       'div',
       'section',
+      'article',
       'aside',
       'figure',
       'table',
@@ -619,6 +789,11 @@ export function convertBlocks($, el, availWidth = CONTENT_WIDTH_DXA) {
       opts.runStyle = { size: /chapter-title|page-\d+-title/.test(c) ? 28 : 22, bold: true, color: COLORS.heading };
       opts.alignment = AlignmentType.CENTER;
       opts.after = 160;
+    }
+    if (/page-\d+-appendix/.test(c)) {
+      opts.runStyle = { size: 20, bold: true, color: COLORS.heading };
+      opts.alignment = AlignmentType.CENTER;
+      opts.after = 40;
     }
     if (/epigraph-attribution|subtitle/.test(c)) {
       opts.runStyle = { size: 18, italics: true };

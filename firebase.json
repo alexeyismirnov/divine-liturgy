@@ -10,6 +10,7 @@
       ".firebase/**",
       "**/node_modules/**",
       "pdf/**",
+      "docx/**",
       "scripts/**",
       "package.json",
       "package-lock.json",

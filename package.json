@@ -7,10 +7,13 @@
     "export:introduction": "node scripts/export-section-pdf.mjs introduction-rite-of-preparation",
     "export:liturgy-of-the-word": "node scripts/export-section-pdf.mjs liturgy-of-the-word",
     "export:liturgy-of-the-faithful": "node scripts/export-section-pdf.mjs liturgy-of-the-faithful",
+    "export:appendices": "node scripts/export-section-pdf.mjs appendices",
+    "export:all": "node scripts/export-section-pdf.mjs all",
     "export:section": "node scripts/export-section-pdf.mjs",
     "export:docx:introduction": "node scripts/export-section-docx.mjs introduction-rite-of-preparation",
     "export:docx:liturgy-of-the-word": "node scripts/export-section-docx.mjs liturgy-of-the-word",
     "export:docx:liturgy-of-the-faithful": "node scripts/export-section-docx.mjs liturgy-of-the-faithful",
+    "export:docx:appendices": "node scripts/export-section-docx.mjs appendices",
     "export:docx:all": "node scripts/export-section-docx.mjs all",
     "export:docx:section": "node scripts/export-section-docx.mjs"
   },

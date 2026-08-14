@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Page 101 — Appendix I: Definitions
+   --------------------------------------------------------------------------
+   Two-column glossary. Entries flow newspaper-style so Kondak continues
+   from the left column into the right.
+   ========================================================================== */
+
+.book-page[data-page-number="101"] {
+  padding-bottom: 48px;
+}
+
+.page-101-appendix {
+  margin: 0 0 2px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+}
+
+.commentary .page-101-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+  padding-left: 0;
+}
+
+.page-101-glossary {
+  column-count: 2;
+  column-gap: 28px;
+  column-fill: balance;
+}
+
+.page-101-glossary p {
+  margin: 0 0 6px;
+  font-size: 13.5px;
+  line-height: 1.32;
+  text-align: left;
+  padding-left: 0.85em;
+  text-indent: -0.85em;
+  orphans: 2;
+  widows: 2;
+}
+
+.page-101-glossary p:last-child {
+  margin-bottom: 0;
+}
+
+.page-101-glossary strong {
+  font-weight: 700;
+}
+
+.page-101-dots {
+  letter-spacing: 0.12em;
+}
+
+.page-101-glossary .quote-blue {
+  font-weight: 700;
+}

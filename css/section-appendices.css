@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Section: Appendices — merged from pages 101, 104–105
+   --------------------------------------------------------------------------
+   Combines page-specific CSS. Page-number padding rules are omitted.
+   Segment wrappers carry no page-break styling.
+   ========================================================================== */
+
+.book-section {
+  min-height: auto;
+  padding-bottom: 36px;
+}
+
+.book-section .section-segment + .section-segment {
+  margin-top: 32px;
+}
+
+/* Page 105 continues Appendix II without a new header. */
+.book-section .segment-104 + .segment-105 {
+  margin-top: 16px;
+}
+
+/* ---------- From css/page-101.css ---------- */
+
+/* ==========================================================================
+   Page 101 — Appendix I: Definitions
+   --------------------------------------------------------------------------
+   Two-column glossary. Entries flow newspaper-style so Kondak continues
+   from the left column into the right.
+   ========================================================================== */
+
+.page-101-appendix {
+  margin: 0 0 2px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+}
+
+.commentary .page-101-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 12px;
+  padding-left: 0;
+}
+
+.page-101-glossary {
+  column-count: 2;
+  column-gap: 28px;
+  column-fill: balance;
+}
+
+.page-101-glossary p {
+  margin: 0 0 6px;
+  font-size: 13.5px;
+  line-height: 1.32;
+  text-align: left;
+  padding-left: 0.85em;
+  text-indent: -0.85em;
+  orphans: 2;
+  widows: 2;
+}
+
+.page-101-glossary p:last-child {
+  margin-bottom: 0;
+}
+
+.page-101-glossary strong {
+  font-weight: 700;
+}
+
+.page-101-dots {
+  letter-spacing: 0.12em;
+}
+
+.page-101-glossary .quote-blue {
+  font-weight: 700;
+}
+
+/* ---------- From css/page-104.css ---------- */
+
+/* ==========================================================================
+   Page 104 — Appendix II: Recommended Reading
+   --------------------------------------------------------------------------
+   Catalog of five books: cover thumbnail at left, title/author/ISBN/
+   publisher/blurb to the right. Text wraps around each cover.
+   ========================================================================== */
+
+.page-104-appendix {
+  margin: 0 0 2px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--color-heading);
+}
+
+.commentary .page-104-title {
+  font-family: 'MedievalSharp', 'Cormorant Unicase', serif;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-heading);
+  margin: 0 0 10px;
+  padding-left: 0;
+}
+
+.page-104-book {
+  overflow: hidden;
+  margin: 0 0 8px;
+}
+
+.page-104-book:last-child {
+  margin-bottom: 0;
+}
+
+.page-104-cover {
+  float: left;
+  width: 96px;
+  margin: 1px 12px 4px 0;
+  text-align: center;
+}
+
+.page-104-cover .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #4a4038;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+.page-104-cover figcaption {
+  margin-top: 4px;
+  font-size: 11.5px;
+  line-height: 1.25;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.page-104-headline {
+  margin: 0 0 1px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.page-104-book-title {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-right: 0.45em;
+}
+
+.page-104-author {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.page-104-pages {
+  float: right;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.page-104-isbn {
+  margin: 0;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.page-104-publisher {
+  margin: 1px 0 5px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.page-104-blurb {
+  margin: 0 0 4px;
+  font-size: 13.5px;
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.page-104-blurb-italic {
+  font-style: italic;
+}
+
+.page-104-bio {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  font-style: italic;
+  text-align: justify;
+}
+
+.page-104-bio cite {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.page-104-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  font-style: italic;
+}
+
+/* ---------- From css/page-105.css ---------- */
+
+/* ==========================================================================
+   Page 105 — Appendix II: Recommended Reading (continued)
+   --------------------------------------------------------------------------
+   Four more catalog entries in the same cover-left / text-right layout
+   as page 104. No section header (continuation page).
+   ========================================================================== */
+
+.page-105-book {
+  overflow: hidden;
+  margin: 0 0 16px;
+}
+
+.page-105-book:last-child {
+  margin-bottom: 0;
+}
+
+.page-105-cover {
+  float: left;
+  width: 100px;
+  margin: 1px 14px 6px 0;
+  text-align: center;
+}
+
+.page-105-cover .figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #4a4038;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+.page-105-headline {
+  margin: 0 0 1px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.page-105-book-title {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-right: 0.45em;
+}
+
+.page-105-author {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.page-105-pages {
+  float: right;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.page-105-isbn {
+  margin: 0;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.page-105-publisher {
+  margin: 1px 0 2px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.page-105-copyright {
+  margin: 0 0 5px;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.page-105-series {
+  margin: 0 0 4px;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.page-105-blurb {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.38;
+  text-align: justify;
+}
